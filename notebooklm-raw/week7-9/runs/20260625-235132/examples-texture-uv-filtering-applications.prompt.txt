@@ -1,0 +1,5 @@
+【单问·Stage 3 例题深挖】基于 Week 9 课堂记录和课件07-Lecture08-2025，请为 Part 4 的 Texture Mapping、UV、Perspective-correct Interpolation、Filtering / Mipmap / LOD 与纹理应用整理可放入学习指南的例子和视觉解释。
+
+Focus map 指出：指南需要修正 UV 通常范围为 [0,1]，并用 footprint 与 $D=\log_2 L$ 解释 mipmap；还需要对比 bump / normal / displacement / environment mapping。
+
+要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释 UV 如何由三角形顶点插值得到；说明为什么屏幕空间线性插值会导致纹理扭曲；解释 nearest、bilinear、mipmap、trilinear 和 LOD；给出纹理应用对比素材；标注来源。

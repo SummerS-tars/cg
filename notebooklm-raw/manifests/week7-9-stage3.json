@@ -1,0 +1,86 @@
+{
+  "module": "week7-9",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 7-9 / Part 4：基于 focus map 的 targeted deep-dive / examples / visual explanations（v4.1 dynamic raw stage 3）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P4",
+  "stage": "stage-3-targeted-deep-dive",
+  "focus_map_ref": "notebooklm-raw/week7-9/focus-map.md",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "quality_standards": [
+      "术语首次出现必须解释",
+      "期末英语考试术语格式：中文(English) 或 Abbr(Full English Name，中文对照)",
+      "最终指南使用章节就近参考 raw 引用块",
+      "最终指南不包含采集说明或补采计划",
+      "Markdown 表格避免未转义竖线，数学表达优先用 LaTeX"
+    ],
+    "optional_stage4": "Stage 1-2 已覆盖 P4 主线；Project / GLSL 代码框架 source 未单独出现，当前不固定生成补采。"
+  },
+  "scope": {
+    "weeks": ["Week 7", "Week 8", "Week 9"],
+    "sources": [
+      "笔记-week07-周一-图形学",
+      "笔记-week08-周一-图形学",
+      "笔记-week09-周一-图形学",
+      "课件06-Lecture07-2026",
+      "课件07-Lecture08-2025",
+      "论文-Improved Illumination Model-CACM1980"
+    ],
+    "stage2_run": "notebooklm-raw/week7-9/runs/20260625-234459",
+    "focus_targets": [
+      "P3 fragment 到 P4 color output 的 shader 数据流",
+      "Lambert / Phong / Blinn-Phong 向量和公式",
+      "Microfacet BRDF 的 D/F/G 视觉解释",
+      "Flat / Gouraud / Phong Shading 对比",
+      "UV、透视校正、filtering / mipmap 与纹理应用"
+    ]
+  },
+  "batches": [
+    {
+      "id": "visual-explain-fragment-shading-pipeline",
+      "stage": "stage-3",
+      "layer": "L4-L5",
+      "priority": "critical",
+      "title": "Fragment Shading 数据流视觉解释",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 视觉解释】基于 Week 7-9 课堂记录、课件06-Lecture07-2026 和课件07-Lecture08-2025，请把 Part 4 中 P3 fragment 到 P4 output color 的数据流整理成可视化解释素材。\n\nFocus map 指出：指南需要明确 vertex attributes、rasterizer interpolation、fragment shader inputs、uniform / material / light parameters、texture sampler、output color、depth test / frame buffer 的边界。\n\n要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)，例如 BRDF、UV、LOD；按数据流顺序解释每一步输入输出；给出适合改写成 Mermaid flowchart 的节点和箭头；标注来源；不要写成最终指南全文。"
+    },
+    {
+      "id": "deep-dive-phong-blinn-lighting-example",
+      "stage": "stage-3",
+      "layer": "L3-L4",
+      "priority": "critical",
+      "title": "Phong / Blinn-Phong 光照公式深挖",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 深挖】基于 Week 7-8 课堂记录、课件06-Lecture07-2026 和论文-Improved Illumination Model-CACM1980，请深挖 Part 4 的 Lambert / Phong / Blinn-Phong 光照公式。\n\nFocus map 指出：指南需要把法线 n、光源方向 l、视线方向 v、反射方向 r、半程向量 h 的语义讲清，并给出 ambient / diffuse / specular 的视觉例。\n\n要求：中文；术语首次出现请写中文(English)；用 LaTeX 写公式；解释 $\\max(0, n\\cdot l)$、$(r\\cdot v)^p$、$(n\\cdot h)^p$ 的几何意义；给一个小型数值或视觉例说明高光指数如何改变亮斑；标注来源；不要展开纹理映射。"
+    },
+    {
+      "id": "deep-dive-microfacet-brdf-visual",
+      "stage": "stage-3",
+      "layer": "L3-L4",
+      "priority": "critical",
+      "title": "Microfacet BRDF 视觉深挖",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 深挖】基于课件06-Lecture07-2026 和论文-Improved Illumination Model-CACM1980，请深挖 Part 4 的 Microfacet BRDF。\n\nFocus map 指出：指南需要把 BRDF、微平面、D/F/G、Fresnel、roughness 讲成可理解的视觉模型，而不只是公式。\n\n要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释 BRDF 的输入方向和输出比例；用宏观/微观表面图景解释 roughness；分别说明 D、F、G 对高光形状、掠射角反射和微遮挡的影响；说明与 Blinn-Phong 的联系；标注来源。"
+    },
+    {
+      "id": "compare-shading-interpolation-methods",
+      "stage": "stage-3",
+      "layer": "L4",
+      "priority": "important",
+      "title": "Flat / Gouraud / Phong Shading 对比",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 对比整理】基于 Week 8 课堂记录和课件06-Lecture07-2026，请整理 Part 4 的 Flat Shading、Gouraud Shading、Phong Shading 对比素材。\n\nFocus map 指出：指南需要用表格对比三者的计算频率、插值对象、视觉质量、性能代价和缺陷，并解释它们与 rasterization / interpolation 的关系。\n\n要求：中文；术语首次出现请写中文(English)；先按面级、顶点级、片元级解释，再给出适合改写为 Markdown 表格的对比内容；说明高光丢失、轮廓不平滑、T-vertices、透视畸变等缺陷；标注来源；不要写成最终指南全文。"
+    },
+    {
+      "id": "examples-texture-uv-filtering-applications",
+      "stage": "stage-3",
+      "layer": "L4-L5",
+      "priority": "critical",
+      "title": "UV、Filtering 与纹理应用例子",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 例题深挖】基于 Week 9 课堂记录和课件07-Lecture08-2025，请为 Part 4 的 Texture Mapping、UV、Perspective-correct Interpolation、Filtering / Mipmap / LOD 与纹理应用整理可放入学习指南的例子和视觉解释。\n\nFocus map 指出：指南需要修正 UV 通常范围为 [0,1]，并用 footprint 与 $D=\\log_2 L$ 解释 mipmap；还需要对比 bump / normal / displacement / environment mapping。\n\n要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释 UV 如何由三角形顶点插值得到；说明为什么屏幕空间线性插值会导致纹理扭曲；解释 nearest、bilinear、mipmap、trilinear 和 LOD；给出纹理应用对比素材；标注来源。"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 7-9 课堂记录和课件06-Lecture07-2026，请展开讲解 Part 4 中“fragment shader / shader 数据流”：P3 光栅化生成的 fragment 如何携带属性进入着色，shader 如何利用 uniform、varying / interpolated attributes、纹理采样和材质参数计算颜色。
+
+Stage 1 骨架依据：P4 的核心位置是光栅化后、写入 frame buffer 前的片元着色阶段。
+
+要求：中文；按 vertex attributes、rasterizer interpolation、fragment shader inputs、uniform/material/light parameters、texture sampler、output color 的顺序解释；说明哪些内容来自 P3，哪些属于 P4；标注来源；不要写成具体 API 教程。

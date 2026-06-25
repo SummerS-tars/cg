@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 8 课堂记录和课件06-Lecture07-2026，请展开讲解 Part 4 中“Flat Shading、Gouraud Shading、Phong Shading 与着色插值”。
+
+Stage 1 骨架依据：Week 8 讲多边形着色插值，Flat 使用面法线，Gouraud 在顶点计算颜色后插值，Phong 插值法线后逐像素计算光照。
+
+要求：中文；解释三种方法分别在面、顶点、像素/片元哪一级计算什么；说明它们的视觉效果、性能代价和典型缺陷（高光丢失、轮廓不平滑、T-vertices 等）；说明与 Week 5-6 rasterization / interpolation 的关系；标注来源；不要展开纹理应用。

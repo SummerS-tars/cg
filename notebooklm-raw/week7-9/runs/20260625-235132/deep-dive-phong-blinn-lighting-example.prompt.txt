@@ -1,0 +1,5 @@
+【单问·Stage 3 深挖】基于 Week 7-8 课堂记录、课件06-Lecture07-2026 和论文-Improved Illumination Model-CACM1980，请深挖 Part 4 的 Lambert / Phong / Blinn-Phong 光照公式。
+
+Focus map 指出：指南需要把法线 n、光源方向 l、视线方向 v、反射方向 r、半程向量 h 的语义讲清，并给出 ambient / diffuse / specular 的视觉例。
+
+要求：中文；术语首次出现请写中文(English)；用 LaTeX 写公式；解释 $\max(0, n\cdot l)$、$(r\cdot v)^p$、$(n\cdot h)^p$ 的几何意义；给一个小型数值或视觉例说明高光指数如何改变亮斑；标注来源；不要展开纹理映射。

@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于课件06-Lecture07-2026 和论文-Improved Illumination Model-CACM1980，请展开讲解 Part 4 中“Microfacet Theory、BRDF、D/F/G、Fresnel 与 roughness”。
+
+Stage 1 骨架依据：Lecture07 将微平面理论和 Microfacet BRDF 作为本课件理论核心，公式包含菲涅尔项 F、几何遮蔽项 G、法线分布函数 D。
+
+要求：中文；先解释 BRDF 描述什么输入输出；用几何直觉解释宏观表面、微观表面、微平面法线分布、roughness；解释 D、F、G 三项分别控制什么视觉效果；说明它与经典 Phong/Blinn-Phong 的关系；标注来源；不要展开全局光照。

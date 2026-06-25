@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 9 课堂记录和课件07-Lecture08-2025，请展开讲解 Part 4 中“Texture Mapping 基础：parameterization、UV、mapping、perspective-correct interpolation”。
+
+Stage 1 骨架依据：Lecture08 将纹理映射方法分为 parameterization、mapping、filtering；Week 9 记录强调 UV 与透视校正插值。
+
+要求：中文；先讲为什么纹理能在不增加几何复杂度时增加表面细节；解释 3D 表面到 2D texture space 的映射，UV 坐标是什么，如何由 rasterization 插值得到；说明为什么需要 perspective-correct interpolation；标注来源；不要展开高级纹理应用。

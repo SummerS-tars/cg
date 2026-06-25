@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 7-8 课堂记录、课件06-Lecture07-2026 和论文-Improved Illumination Model-CACM1980，请展开讲解 Part 4 中“局部光照模型、Lambert、Phong / Blinn-Phong、ambient / diffuse / specular 与材质参数”。
+
+Stage 1 骨架依据：P4 在 fragment 可见后计算表面颜色；经典局部光照模型把光照拆成环境光、漫反射和高光分量，论文 source 给出 Phong 公式与材质参数。
+
+要求：中文；先讲局部光照解决什么问题；解释光源方向、视线方向、法线、材质参数如何进入公式；给出 Lambert 漫反射与 Phong / Blinn-Phong 高光的公式或直觉；说明 ambient / diffuse / specular 各自的视觉效果；标注来源；不要展开纹理映射。

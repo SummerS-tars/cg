@@ -1,0 +1,5 @@
+【单问·Stage 3 对比整理】基于 Week 8 课堂记录和课件06-Lecture07-2026，请整理 Part 4 的 Flat Shading、Gouraud Shading、Phong Shading 对比素材。
+
+Focus map 指出：指南需要用表格对比三者的计算频率、插值对象、视觉质量、性能代价和缺陷，并解释它们与 rasterization / interpolation 的关系。
+
+要求：中文；术语首次出现请写中文(English)；先按面级、顶点级、片元级解释，再给出适合改写为 Markdown 表格的对比内容；说明高光丢失、轮廓不平滑、T-vertices、透视畸变等缺陷；标注来源；不要写成最终指南全文。

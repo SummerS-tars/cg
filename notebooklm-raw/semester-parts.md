@@ -61,7 +61,7 @@ P1 管线地图和数学语言
 | 课程记录 W1–W16 | 未发现 | `笔记-week01-CG` … `笔记-week16-CG` | 需要从邮箱/FiCS/iCourse 导出并核对停课周 |
 | Project / 作业文档 | 未发现 | `Project-*`、`Assignment-*` | 需要用户提供文档和评分要求 |
 | NotebookLM source list | 已验证：CG Notebook `c46f03a0-be2e-4cbb-8172-24a3ee0fce88`，29 个 source 均 `ready` | 与上述标题逐项一致 | 详见 `notebooklm-raw/capability-check.md`；后续按 manifest 逐 Part 对齐 source |
-| raw 采集结果 | P1/P2/P3 已完成 | `notebooklm-raw/week1-2/runs/latest/*.answer.md`、`notebooklm-raw/week3-4/runs/latest/*.answer.md`、`notebooklm-raw/week5-6/runs/latest/*.answer.md` | 后续 Part 待 manifest 创建与采集 |
+| raw 采集结果 | P1/P2/P3/P4 已完成 | `notebooklm-raw/week1-2/runs/latest/*.answer.md`、`notebooklm-raw/week3-4/runs/latest/*.answer.md`、`notebooklm-raw/week5-6/runs/latest/*.answer.md`、`notebooklm-raw/week7-9/runs/latest/*.answer.md` | 后续 Part 待 manifest 创建与采集 |
 
 > **重要**：当前仓库只有采集工具和规范，不包含可据以定稿的课程原文。所有 Part 的主题与周次均为采集规划，不是已验证课表。
 
@@ -74,7 +74,7 @@ P1 管线地图和数学语言
 | P1 `week1-2` | 已创建 v4 静态试跑 | 已生成 | 已采集 12/12 | 已生成 | 已写用户 Review 前版本 |
 | P2 `week3-4` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
 | P3 `week5-6` | 已创建：`week5-6-stage1/2/3.json` | 已生成 | 已采集：3 + 6 + 4 | 已生成 | 已写用户 Review 前版本 |
-| P4 `week7-9` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
+| P4 `week7-9` | 已创建：`week7-9-stage1/2/3.json` | 已生成 | 已采集：4 + 6 + 5 | 已生成 | 已写用户 Review 前版本 |
 | P5 `week10-11` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
 | P6 `week12-14` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
 | P7 `week15-16` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |

@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 9 课堂记录和课件07-Lecture08-2025，请展开讲解 Part 4 中“Texture Filtering、Mipmaps / LOD 与纹理应用”。
+
+Stage 1 骨架依据：Lecture08 明确列出 filtering，以及 modulation textures、illumination mapping、bump / displacement mapping、environment mapping、image-based rendering、volume textures 等应用。
+
+要求：中文；解释纹理采样为什么会产生走样和模糊；说明 nearest / bilinear / mipmap / LOD 的直觉或公式；对比 bump mapping、normal mapping、displacement mapping、environment mapping、illumination mapping 的输入、输出和视觉作用；标注来源；不要写成最终指南全文。

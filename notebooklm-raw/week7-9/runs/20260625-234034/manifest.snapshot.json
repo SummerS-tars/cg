@@ -1,0 +1,79 @@
+{
+  "module": "week7-9",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 7-9 / Part 4：着色、光照、纹理与 shader 数据流（v4.1 dynamic raw stage 1；只采骨架）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P4",
+  "stage": "stage-1-skeleton",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "carry_forward": "Agent 读取 stage-1 answers 后产出 notebooklm-raw/week7-9/stage1-summary.md，并把摘要显式写入 stage-2 manifest；不得依赖 NotebookLM chat history。",
+    "next_stage": "stage-2 module expansion / concept breakdown",
+    "postpone_until_focus_map": [
+      "misconceptions-*",
+      "project-bridge",
+      "glossary-raw"
+    ]
+  },
+  "scope": {
+    "weeks": [
+      "Week 7",
+      "Week 8",
+      "Week 9"
+    ],
+    "topics": [
+      "局部光照模型",
+      "着色器与 GPU 渲染流程",
+      "纹理映射与采样",
+      "材质与法线",
+      "GLSL / shader 数据流"
+    ],
+    "source_alignment_note": "P4 范围依据 notebooklm-raw/semester-parts.md 与 guides/CG课程-16周内容梳理.md；2026-06-25 source list 中存在 Week 7/8/9 课堂笔记、课件06-Lecture07-2026、课件07-Lecture08-2025，以及 Improved Illumination Model 论文。Stage 1 用于校准这些 source 与着色 / 光照 / 纹理的真实对应关系。"
+  },
+  "sources_hint": [
+    "笔记-week07-CG / 笔记-week07-周一-图形学",
+    "笔记-week08-CG / 笔记-week08-周一-图形学",
+    "笔记-week09-CG / 笔记-week09-周一-图形学",
+    "课件06-Lecture07-2026",
+    "课件07-Lecture08-2025",
+    "论文-Improved Illumination Model-CACM1980（若与 Phong / Blinn-Phong 相关，请说明）"
+  ],
+  "batches": [
+    {
+      "id": "overview-skeleton",
+      "stage": "stage-1",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Part 4 全面内容骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·Part 骨架·Stage 1】请综合 Week 7-9 课程记录和相关课件，全面梳理 CG Part 4 讲了哪些大知识点。\n\n建议来源范围：笔记-week07-CG / 笔记-week07-周一-图形学、笔记-week08-CG / 笔记-week08-周一-图形学、笔记-week09-CG / 笔记-week09-周一-图形学、课件06-Lecture07-2026、课件07-Lecture08-2025、论文-Improved Illumination Model-CACM1980；若 NotebookLM 中实际 source 名称不同，请以可见来源为准并在回答中说明。\n\n要求：中文；按授课或课件顺序列出大知识点；说明每个大知识点解决的图形学问题、重要性（核心/重要/了解）、与渲染管线以及 Week 5-6 rasterization / depth test 的关系、相关来源；可以不用展开公式细节；不要遗漏边角主题；不要写成学习指南正文；不要总结易混点或常见错误。"
+    },
+    {
+      "id": "slide-skeleton-lecture07",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "课件06/Lecture07 原序骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定·Stage 1】请仅依据以下课件：课件06-Lecture07-2026。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件分了几个主要模块？每个模块分别讲了什么知识点？哪些模块/知识点最重要？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键示例或例题；每点标注来源；不要展开成完整学习指南；不要总结易混点或常见错误。若该课件在 NotebookLM 中不存在或标题不同，请明确说明。"
+    },
+    {
+      "id": "slide-skeleton-lecture08",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "课件07/Lecture08 原序骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定·Stage 1】请仅依据以下课件：课件07-Lecture08-2025。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件分了几个主要模块？每个模块分别讲了什么知识点？哪些模块/知识点最重要？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键示例或例题；每点标注来源；不要展开成完整学习指南；不要总结易混点或常见错误。若该课件在 NotebookLM 中不存在或标题不同，请明确说明。"
+    },
+    {
+      "id": "source-skeleton-improved-illumination",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "normal",
+      "title": "Improved Illumination Model source 骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·source 限定·Stage 1】请仅依据以下 source：论文-Improved Illumination Model-CACM1980。不要使用其他周次、课堂记录、课件或 Project 文档。\n\n问题：请判断这份 source 与 Part 4 的局部光照、Phong / Blinn-Phong、高光或材质模型是否相关；若相关，请按原文顺序梳理它提供了哪些核心概念或公式；若不相关，请明确说明。\n\n要求：中文；标注来源；只做 source 骨架和相关性判断；不要展开成完整学习指南；不要总结易混点或常见错误。"
+    }
+  ]
+}

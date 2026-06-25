@@ -1,0 +1,5 @@
+【单问·Stage 3 视觉解释】基于 Week 7-9 课堂记录、课件06-Lecture07-2026 和课件07-Lecture08-2025，请把 Part 4 中 P3 fragment 到 P4 output color 的数据流整理成可视化解释素材。
+
+Focus map 指出：指南需要明确 vertex attributes、rasterizer interpolation、fragment shader inputs、uniform / material / light parameters、texture sampler、output color、depth test / frame buffer 的边界。
+
+要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)，例如 BRDF、UV、LOD；按数据流顺序解释每一步输入输出；给出适合改写成 Mermaid flowchart 的节点和箭头；标注来源；不要写成最终指南全文。

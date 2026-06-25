@@ -1,0 +1,5 @@
+【单问·source 限定·Stage 1】请仅依据以下 source：论文-Improved Illumination Model-CACM1980。不要使用其他周次、课堂记录、课件或 Project 文档。
+
+问题：请判断这份 source 与 Part 4 的局部光照、Phong / Blinn-Phong、高光或材质模型是否相关；若相关，请按原文顺序梳理它提供了哪些核心概念或公式；若不相关，请明确说明。
+
+要求：中文；标注来源；只做 source 骨架和相关性判断；不要展开成完整学习指南；不要总结易混点或常见错误。

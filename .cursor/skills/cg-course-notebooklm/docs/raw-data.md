@@ -57,6 +57,19 @@ Part 采集不再一次性固定完整 batch 列表，而是“跑一层、读 r
 4. Stage 3 只追问 focus map 中的重点难点或高价值 topics。Stage 4 仅按缺口追加。
 5. 整合时发现 raw 缺口，追加 `supplement-*` 或上述命名 batch，并用新 manifest 或 `--only <batch-id> --resume runs/latest` 续跑。
 
+### 批量推进多个 Part 的调度
+
+NotebookLM raw 采集仍应保持**串行**：同一时刻只运行一个正式 `nlm-collect.py` 采集任务，避免认证、远端会话、代理重试和 `latest` 链接互相干扰。
+
+但一个 Part 的 stage-1/2/3 raw 全部 completed 后，从 raw 到 `knowledge-graph.md`、学习指南和 `review-iteration.md` 的 Agent 整理工作，可以与下一个 Part 的 raw 采集交错推进。推荐调度是：
+
+1. Part A 完成全部 raw 并确认 `run.meta.json` completed。
+2. 启动 Part B 的 stage-1 raw 采集；采集等待期间整理 Part A 的 knowledge graph / guide / review。
+3. Part B 某一 stage 完成后，先通读该 stage raw，生成 summary / focus map / 下一 stage manifest，再继续采集。
+4. 提交时仍按 Part 拆分：Part A 验证、提交、推送完成后，再提交 Part B。若交错执行导致未提交变更难以审查，优先停止并行，保持提交清晰。
+
+这种调度只优化等待时间，不降低门控：每个 Part 仍必须独立完成 raw 非空、run meta、knowledge graph、指南 review、验证和推送。
+
 ### clear_conversation 原则
 
 - 正式 batch 默认 `clear_conversation: true`，使每个回答成为独立、可追溯、可复现 raw 样本，避免历史上下文污染。

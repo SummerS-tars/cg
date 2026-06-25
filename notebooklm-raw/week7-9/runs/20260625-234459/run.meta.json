@@ -1,0 +1,67 @@
+{
+  "module": "week7-9",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week7-9-stage2.json",
+  "run_dir": "notebooklm-raw/week7-9/runs/20260625-234459",
+  "started_at": "2026-06-25T15:44:59.559983+00:00",
+  "finished_at": "2026-06-25T15:50:31.846768+00:00",
+  "batches_total": 6,
+  "batches_completed": 6,
+  "batches_ok": 6,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "concept-breakdown-local-shading-phong",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 46.83,
+      "retry_count": 0,
+      "conversation_id": "7b030461-80d4-41e8-b61e-1beb61ef7ef6"
+    },
+    {
+      "id": "concept-breakdown-microfacet-brdf",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 43.52,
+      "retry_count": 0,
+      "conversation_id": "6a88fb0c-6753-4fc2-9d58-cb5eb0dc852a"
+    },
+    {
+      "id": "concept-breakdown-shading-interpolation",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 44.6,
+      "retry_count": 0,
+      "conversation_id": "193edbb9-8883-40b1-a446-6833ff9e0627"
+    },
+    {
+      "id": "concept-breakdown-shader-data-flow",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 46.14,
+      "retry_count": 0,
+      "conversation_id": "75372fc7-8753-4d80-8103-8302a8f295fc"
+    },
+    {
+      "id": "concept-breakdown-texture-mapping-basics",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 37.27,
+      "retry_count": 0,
+      "conversation_id": "52e631f0-40d9-49ac-afd0-c82822dc938b"
+    },
+    {
+      "id": "concept-breakdown-texture-filtering-applications",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 68.84,
+      "retry_count": 1,
+      "conversation_id": "6017d711-34b4-4249-95d9-9f718bf2428c"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 332.29,
+  "total_retry_count": 1
+}

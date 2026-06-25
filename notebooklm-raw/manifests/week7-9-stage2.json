@@ -1,0 +1,95 @@
+{
+  "module": "week7-9",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 7-9 / Part 4：基于 stage-1 真实骨架的模块展开（v4.1 dynamic raw stage 2）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P4",
+  "stage": "stage-2-module-expansion",
+  "stage_input_summary": "notebooklm-raw/week7-9/stage1-summary.md",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "carry_forward": "Agent 读取 stage-2 answers 后产出 notebooklm-raw/week7-9/focus-map.md，并把 critical/important/normal、缺口与 deep-dive 目标显式写入 stage-3 manifest。",
+    "postpone_until_focus_map": [
+      "misconceptions-*",
+      "project-bridge",
+      "glossary-raw"
+    ]
+  },
+  "scope": {
+    "weeks": ["Week 7", "Week 8", "Week 9"],
+    "sources": [
+      "笔记-week07-周一-图形学",
+      "笔记-week08-周一-图形学",
+      "笔记-week09-周一-图形学",
+      "课件06-Lecture07-2026",
+      "课件07-Lecture08-2025",
+      "论文-Improved Illumination Model-CACM1980"
+    ],
+    "stage1_run": "notebooklm-raw/week7-9/runs/20260625-234034",
+    "stage1_modules": [
+      "Local Shading：Lambert、Phong / Blinn-Phong、ambient / diffuse / specular",
+      "Microfacet Theory / BRDF：D/F/G、Fresnel、roughness",
+      "Shading Interpolation：Flat、Gouraud、Phong Shading",
+      "Texture Mapping：parameterization、mapping、filtering、applications"
+    ],
+    "excluded_or_compressed": [
+      "Visibility / HSR 已由 Part 3 深入处理，在 Part 4 仅作为承接背景"
+    ]
+  },
+  "batches": [
+    {
+      "id": "concept-breakdown-local-shading-phong",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "局部光照与 Phong / Blinn-Phong 展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 7-8 课堂记录、课件06-Lecture07-2026 和论文-Improved Illumination Model-CACM1980，请展开讲解 Part 4 中“局部光照模型、Lambert、Phong / Blinn-Phong、ambient / diffuse / specular 与材质参数”。\n\nStage 1 骨架依据：P4 在 fragment 可见后计算表面颜色；经典局部光照模型把光照拆成环境光、漫反射和高光分量，论文 source 给出 Phong 公式与材质参数。\n\n要求：中文；先讲局部光照解决什么问题；解释光源方向、视线方向、法线、材质参数如何进入公式；给出 Lambert 漫反射与 Phong / Blinn-Phong 高光的公式或直觉；说明 ambient / diffuse / specular 各自的视觉效果；标注来源；不要展开纹理映射。"
+    },
+    {
+      "id": "concept-breakdown-microfacet-brdf",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "Microfacet Theory 与 BRDF 展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于课件06-Lecture07-2026 和论文-Improved Illumination Model-CACM1980，请展开讲解 Part 4 中“Microfacet Theory、BRDF、D/F/G、Fresnel 与 roughness”。\n\nStage 1 骨架依据：Lecture07 将微平面理论和 Microfacet BRDF 作为本课件理论核心，公式包含菲涅尔项 F、几何遮蔽项 G、法线分布函数 D。\n\n要求：中文；先解释 BRDF 描述什么输入输出；用几何直觉解释宏观表面、微观表面、微平面法线分布、roughness；解释 D、F、G 三项分别控制什么视觉效果；说明它与经典 Phong/Blinn-Phong 的关系；标注来源；不要展开全局光照。"
+    },
+    {
+      "id": "concept-breakdown-shading-interpolation",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "important",
+      "title": "Flat / Gouraud / Phong Shading 展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 8 课堂记录和课件06-Lecture07-2026，请展开讲解 Part 4 中“Flat Shading、Gouraud Shading、Phong Shading 与着色插值”。\n\nStage 1 骨架依据：Week 8 讲多边形着色插值，Flat 使用面法线，Gouraud 在顶点计算颜色后插值，Phong 插值法线后逐像素计算光照。\n\n要求：中文；解释三种方法分别在面、顶点、像素/片元哪一级计算什么；说明它们的视觉效果、性能代价和典型缺陷（高光丢失、轮廓不平滑、T-vertices 等）；说明与 Week 5-6 rasterization / interpolation 的关系；标注来源；不要展开纹理应用。"
+    },
+    {
+      "id": "concept-breakdown-shader-data-flow",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "important",
+      "title": "P3 fragment 到 P4 shader 数据流展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 7-9 课堂记录和课件06-Lecture07-2026，请展开讲解 Part 4 中“fragment shader / shader 数据流”：P3 光栅化生成的 fragment 如何携带属性进入着色，shader 如何利用 uniform、varying / interpolated attributes、纹理采样和材质参数计算颜色。\n\nStage 1 骨架依据：P4 的核心位置是光栅化后、写入 frame buffer 前的片元着色阶段。\n\n要求：中文；按 vertex attributes、rasterizer interpolation、fragment shader inputs、uniform/material/light parameters、texture sampler、output color 的顺序解释；说明哪些内容来自 P3，哪些属于 P4；标注来源；不要写成具体 API 教程。"
+    },
+    {
+      "id": "concept-breakdown-texture-mapping-basics",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "Texture Mapping 基础展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 9 课堂记录和课件07-Lecture08-2025，请展开讲解 Part 4 中“Texture Mapping 基础：parameterization、UV、mapping、perspective-correct interpolation”。\n\nStage 1 骨架依据：Lecture08 将纹理映射方法分为 parameterization、mapping、filtering；Week 9 记录强调 UV 与透视校正插值。\n\n要求：中文；先讲为什么纹理能在不增加几何复杂度时增加表面细节；解释 3D 表面到 2D texture space 的映射，UV 坐标是什么，如何由 rasterization 插值得到；说明为什么需要 perspective-correct interpolation；标注来源；不要展开高级纹理应用。"
+    },
+    {
+      "id": "concept-breakdown-texture-filtering-applications",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "Texture Filtering 与应用展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 9 课堂记录和课件07-Lecture08-2025，请展开讲解 Part 4 中“Texture Filtering、Mipmaps / LOD 与纹理应用”。\n\nStage 1 骨架依据：Lecture08 明确列出 filtering，以及 modulation textures、illumination mapping、bump / displacement mapping、environment mapping、image-based rendering、volume textures 等应用。\n\n要求：中文；解释纹理采样为什么会产生走样和模糊；说明 nearest / bilinear / mipmap / LOD 的直觉或公式；对比 bump mapping、normal mapping、displacement mapping、environment mapping、illumination mapping 的输入、输出和视觉作用；标注来源；不要写成最终指南全文。"
+    }
+  ]
+}

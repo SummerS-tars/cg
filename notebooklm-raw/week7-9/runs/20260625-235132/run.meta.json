@@ -1,0 +1,59 @@
+{
+  "module": "week7-9",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week7-9-stage3.json",
+  "run_dir": "notebooklm-raw/week7-9/runs/20260625-235132",
+  "started_at": "2026-06-25T15:51:32.000783+00:00",
+  "finished_at": "2026-06-25T15:57:13.735731+00:00",
+  "batches_total": 5,
+  "batches_completed": 5,
+  "batches_ok": 5,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "visual-explain-fragment-shading-pipeline",
+      "layer": "L4-L5",
+      "status": "ok",
+      "elapsed_seconds": 51.56,
+      "retry_count": 0,
+      "conversation_id": "e7365609-6b39-4fe0-84b2-902d4ab9091c"
+    },
+    {
+      "id": "deep-dive-phong-blinn-lighting-example",
+      "layer": "L3-L4",
+      "status": "ok",
+      "elapsed_seconds": 52.73,
+      "retry_count": 0,
+      "conversation_id": "d0b099b3-1844-49f3-8354-191a3e4af353"
+    },
+    {
+      "id": "deep-dive-microfacet-brdf-visual",
+      "layer": "L3-L4",
+      "status": "ok",
+      "elapsed_seconds": 44.24,
+      "retry_count": 0,
+      "conversation_id": "7370b210-6c0f-4fc8-b4cc-179bf969f8b7"
+    },
+    {
+      "id": "compare-shading-interpolation-methods",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 44.46,
+      "retry_count": 0,
+      "conversation_id": "0bf0e304-ba9a-47df-81cd-563b089bfb4f"
+    },
+    {
+      "id": "examples-texture-uv-filtering-applications",
+      "layer": "L4-L5",
+      "status": "ok",
+      "elapsed_seconds": 42.08,
+      "retry_count": 0,
+      "conversation_id": "8b8c2b34-8251-494e-9285-25ab6be67954"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 153.33,
+  "total_retry_count": 0
+}

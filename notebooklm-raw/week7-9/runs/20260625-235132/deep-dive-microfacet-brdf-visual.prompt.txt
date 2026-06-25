@@ -1,0 +1,5 @@
+【单问·Stage 3 深挖】基于课件06-Lecture07-2026 和论文-Improved Illumination Model-CACM1980，请深挖 Part 4 的 Microfacet BRDF。
+
+Focus map 指出：指南需要把 BRDF、微平面、D/F/G、Fresnel、roughness 讲成可理解的视觉模型，而不只是公式。
+
+要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释 BRDF 的输入方向和输出比例；用宏观/微观表面图景解释 roughness；分别说明 D、F、G 对高光形状、掠射角反射和微遮挡的影响；说明与 Blinn-Phong 的联系；标注来源。
