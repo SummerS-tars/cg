@@ -1,0 +1,5 @@
+【单问·Stage 3 视觉解释】基于 Week16 raw，请把渲染管线、MVP、Shader、Buffer / Descriptor binding 整理成可视化解释素材。
+
+Focus map 指出：指南需要一张从 CPU 端应用阶段到 GPU 几何处理、光栅化、片元着色、深度 / 混合、framebuffer 的完整数据流图。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给出适合改写成 Mermaid flowchart 的节点和箭头；说明每个节点输入输出；标注来源；不要写 API 代码教程。

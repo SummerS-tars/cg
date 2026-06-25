@@ -1,0 +1,67 @@
+{
+  "module": "week15-16",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week15-16-stage3.json",
+  "run_dir": "notebooklm-raw/week15-16/runs/20260626-024213",
+  "started_at": "2026-06-25T18:42:13.041403+00:00",
+  "finished_at": "2026-06-25T18:49:39.393649+00:00",
+  "batches_total": 6,
+  "batches_completed": 6,
+  "batches_ok": 6,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "examples-alpha-blending-exam",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 62.68,
+      "retry_count": 0,
+      "conversation_id": "33908174-048c-4ff2-910c-2b53d61e7f37"
+    },
+    {
+      "id": "visual-explain-pipeline-mvp-shader",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 49.99,
+      "retry_count": 0,
+      "conversation_id": "222e8f86-1f11-4929-9f03-2fe7b64edca2"
+    },
+    {
+      "id": "deep-dive-curves-nurbs-continuity",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 55.69,
+      "retry_count": 0,
+      "conversation_id": "c8c2c4e3-0c8a-409e-b70b-03cf7b605498"
+    },
+    {
+      "id": "compare-traditional-gpu-driven-pipeline",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 130.62,
+      "retry_count": 1,
+      "conversation_id": "cf3fe52d-89da-4d64-ad11-bc51769d2b8c"
+    },
+    {
+      "id": "review-map-final-exam-p1-p6",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 58.7,
+      "retry_count": 0,
+      "conversation_id": "0c2b12b5-ea2e-461d-a106-95858af8bb5b"
+    },
+    {
+      "id": "visual-explain-vr-spatial-ai",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 50.07,
+      "retry_count": 0,
+      "conversation_id": "8656311b-5100-413a-a0e8-9679ad765e23"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 446.35,
+  "total_retry_count": 1
+}

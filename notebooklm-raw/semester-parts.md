@@ -3,7 +3,7 @@
 > **课程**：计算机图形学（Computer Graphics）  
 > **依据**：`guides/CG课程-16周内容梳理.md` 的待校准 16 周框架  
 > **盘点日期**：2026-06-25  
-> **状态**：本文件是采集规划与同步状态矩阵；2026-06-25 已确认 CG Notebook UUID 与 source list，P1 / `week1-2` 已完成 v4.1 前静态分层试跑、knowledge graph、学习指南与内部 review。后续 Part 采用 v4.1 multi-stage dynamic manifest。
+> **状态**：本文件是采集规划与同步状态矩阵；2026-06-25 已确认 CG Notebook UUID 与 source list，P1-P7 已完成 raw 采集、knowledge graph、学习指南与内部 review；P2-P7 采用 v4.1 multi-stage dynamic manifest。
 
 ---
 
@@ -58,10 +58,10 @@ P1 管线地图和数学语言
 |------|----------|-----------------|----------|
 | 课程大纲 | 未发现 | `课纲-计算机图形学` | 需要用户提供本地路径或上传状态 |
 | 课件 PDF | 未发现 | `课件01-*` … `课件NN-*` | 需要用户提供课件目录 |
-| 课程记录 W1–W16 | 未发现 | `笔记-week01-CG` … `笔记-week16-CG` | 需要从邮箱/FiCS/iCourse 导出并核对停课周 |
+| 课程记录 W1–W16 | 已从 Windows 资料库核对并为 Week16 脱敏落盘 | `笔记-week01-CG` … `笔记-week16-CG` | Week16 已加入 NotebookLM；Week6/10 仍按 source 缺失/停课边界保守处理 |
 | Project / 作业文档 | 未发现 | `Project-*`、`Assignment-*` | 需要用户提供文档和评分要求 |
-| NotebookLM source list | 已验证：CG Notebook `c46f03a0-be2e-4cbb-8172-24a3ee0fce88`，29 个 source 均 `ready` | 与上述标题逐项一致 | 详见 `notebooklm-raw/capability-check.md`；后续按 manifest 逐 Part 对齐 source |
-| raw 采集结果 | P1/P2/P3/P4/P5/P6 已完成 | `notebooklm-raw/week1-2/runs/latest/*.answer.md`、`notebooklm-raw/week3-4/runs/latest/*.answer.md`、`notebooklm-raw/week5-6/runs/latest/*.answer.md`、`notebooklm-raw/week7-9/runs/latest/*.answer.md`、`notebooklm-raw/week10-11/runs/latest/*.answer.md`、`notebooklm-raw/week12-14/runs/latest/*.answer.md` | P7 待 manifest 创建与采集；P5 已确认传统曲线曲面 / mesh processing 资料不足 |
+| NotebookLM source list | 已验证：CG Notebook `c46f03a0-be2e-4cbb-8172-24a3ee0fce88`，30 个 source 均 `ready` | 与上述标题逐项一致 | Week16 由 `notebooklm-raw/source-sync/week16-周一-图形学.md` 脱敏导入；Project/rubric 仍缺失 |
+| raw 采集结果 | P1/P2/P3/P4/P5/P6/P7 已完成 | `notebooklm-raw/week1-2/`、`week3-4/`、`week5-6/`、`week7-9/`、`week10-11/`、`week12-14/`、`week15-16/` | P7 已完成 stage-1 4、stage-2 7、stage-3 6；P5 传统曲线曲面缺口由 P7 Week16 补齐一部分 |
 
 > **重要**：当前仓库只有采集工具和规范，不包含可据以定稿的课程原文。所有 Part 的主题与周次均为采集规划，不是已验证课表。
 
@@ -72,12 +72,12 @@ P1 管线地图和数学语言
 | Part | manifest | topics-map | raw 采集 | knowledge-graph | 学习指南 |
 |------|----------|------------|----------|-----------------|----------|
 | P1 `week1-2` | 已创建 v4 静态试跑 | 已生成 | 已采集 12/12 | 已生成 | 已写用户 Review 前版本 |
-| P2 `week3-4` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
+| P2 `week3-4` | 已创建：`week3-4-stage1/2/3.json` | 已生成 | 已采集：3 + 6 + 4 | 已生成 | 已写用户 Review 前版本 |
 | P3 `week5-6` | 已创建：`week5-6-stage1/2/3.json` | 已生成 | 已采集：3 + 6 + 4 | 已生成 | 已写用户 Review 前版本 |
 | P4 `week7-9` | 已创建：`week7-9-stage1/2/3.json` | 已生成 | 已采集：4 + 6 + 5 | 已生成 | 已写用户 Review 前版本 |
 | P5 `week10-11` | 已创建：`week10-11-stage1/2/3.json` | 已生成 | 已采集：4 + 4 + 4 | 已生成 | 已写用户 Review 前版本 |
 | P6 `week12-14` | 已创建：`week12-14-stage1/2/3.json` | 已生成 | 已采集：5 + 6 + 6 | 已生成 | 已写用户 Review 前版本 |
-| P7 `week15-16` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
+| P7 `week15-16` | 已创建：`week15-16-stage1/2/3.json` | 已生成 | 已采集：4 + 7 + 6 | 已生成 | 已写用户 Review 前版本 |
 
 ### 并行 raw 采集策略（2026-06-26 实验结论）
 
@@ -101,7 +101,7 @@ P5 / P6 stage-1、stage-2、stage-3 均尝试了两个 Part 小并发 raw 采集
 
 ## NotebookLM Source 对齐（已完成能力检查，待逐 Part 对齐）
 
-当前已验证 Notebook：`c46f03a0-be2e-4cbb-8172-24a3ee0fce88`（计算机图形学 Notebook）。远端 source list 返回 29 个 `ready` source，包括 Week 1/2/3/4/5/7/8/9/11/12/13/14/15 课堂笔记、课件 01–09 与若干渲染/路径追踪论文。下面是建议的 Part 对齐表，仍需结合真实课表确认停课周、Project/作业资料是否已补齐。
+当前已验证 Notebook：`c46f03a0-be2e-4cbb-8172-24a3ee0fce88`（计算机图形学 Notebook）。远端 source list 返回 30 个 `ready` source，包括 Week 1/2/3/4/5/7/8/9/11/12/13/14/15/16 课堂笔记、课件 01–09 与若干渲染/路径追踪论文。Week16 来自本地 FiCS/iCourse 课程总结脱敏导入；Project/作业独立资料与 rubric 仍需后续确认。
 
 | Part | 建议 Source |
 |------|-------------|
@@ -111,7 +111,7 @@ P5 / P6 stage-1、stage-2、stage-3 均尝试了两个 Part 小并发 raw 采集
 | P4 | `笔记-week07-CG`、`笔记-week08-CG`、`笔记-week09-CG`、着色/光照/纹理课件、shader 代码框架 |
 | P5 | `笔记-week10-CG`、`笔记-week11-CG`、曲线曲面/mesh 课件 |
 | P6 | `笔记-week12-CG`、`笔记-week13-CG`、`笔记-week14-CG`、高级渲染/光线追踪课件 |
-| P7 | `笔记-week15-CG`、`笔记-week16-CG`、Project 说明、展示/复习范围 |
+| P7 | `笔记-week15-周一-图形学`、`笔记-week16-周一-图形学`；Project 说明、展示/rubric 暂缺 |
 
 认证与 source 对齐建议按本仓库 skill 执行：
 

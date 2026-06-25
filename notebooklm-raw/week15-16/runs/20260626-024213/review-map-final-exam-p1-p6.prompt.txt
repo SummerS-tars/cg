@@ -1,0 +1,5 @@
+【单问·Stage 3 复习地图】基于 Week15/16 raw 和 CG Notebook 中 P1-P6 主线，请整理一个可用于 P7 指南的期末复习地图。
+
+Focus map 指出：已确认考试来自 PPT 与作业，重点包括 Alpha、Pipeline、MVP、Blinn-Phong、Shader、Buffer、Vulkan/OpenGL、GPU-driven 和光追资料；但题型、分值、Project 展示与 rubric 缺失。
+
+要求：中文；按 P1-P6 顺序列出每个 Part 与 Week15/16 明确考点的关系；区分“已确认考点 / 建议复习 / 不可推断”；标注来源；不要把 Lecture #7 Local Shading 当成本 Part 主线。

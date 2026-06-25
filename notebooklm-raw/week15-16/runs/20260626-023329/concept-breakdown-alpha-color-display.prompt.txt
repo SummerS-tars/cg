@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】请基于 Week15 / Week16 raw，展开“Alpha 混合、颜色科学、HDR 和显示增强”。
+
+Stage 1 摘要：Week15 明确 $I = \alpha F + (1-\alpha)B$ 为必考，并把 Alpha 用到投影融合 / 边缘融合；Week15/16 还涉及锥状细胞、杆状细胞、RGB 加色模型、CIE 色度、HDR 与电视 / 手机的显示增强。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释公式符号和视觉意义；给一个 Alpha 数值例；说明颜色感知与显示管线关系；标注来源；不要扩展到 raw 未支持的色彩管理细节。

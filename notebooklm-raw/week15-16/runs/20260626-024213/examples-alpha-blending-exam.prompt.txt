@@ -1,0 +1,5 @@
+【单问·Stage 3 例题深挖】基于 Week15/16 raw，请整理 Alpha Blending / Image Compositing 的考试例题素材。
+
+Focus map 指出：Alpha 公式是明确必考点，且 Stage 2 raw 中取值范围被引用编号污染，最终指南需修正为 $\alpha \in [0,1]$。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给 2 个数值例：普通前景/背景混合、投影融合重叠区亮带消除；解释 $I$、$F$、$B$、$\alpha$ 的视觉意义；标注来源；不要虚构题型和分值。

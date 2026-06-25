@@ -1,0 +1,111 @@
+{
+  "module": "week15-16",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 15-16 / Part 7：基于 stage-1 真实骨架的 Week15-16 总复习、曲线曲面、管线与工业前沿展开（v4.1 dynamic raw stage 2）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P7",
+  "stage": "stage-2-module-expansion",
+  "stage_input_summary": "notebooklm-raw/week15-16/stage1-summary.md",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "carry_forward": "Agent 读取 stage-2 answers 后产出 notebooklm-raw/week15-16/focus-map.md，并把 critical/important/normal、缺口与 deep-dive 目标显式写入 stage-3 manifest。",
+    "postpone_until_focus_map": [
+      "misconceptions-*",
+      "project-bridge",
+      "glossary-raw"
+    ],
+    "source_boundary": "Week16 已由本地 FiCS/iCourse 邮件课程总结脱敏导入 NotebookLM 并 ready；Project 展示、详细 rubric、完整题型说明仍未在 source list 中找到。所有 batch 必须明确资料边界，不得虚构。"
+  },
+  "scope": {
+    "weeks": [
+      "Week 15",
+      "Week 16"
+    ],
+    "sources": [
+      "笔记-week15-周一-图形学",
+      "笔记-week16-周一-图形学"
+    ],
+    "stage1_run": "notebooklm-raw/week15-16/runs/20260626-014343",
+    "stage1_modules": [
+      "期末考试与作业/PPT 复习边界",
+      "Alpha 混合、颜色科学与显示",
+      "参数曲线与参数曲面",
+      "渲染管线与可编程 API 总复习",
+      "GPU-driven rendering 与工业资料",
+      "空间智能与高保真仿真",
+      "VR 硬件挑战与分布式渲染",
+      "光线追踪、路径追踪与 AI 降噪"
+    ],
+    "known_gaps": [
+      "Project 展示要求缺失",
+      "详细评分标准 / rubric 缺失",
+      "考试题型说明缺失",
+      "Final Project 独立任务书缺失"
+    ]
+  },
+  "batches": [
+    {
+      "id": "concept-breakdown-exam-homework-boundary",
+      "stage": "stage-2",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "期末范围与作业/PPT 边界展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】请基于 Week15 / Week16 raw，展开 P7 中“期末范围、作业/PPT 关系和资料边界”。\n\nStage 1 摘要：Week15 明确 Alpha 混合公式必考；Week16 明确考试题目来自课堂 PPT，重点考作业涉及的渲染管线、Blinn-Phong、MVP 矩阵传递、Shader 编写、Buffer 绑定、Vulkan / OpenGL 流程。Project 展示、详细 rubric、题型说明仍缺失。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；区分“已确认考点”和“不可推断内容”；说明这些考点分别对应 P1-P6 哪些模块；标注来源；不要虚构题型、分值或 Project 展示流程。"
+    },
+    {
+      "id": "concept-breakdown-alpha-color-display",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "Alpha、颜色科学与显示展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】请基于 Week15 / Week16 raw，展开“Alpha 混合、颜色科学、HDR 和显示增强”。\n\nStage 1 摘要：Week15 明确 $I = \\alpha F + (1-\\alpha)B$ 为必考，并把 Alpha 用到投影融合 / 边缘融合；Week15/16 还涉及锥状细胞、杆状细胞、RGB 加色模型、CIE 色度、HDR 与电视 / 手机的显示增强。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释公式符号和视觉意义；给一个 Alpha 数值例；说明颜色感知与显示管线关系；标注来源；不要扩展到 raw 未支持的色彩管理细节。"
+    },
+    {
+      "id": "concept-breakdown-curves-surfaces",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "参数曲线与曲面展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】请基于 Week16 raw，展开“参数曲线、参数曲面、Bezier、B-spline、NURBS、张量积曲面、连续性和 CAD 难点”。\n\nStage 1 摘要：Week16 以字体、动画路径、汽车 / 建筑造型为背景，讲基函数混合控制顶点、分段参数多项式、Bezier / B-spline / NURBS、张量积曲面、C0/C1/C2 连续性、任意拓扑和曲面求交难题。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 写关键公式；解释控制顶点、基函数、局部控制和权重的视觉意义；给一个直观例；标注来源。"
+    },
+    {
+      "id": "concept-breakdown-pipeline-programmable-api",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "渲染管线与可编程 API 展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】请基于 Week16 raw，展开“渲染管线、MVP、齐次坐标、Shader、Buffer / Descriptor binding、Vulkan / OpenGL 流程”。\n\nStage 1 摘要：Week16 将 Pipeline 列为考试 / 作业重点，要求能清楚讲出应用阶段、几何处理、光栅化、像素处理；并理解 MVP 矩阵传递、齐次坐标、Shader 编写、Buffer 绑定和 Vulkan / DX12 可编程管线。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；按数据从 CPU 到 GPU 到 framebuffer 的顺序解释；说明每一步输入输出；标注来源；不要写成 API 代码教程。"
+    },
+    {
+      "id": "concept-breakdown-gpu-driven-rendering",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "important",
+      "title": "GPU-driven rendering 与工业资料展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】请基于 Week16 raw 和相关 GPU-driven rendering source，展开“Mesh Shader、Meshlet、Visibility Buffer、CPU-GPU 通信瓶颈、Ubisoft 2015 工业资料和《赛博朋克 2077》光追资料的复习价值”。\n\nStage 1 摘要：Week16 推荐阅读工业级文档，强调 Mesh Shader 与 Visibility Buffer 等前沿技术，核心是理解这些技术与引擎 / 现代图形 API 的关系，而非死记细节。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释传统管线瓶颈和 GPU-driven 思路；标注来源；不要虚构考试具体题目。"
+    },
+    {
+      "id": "concept-breakdown-vr-spatial-intelligence",
+      "stage": "stage-2",
+      "layer": "L2",
+      "priority": "important",
+      "title": "VR、空间智能与 AI 趋势展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】请基于 Week15 / Week16 raw，展开“VR / AR、分布式渲染、非对称投影矩阵、空间智能、高保真仿真、Coding Agent 和 AIGC 工具趋势”。\n\nStage 1 摘要：Week15 讲 World Labs、空间智能、Coding Agent、AI 图像工具、VR 分布式渲染与 6G；Week16 回顾 VR 立体视觉、世界稳定性和非对称投影矩阵。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；区分考试核心知识与行业展望；给出适合指南的应用链路图节点；标注来源；不要虚构 Project 展示要求。"
+    },
+    {
+      "id": "concept-breakdown-raytracing-review",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "important",
+      "title": "光线追踪与路径追踪复习展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】请基于 Week16 raw 和 P6 source，展开“光线追踪、路径追踪、渲染方程、BRDF、BVH / KD 树、Russian Roulette、Ray Reconstruction 与 AI 降噪”的总复习承接。\n\nStage 1 摘要：Week16 把光追 / 路径追踪放在工业资料和期末复习语境中，回顾全局光照、加速结构、蒙特卡洛路径积分和《赛博朋克 2077》光线重建。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；说明与 P6 高级渲染的关系；标注来源；不要重新展开成完整 P6 指南。"
+    }
+  ]
+}

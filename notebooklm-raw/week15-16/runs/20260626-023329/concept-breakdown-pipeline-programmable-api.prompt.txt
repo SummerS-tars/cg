@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】请基于 Week16 raw，展开“渲染管线、MVP、齐次坐标、Shader、Buffer / Descriptor binding、Vulkan / OpenGL 流程”。
+
+Stage 1 摘要：Week16 将 Pipeline 列为考试 / 作业重点，要求能清楚讲出应用阶段、几何处理、光栅化、像素处理；并理解 MVP 矩阵传递、齐次坐标、Shader 编写、Buffer 绑定和 Vulkan / DX12 可编程管线。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；按数据从 CPU 到 GPU 到 framebuffer 的顺序解释；说明每一步输入输出；标注来源；不要写成 API 代码教程。

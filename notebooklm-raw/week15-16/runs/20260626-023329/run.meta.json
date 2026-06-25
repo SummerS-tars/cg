@@ -1,0 +1,75 @@
+{
+  "module": "week15-16",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week15-16-stage2.json",
+  "run_dir": "notebooklm-raw/week15-16/runs/20260626-023329",
+  "started_at": "2026-06-25T18:33:29.442213+00:00",
+  "finished_at": "2026-06-25T18:41:11.920629+00:00",
+  "batches_total": 7,
+  "batches_completed": 7,
+  "batches_ok": 7,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "concept-breakdown-exam-homework-boundary",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 51.85,
+      "retry_count": 0,
+      "conversation_id": "c06ba76f-a4a4-4e12-87c2-617af49afe08"
+    },
+    {
+      "id": "concept-breakdown-alpha-color-display",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 53.49,
+      "retry_count": 0,
+      "conversation_id": "9e94c3e6-5759-4686-98bd-c0389e47c8ac"
+    },
+    {
+      "id": "concept-breakdown-curves-surfaces",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 93.21,
+      "retry_count": 2,
+      "conversation_id": "139fa542-320c-4584-b678-89e668c72174"
+    },
+    {
+      "id": "concept-breakdown-pipeline-programmable-api",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 53.97,
+      "retry_count": 0,
+      "conversation_id": "7df7d0b4-1911-4a9c-aed3-243e619143c8"
+    },
+    {
+      "id": "concept-breakdown-gpu-driven-rendering",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 52.25,
+      "retry_count": 0,
+      "conversation_id": "d5f64112-37ce-49c7-87ad-73bcc77d01ea"
+    },
+    {
+      "id": "concept-breakdown-vr-spatial-intelligence",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 55.09,
+      "retry_count": 0,
+      "conversation_id": "c0d7c50e-6524-4a6e-b280-04784b13feab"
+    },
+    {
+      "id": "concept-breakdown-raytracing-review",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 53.75,
+      "retry_count": 0,
+      "conversation_id": "1b89ca35-b58e-4508-8aa6-19c4446e1d72"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 462.48,
+  "total_retry_count": 2
+}

@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】请基于 Week15 / Week16 raw，展开“VR / AR、分布式渲染、非对称投影矩阵、空间智能、高保真仿真、Coding Agent 和 AIGC 工具趋势”。
+
+Stage 1 摘要：Week15 讲 World Labs、空间智能、Coding Agent、AI 图像工具、VR 分布式渲染与 6G；Week16 回顾 VR 立体视觉、世界稳定性和非对称投影矩阵。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；区分考试核心知识与行业展望；给出适合指南的应用链路图节点；标注来源；不要虚构 Project 展示要求。

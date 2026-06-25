@@ -1,0 +1,5 @@
+【单问·Stage 3 视觉解释】基于 Week15/16 raw，请整理 VR / 分布式渲染 / 空间智能 / Coding Agent / AIGC 的收束链路图素材。
+
+Focus map 指出：这部分需要区分考试核心与行业展望；核心包括非对称投影矩阵、Alpha 投影融合，展望包括 World Labs、Sim-to-Real、Coding Agent 和 AIGC。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给出适合改写成 Mermaid flowchart 的节点和箭头；标注来源；不要虚构 Project 展示要求。

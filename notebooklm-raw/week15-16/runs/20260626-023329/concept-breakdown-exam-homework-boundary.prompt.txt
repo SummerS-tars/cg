@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】请基于 Week15 / Week16 raw，展开 P7 中“期末范围、作业/PPT 关系和资料边界”。
+
+Stage 1 摘要：Week15 明确 Alpha 混合公式必考；Week16 明确考试题目来自课堂 PPT，重点考作业涉及的渲染管线、Blinn-Phong、MVP 矩阵传递、Shader 编写、Buffer 绑定、Vulkan / OpenGL 流程。Project 展示、详细 rubric、题型说明仍缺失。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；区分“已确认考点”和“不可推断内容”；说明这些考点分别对应 P1-P6 哪些模块；标注来源；不要虚构题型、分值或 Project 展示流程。

@@ -1,0 +1,5 @@
+【单问·Stage 3 对比整理】基于 Week16 raw 和 GPU-driven rendering source，请整理传统 CPU-driven 管线与 GPU-driven rendering 的对比素材。
+
+Focus map 指出：指南需要解释 draw call、CPU culling / LOD、MultiDrawIndirect、Meshlet、Mesh Shader、Visibility Buffer 和延迟着色的关系。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给出适合改写为 Markdown 表格的对比内容；标注来源；不要虚构考试题目。

@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】请基于 Week16 raw 和 P6 source，展开“光线追踪、路径追踪、渲染方程、BRDF、BVH / KD 树、Russian Roulette、Ray Reconstruction 与 AI 降噪”的总复习承接。
+
+Stage 1 摘要：Week16 把光追 / 路径追踪放在工业资料和期末复习语境中，回顾全局光照、加速结构、蒙特卡洛路径积分和《赛博朋克 2077》光线重建。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；说明与 P6 高级渲染的关系；标注来源；不要重新展开成完整 P6 指南。

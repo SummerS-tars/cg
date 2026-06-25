@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】请基于 Week16 raw 和相关 GPU-driven rendering source，展开“Mesh Shader、Meshlet、Visibility Buffer、CPU-GPU 通信瓶颈、Ubisoft 2015 工业资料和《赛博朋克 2077》光追资料的复习价值”。
+
+Stage 1 摘要：Week16 推荐阅读工业级文档，强调 Mesh Shader 与 Visibility Buffer 等前沿技术，核心是理解这些技术与引擎 / 现代图形 API 的关系，而非死记细节。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释传统管线瓶颈和 GPU-driven 思路；标注来源；不要虚构考试具体题目。

@@ -1,0 +1,43 @@
+{
+  "module": "week15-16",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week15-16-stage1.json",
+  "run_dir": "notebooklm-raw/week15-16/runs/20260626-013540",
+  "started_at": "2026-06-25T17:35:40.940617+00:00",
+  "finished_at": "2026-06-25T17:38:45.501367+00:00",
+  "batches_total": 3,
+  "batches_completed": 3,
+  "batches_ok": 3,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "overview-skeleton",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 47.98,
+      "retry_count": 0,
+      "conversation_id": "ee8bb143-e9e7-47f2-bf54-9bae4caac791"
+    },
+    {
+      "id": "notes-skeleton-week15",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 68.3,
+      "retry_count": 1,
+      "conversation_id": "83e3fa0c-4479-4968-9830-3314605155d0"
+    },
+    {
+      "id": "source-boundary-week16-project-rubric",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 48.86,
+      "retry_count": 0,
+      "conversation_id": "9d4eda27-d714-4715-91e2-54c854bdfe13"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 184.56,
+  "total_retry_count": 1
+}

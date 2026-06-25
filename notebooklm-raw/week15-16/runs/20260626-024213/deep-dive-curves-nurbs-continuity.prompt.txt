@@ -1,0 +1,5 @@
+【单问·Stage 3 深挖】基于 Week16 raw，请深挖 Bezier、B-spline、NURBS、张量积曲面与 C0/C1/C2 连续性的直观解释。
+
+Focus map 指出：指南不能只列公式，需要解释控制顶点、基函数、节点向量、权重、局部控制、连续性和 CAD 曲面难点。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 写关键公式；给一个控制多边形 / 权重变化 / 曲面拼接的直观例；标注来源。

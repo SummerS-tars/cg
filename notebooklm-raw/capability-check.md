@@ -81,7 +81,7 @@ export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897
 
 已确认 source 类型：
 
-- 课堂笔记：`笔记-week01-周一-图形学`、`笔记-week02-周一-图形学`、`笔记-week03-周一-图形学`、`笔记-week04-周一-图形学`、`笔记-week05-周一-图形学`、`笔记-week07-周一-图形学`、`笔记-week08-周一-图形学`、`笔记-week09-周一-图形学`、`笔记-week11-周一-图形学`、`笔记-week12-周一-图形学`、`笔记-week13-周一-图形学`、`笔记-week14-周一-图形学`、`笔记-week15-周一-图形学`。
+- 课堂笔记：`笔记-week01-周一-图形学`、`笔记-week02-周一-图形学`、`笔记-week03-周一-图形学`、`笔记-week04-周一-图形学`、`笔记-week05-周一-图形学`、`笔记-week07-周一-图形学`、`笔记-week08-周一-图形学`、`笔记-week09-周一-图形学`、`笔记-week11-周一-图形学`、`笔记-week12-周一-图形学`、`笔记-week13-周一-图形学`、`笔记-week14-周一-图形学`、`笔记-week15-周一-图形学`、`笔记-week16-周一-图形学`。
 - 课件 PDF：`课件01-Lecture01-2026` 至 `课件09-Lecture11-part2-路径追踪-2026`。
 - 论文/补充材料：Brook for GPUs、GPU-Driven Rendering Pipelines、Improved Illumination Model、OptiX、Particle Transport and Image Synthesis、Ray Tracing in One Weekend、The Rendering Equation。
 
@@ -98,8 +98,9 @@ export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897
 
 - P1 正式 `nlm-collect.py` 采集已完成；后续 Part 尚未创建 manifest。
 - CG Notebook 极简 `ask` 已运行，返回 `CG Notebook API 探测 OK。`。
-- 未确认 Week 6/10/16 是否因停课、资料缺失或 source 命名差异而不存在。
-- 未确认 Project、作业、评分标准等 source 是否已上传到 CG Notebook。
+- Week16 已从本地 FiCS/iCourse 课程总结脱敏导入 CG NotebookLM，并确认 source `笔记-week16-周一-图形学` 为 `ready`。
+- 未确认 Week 6/10 是否因停课、资料缺失或 source 命名差异而不存在。
+- 未确认 Project、作业、评分标准等独立 source 是否已上传到 CG Notebook。
 
 ## 下一步
 
@@ -118,3 +119,12 @@ export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897
 - `ChatAPI.ask()` 返回 `AskResult(answer=...)`；脚本读取 `answer`，并保留旧字段 `text` fallback。
 - 极小 ask 探测成功，返回 `CG Notebook API 探测 OK。`。
 - P1 续跑成功：`notebooklm-raw/week1-2/runs/20260625-213138`，12/12 ok，0 retry，状态 completed。
+
+
+## 2026-06-26 P7 Week16 邮件导入
+
+- 本地来源：`/mnt/e/★Document/1_Study/2_6_2026springTerm/3_计算机图形学/2_课程资料/课程总结/week16-周一-图形学.md`。
+- 仓库脱敏副本：`notebooklm-raw/source-sync/week16-周一-图形学.md`。
+- 隐私处理：发件人邮箱已脱敏；未复制 token、cookie 或私人通信内容。
+- NotebookLM：首次文件路径上传生成 error source，已删除；随后以 `--type text --title 笔记-week16-周一-图形学` 重传，`source wait` 返回 `ready`，source ID `03628d49-49ec-4e1b-ba19-15449aa6a800`。
+- P7 raw：新版 `week15-16-stage1/2/3.json` 已纳入 Week16 source，stage-1 4/4、stage-2 7/7、stage-3 6/6 completed。

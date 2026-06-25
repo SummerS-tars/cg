@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】请基于 Week16 raw，展开“参数曲线、参数曲面、Bezier、B-spline、NURBS、张量积曲面、连续性和 CAD 难点”。
+
+Stage 1 摘要：Week16 以字体、动画路径、汽车 / 建筑造型为背景，讲基函数混合控制顶点、分段参数多项式、Bezier / B-spline / NURBS、张量积曲面、C0/C1/C2 连续性、任意拓扑和曲面求交难题。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 写关键公式；解释控制顶点、基函数、局部控制和权重的视觉意义；给一个直观例；标注来源。
