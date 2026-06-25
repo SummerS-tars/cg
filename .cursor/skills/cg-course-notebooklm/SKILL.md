@@ -9,7 +9,7 @@ description: >-
 # CG 课程 × NotebookLM 学习 Skill
 
 > **课程**：计算机图形学（CG）  
-> **Notebook**：在首次采集前用 `notebooklm list` 填入完整 UUID（短前缀在 Python API 下会 RPC 失败）  
+> **Notebook**：`c46f03a0-be2e-4cbb-8172-24a3ee0fce88`（计算机图形学 Notebook；短前缀在 Python API 下会 RPC 失败）  
 > **仓库根**：含 `notebooklm-raw/` 与 `guides/` 的项目目录
 
 ## 何时启用
@@ -63,6 +63,7 @@ flowchart LR
 
 ```bash
 cd <repo>
+export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897
 NLM=.cursor/skills/cg-course-notebooklm/scripts/nlm-collect.py
 
 # 预览
@@ -146,6 +147,8 @@ notebooklm-raw/<module>/runs/latest → 最近 completed run
 **认证 SOP（权威）**：`~/service/openclaw/workspace/skills/notebooklm-integration/docs/auth-sop.md`
 
 见 `docs/troubleshooting.md`：认证、代理 `127.0.0.1:7897`、超时重试。
+
+**能力检查记录**：`notebooklm-raw/capability-check.md`。2026-06-25 已复用 Windows 侧 storage，同步后 `sync-auth --check`、`notebooklm list --json`、CG Notebook `source list --json` 通过。
 
 **Agent 禁止**：`notebooklm login`、WSL 浏览器、从 WSL 调 Windows 登录、`sync-auth --refresh`。
 

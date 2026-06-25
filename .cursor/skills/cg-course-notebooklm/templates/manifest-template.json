@@ -1,6 +1,6 @@
 {
   "module": "weekX-Y",
-  "notebook_id": "<填入完整 NotebookLM UUID>",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
   "description": "Week X-Y：<计算机图形学主题>（单问单答，每 batch 新对话）",
   "workflow": "v3-one-question-per-chat",
   "sources_hint": [

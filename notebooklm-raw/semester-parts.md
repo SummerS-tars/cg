@@ -3,7 +3,7 @@
 > **课程**：计算机图形学（Computer Graphics）  
 > **依据**：`guides/CG课程-16周内容梳理.md` 的待校准 16 周框架  
 > **盘点日期**：2026-06-25  
-> **状态**：本文件是采集规划与同步状态矩阵，当前未确认 NotebookLM source list，也未发现 raw 采集结果。
+> **状态**：本文件是采集规划与同步状态矩阵；2026-06-25 已确认 CG Notebook UUID 与 source list，当前未发现 raw 采集结果。
 
 ---
 
@@ -43,7 +43,7 @@ P1 管线地图和数学语言
 | 课件 PDF | 未发现 | `课件01-*` … `课件NN-*` | 需要用户提供课件目录 |
 | 课程记录 W1–W16 | 未发现 | `笔记-week01-CG` … `笔记-week16-CG` | 需要从邮箱/FiCS/iCourse 导出并核对停课周 |
 | Project / 作业文档 | 未发现 | `Project-*`、`Assignment-*` | 需要用户提供文档和评分要求 |
-| NotebookLM source list | 未验证 | 与上述标题逐项一致 | 认证恢复后运行 `notebooklm source list` |
+| NotebookLM source list | 已验证：CG Notebook `c46f03a0-be2e-4cbb-8172-24a3ee0fce88`，29 个 source 均 `ready` | 与上述标题逐项一致 | 详见 `notebooklm-raw/capability-check.md`；后续按 manifest 逐 Part 对齐 source |
 | raw 采集结果 | 未发现 | `notebooklm-raw/<module>/runs/latest/*.answer.md` | 待 manifest 创建与采集 |
 
 > **重要**：当前仓库只有采集工具和规范，不包含可据以定稿的课程原文。所有 Part 的主题与周次均为采集规划，不是已验证课表。
@@ -64,9 +64,9 @@ P1 管线地图和数学语言
 
 ---
 
-## NotebookLM Source 对齐（待认证与 source list）
+## NotebookLM Source 对齐（已完成能力检查，待逐 Part 对齐）
 
-当前没有可验证的 Notebook UUID 或 source list。下面是建议的 source 命名，用于后续 manifest 的 `sources_hint`，不是已确认的远端清单。
+当前已验证 Notebook：`c46f03a0-be2e-4cbb-8172-24a3ee0fce88`（计算机图形学 Notebook）。远端 source list 返回 29 个 `ready` source，包括 Week 1/2/3/4/5/7/8/9/11/12/13/14/15 课堂笔记、课件 01–09 与若干渲染/路径追踪论文。下面是建议的 Part 对齐表，仍需结合真实课表确认停课周、Project/作业资料是否已补齐。
 
 | Part | 建议 Source |
 |------|-------------|
@@ -84,6 +84,7 @@ P1 管线地图和数学语言
 export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897
 python3 ~/service/openclaw/workspace/skills/notebooklm-integration/scripts/sync-auth.py --force
 python3 ~/service/openclaw/workspace/skills/notebooklm-integration/scripts/sync-auth.py --check
+notebooklm use c46f03a0-be2e-4cbb-8172-24a3ee0fce88
 notebooklm source list
 ```
 
