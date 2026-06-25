@@ -49,7 +49,19 @@ CLI 报 `Run 'notebooklm login'` 时忽略，改走 Windows + sync-auth。
 
 ## 代理
 
-WSL 访问 Google 必须 `http://127.0.0.1:7897`；`nlm-collect.py` / `sync-auth.py` 已默认设置。
+WSL 访问 Google / `notebooklm.google.com` 必须 `http://127.0.0.1:7897`。同时设置大小写变量，避免 CLI 与 `notebooklm-py/httpx` 行为不一致：
+
+```bash
+export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897
+export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897
+```
+
+`nlm-collect.py` 已默认把四个变量传给 `sync-auth`、NotebookLM CLI 和 Python API。若日志中每次 `ask` 都在约 30s 后空错误/超时，优先检查代理变量是否进入 Python 进程。
+
+## notebooklm-py v0.3.4 API 适配
+
+- `NotebookLMClient()` 不能无参构造；脚本使用 `AuthTokens.from_storage()` 读取 cookies，并异步 fetch `csrf_token` / `session_id` 后构造 `NotebookLMClient(auth, timeout=...)`。
+- `ask` 返回正文是 `AskResult.answer`；脚本保留旧字段 `text` fallback，落盘仍统一写入 `answer`。
 
 ## 整合质量
 

@@ -36,7 +36,9 @@
 
 ## 技术
 
-- [ ] NotebookLM 认证有效（`auth check --test` + 代理）
+- [ ] NotebookLM 认证有效（`sync-auth.py --check` + 代理）
+- [ ] WSL 代理已生效：`HTTP_PROXY`、`HTTPS_PROXY`、`http_proxy`、`https_proxy` 指向 `http://127.0.0.1:7897`
+- [ ] `notebooklm-py` 采集路径已验证：`AuthTokens.from_storage()` 能 fetch csrf/session，极小 `ask` 返回 `AskResult.answer`
 - [ ] `guides/CG课程-内容梳理.md` 进度已更新
 
 ## 禁止项（任一命中则未定稿）

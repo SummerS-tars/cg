@@ -64,6 +64,7 @@ flowchart LR
 ```bash
 cd <repo>
 export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897
+export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897
 NLM=.cursor/skills/cg-course-notebooklm/scripts/nlm-collect.py
 
 # 预览
@@ -171,6 +172,10 @@ Phase 4 是用户 Review，不替代 Agent 内部自审。用户看到前，Agen
 ## 环境与排错
 
 **认证 SOP（权威）**：`~/service/openclaw/workspace/skills/notebooklm-integration/docs/auth-sop.md`
+
+**代理要求**：WSL 访问 `notebooklm.google.com` 必须走 `http://127.0.0.1:7897`。`nlm-collect.py` 会为 `sync-auth`、NotebookLM CLI、`notebooklm-py/httpx` 同时设置 `HTTP_PROXY`、`HTTPS_PROXY`、`http_proxy`、`https_proxy`；手工探测时也要导出四个变量。
+
+**notebooklm-py v0.3.4 API**：Python API 需先用 storage cookies 异步构造 `AuthTokens`（会 fetch `csrf_token`/`session_id`），再传给 `NotebookLMClient(auth, timeout=...)`；`ask` 结果正文使用 `AskResult.answer`，脚本保留 `text` fallback。
 
 见 `docs/troubleshooting.md`：认证、代理 `127.0.0.1:7897`、超时重试。
 

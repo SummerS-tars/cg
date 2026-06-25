@@ -3,6 +3,7 @@
 NotebookLM 分层采集脚本 — 将对话原始内容落盘，运行轨迹可追踪。
 
 认证：WSL 仅 sync-auth（见 notebooklm-integration/docs/auth-sop.md），禁止 notebooklm login。
+网络：国内 WSL 需代理访问 notebooklm.google.com，默认使用 127.0.0.1:7897。
 
 用法（仓库根目录）:
   python .cursor/skills/cg-course-notebooklm/scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json
@@ -79,6 +80,20 @@ def rel_repo(path: Path) -> str:
         return str(path)
 
 
+def build_proxy_env(proxy: str) -> dict[str, str]:
+    return {
+        "HTTP_PROXY": proxy,
+        "HTTPS_PROXY": proxy,
+        "http_proxy": proxy,
+        "https_proxy": proxy,
+    }
+
+
+def apply_proxy_env(proxy: str) -> None:
+    # notebooklm-py 使用 httpx；显式写入进程环境，确保 token fetch 与 ask 都走代理。
+    os.environ.update(build_proxy_env(proxy))
+
+
 def run_cmd(
     cmd: list[str],
     *,
@@ -117,11 +132,11 @@ class AskError(Exception):
         self.stderr = stderr
 
 
-def ensure_auth(log_file: Path | None) -> None:
+def ensure_auth(env: dict[str, str], log_file: Path | None) -> None:
     if not SYNC_AUTH.exists():
         raise FileNotFoundError(f"sync-auth 不存在: {SYNC_AUTH}")
     log("同步认证…", log_file)
-    r = run_cmd([sys.executable, str(SYNC_AUTH)], timeout=60)
+    r = run_cmd([sys.executable, str(SYNC_AUTH)], env=env, timeout=60)
     if r.returncode != 0:
         raise AskError(
             f"sync-auth 失败:\n{r.stdout}\n{r.stderr}\n\n{AUTH_SOP_HINT}",
@@ -150,17 +165,20 @@ def notebook_clear(env: dict[str, str], log_file: Path | None) -> None:
 
 async def _ask_async(prompt: str, notebook_id: str, http_timeout: float) -> dict[str, Any]:
     _ensure_notebooklm_import()
-    from notebooklm import NotebookLMClient  # noqa: WPS433
+    from notebooklm import AuthTokens, NotebookLMClient  # noqa: WPS433
 
-    async with await NotebookLMClient.from_storage(timeout=http_timeout) as client:
+    auth = await AuthTokens.from_storage()
+    async with NotebookLMClient(auth, timeout=http_timeout) as client:
         result = await client.chat.ask(notebook_id, prompt, conversation_id=None)
-    refs = [asdict(r) for r in result.references]
+    answer = getattr(result, "answer", getattr(result, "text", ""))
+    refs = [asdict(r) for r in getattr(result, "references", [])]
     return {
-        "answer": result.answer,
-        "conversation_id": result.conversation_id,
-        "turn_number": result.turn_number,
-        "is_follow_up": result.is_follow_up,
+        "answer": answer,
+        "conversation_id": getattr(result, "conversation_id", None),
+        "turn_number": getattr(result, "turn_number", None),
+        "is_follow_up": getattr(result, "is_follow_up", None),
         "references": refs,
+        "raw_response": getattr(result, "raw_response", None),
     }
 
 
@@ -498,10 +516,9 @@ def cmd_collect(args: argparse.Namespace) -> int:
         print(f"notebooklm CLI 不存在: {NOTEBOOKLM_CLI}", file=sys.stderr)
         return 1
 
-    proxy_env = {
-        "HTTP_PROXY": args.proxy,
-        "HTTPS_PROXY": args.proxy,
-    }
+    proxy_env = build_proxy_env(args.proxy)
+    apply_proxy_env(args.proxy)
+    log(f"代理环境: HTTP(S)_PROXY/http(s)_proxy={args.proxy}", log_file)
 
     run_t0 = time.time()
     total_retries = 0
@@ -510,7 +527,7 @@ def cmd_collect(args: argparse.Namespace) -> int:
 
     try:
         if not args.no_auth:
-            ensure_auth(log_file)
+            ensure_auth(proxy_env, log_file)
         notebook_use(notebook_id, proxy_env, log_file)
 
         for i, batch in enumerate(batches, 1):

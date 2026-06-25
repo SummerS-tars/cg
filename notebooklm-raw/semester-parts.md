@@ -3,7 +3,7 @@
 > **课程**：计算机图形学（Computer Graphics）  
 > **依据**：`guides/CG课程-16周内容梳理.md` 的待校准 16 周框架  
 > **盘点日期**：2026-06-25  
-> **状态**：本文件是采集规划与同步状态矩阵；2026-06-25 已确认 CG Notebook UUID 与 source list，当前未发现 raw 采集结果。
+> **状态**：本文件是采集规划与同步状态矩阵；2026-06-25 已确认 CG Notebook UUID 与 source list，P1 / `week1-2` 已完成 raw、knowledge graph、学习指南与内部 review。
 
 ---
 
@@ -61,7 +61,7 @@ P1 管线地图和数学语言
 | 课程记录 W1–W16 | 未发现 | `笔记-week01-CG` … `笔记-week16-CG` | 需要从邮箱/FiCS/iCourse 导出并核对停课周 |
 | Project / 作业文档 | 未发现 | `Project-*`、`Assignment-*` | 需要用户提供文档和评分要求 |
 | NotebookLM source list | 已验证：CG Notebook `c46f03a0-be2e-4cbb-8172-24a3ee0fce88`，29 个 source 均 `ready` | 与上述标题逐项一致 | 详见 `notebooklm-raw/capability-check.md`；后续按 manifest 逐 Part 对齐 source |
-| raw 采集结果 | 未发现 | `notebooklm-raw/<module>/runs/latest/*.answer.md` | 待 manifest 创建与采集 |
+| raw 采集结果 | P1 已完成 | `notebooklm-raw/week1-2/runs/latest/*.answer.md` | 后续 Part 待 manifest 创建与采集 |
 
 > **重要**：当前仓库只有采集工具和规范，不包含可据以定稿的课程原文。所有 Part 的主题与周次均为采集规划，不是已验证课表。
 
@@ -71,7 +71,7 @@ P1 管线地图和数学语言
 
 | Part | manifest | topics-map | raw 采集 | knowledge-graph | 学习指南 |
 |------|----------|------------|----------|-----------------|----------|
-| P1 `week1-2` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
+| P1 `week1-2` | 已创建 | 已生成 | 已采集 12/12 | 已生成 | 已写用户 Review 前版本 |
 | P2 `week3-4` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
 | P3 `week5-6` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
 | P4 `week7-9` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
@@ -99,6 +99,7 @@ P1 管线地图和数学语言
 
 ```bash
 export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897
+export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897
 python3 ~/service/openclaw/workspace/skills/notebooklm-integration/scripts/sync-auth.py --force
 python3 ~/service/openclaw/workspace/skills/notebooklm-integration/scripts/sync-auth.py --check
 notebooklm use c46f03a0-be2e-4cbb-8172-24a3ee0fce88

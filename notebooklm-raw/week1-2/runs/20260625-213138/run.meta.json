@@ -1,0 +1,115 @@
+{
+  "module": "week1-2",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week1-2.json",
+  "run_dir": "notebooklm-raw/week1-2/runs/20260625-213138",
+  "started_at": "2026-06-25T13:31:38.961553+00:00",
+  "finished_at": "2026-06-25T14:04:36.245276+00:00",
+  "batches_total": 12,
+  "batches_completed": 12,
+  "batches_ok": 12,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "overview-skeleton",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 47.31,
+      "retry_count": 0,
+      "conversation_id": "6b1a3aac-8007-46b2-a753-d9b4fd36a418"
+    },
+    {
+      "id": "concept-breakdown-graphics-overview",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 45.31,
+      "retry_count": 0,
+      "conversation_id": "2467dc34-0634-4704-a7c2-8dda1eda5649"
+    },
+    {
+      "id": "concept-breakdown-rendering-pipeline",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 49.2,
+      "retry_count": 0,
+      "conversation_id": "e410a4f6-717e-444a-bc08-03d7a50cd0de"
+    },
+    {
+      "id": "concept-breakdown-math-foundations",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 61.61,
+      "retry_count": 0,
+      "conversation_id": "abe87158-95d3-4543-a9c0-450d2e8133f6"
+    },
+    {
+      "id": "deep-dive-pipeline-dataflow",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 51.94,
+      "retry_count": 0,
+      "conversation_id": "0a15ff02-bd5c-40b4-afb4-e07c8e9edee3"
+    },
+    {
+      "id": "deep-dive-coordinates-homogeneous",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 49.92,
+      "retry_count": 0,
+      "conversation_id": "61f068cf-f4a0-42ce-902e-2780cad9b57a"
+    },
+    {
+      "id": "slide-skeleton-lecture01",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 42.7,
+      "retry_count": 0,
+      "conversation_id": "9f4e11d1-d4ca-4240-a415-258feee0cbfa"
+    },
+    {
+      "id": "slide-skeleton-lecture02",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 39.38,
+      "retry_count": 0,
+      "conversation_id": "d65151c6-7e94-462d-b33c-f4bcdf2aa380"
+    },
+    {
+      "id": "slide-module-detail-lecture02-math",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 73.82,
+      "retry_count": 0,
+      "conversation_id": "91b0a547-c0d9-481a-be3a-cc52b849b0a1"
+    },
+    {
+      "id": "examples-pipeline-and-math",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 47.43,
+      "retry_count": 0,
+      "conversation_id": "1041bd42-1c99-445a-9df8-4afa3332a087"
+    },
+    {
+      "id": "misconceptions-part1",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 48.47,
+      "retry_count": 0,
+      "conversation_id": "87a3a9eb-acfc-413c-b525-5f1990bc9705"
+    },
+    {
+      "id": "project-bridge",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 37.56,
+      "retry_count": 0,
+      "conversation_id": "eda1292f-d2e7-4b4b-a957-738384c00668"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 684.76,
+  "total_retry_count": 0
+}

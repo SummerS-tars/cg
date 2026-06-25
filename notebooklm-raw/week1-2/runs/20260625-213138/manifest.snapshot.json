@@ -1,0 +1,125 @@
+{
+  "module": "week1-2",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 1-2：图形学总览、渲染管线与数学基础（v4 分层 raw 采集；单问单答，每 batch 新对话）",
+  "workflow": "v4-layered-raw-coverage",
+  "part": "P1",
+  "scope": {
+    "weeks": [
+      "Week 1",
+      "Week 2"
+    ],
+    "topics": [
+      "图形学导论",
+      "渲染管线",
+      "图形系统与课程地图",
+      "向量矩阵",
+      "坐标系与齐次坐标"
+    ],
+    "source_alignment_note": "本范围依据 notebooklm-raw/semester-parts.md 与 guides/CG课程-16周内容梳理.md 的 P1 定义；远端 source list 中可匹配 Week 1/2 笔记与课件01/02，未发现独立课程大纲或 Project 文档 source。"
+  },
+  "sources_hint": [
+    "笔记-week01-周一-图形学",
+    "笔记-week02-周一-图形学",
+    "课件01-Lecture01-2026",
+    "课件02-Lecture02-2026"
+  ],
+  "batches": [
+    {
+      "id": "overview-skeleton",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Part 1 全面内容骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·Part 骨架】请综合以下来源：笔记-week01-周一-图形学、笔记-week02-周一-图形学、课件01-Lecture01-2026、课件02-Lecture02-2026，全面梳理 CG Part 1 / Week 1-2 讲了哪些大知识点。\n\n要求：中文；按授课或课件顺序列出大知识点；说明每个大知识点解决的图形学问题、重要性（核心/重要/了解）、与渲染管线或后续课程的关系、相关来源；可以不用展开公式细节；不要遗漏边角主题；不要写成学习指南正文。若某个来源不包含课程大纲、Project 或评价方式，请明确说明“来源中未见”。"
+    },
+    {
+      "id": "concept-breakdown-graphics-overview",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "图形学总览与应用拆分",
+      "clear_conversation": true,
+      "prompt": "【单问·知识点拆分】请仅围绕 CG Part 1 中的“图形学总览、应用场景、课程地图与学习目标”。\n\n依据：笔记-week01-周一-图形学、课件01-Lecture01-2026、必要时参考课件02-Lecture02-2026 中与课程地图有关的内容。\n\n要求：中文；拆出子知识点；分别给基础解释、几何/视觉直觉、在课程整体或渲染管线中的位置；说明哪些内容是核心、哪些了解即可；每点标注来源；不要同时展开 Week 3 以后具体变换、光栅化或光照细节。"
+    },
+    {
+      "id": "concept-breakdown-rendering-pipeline",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "渲染管线与图形系统拆分",
+      "clear_conversation": true,
+      "prompt": "【单问·知识点拆分】请仅围绕 CG Part 1 中的“从场景/模型到屏幕像素的渲染管线、图形系统与 GPU/OpenGL/GLSL 角色”。\n\n依据：笔记-week01-周一-图形学、课件01-Lecture01-2026、课件02-Lecture02-2026。\n\n要求：中文；拆出管线阶段、每阶段输入输出、解决的图形问题、视觉直觉和后续课程对应模块；如提到顶点、片元、framebuffer、shader，请解释它们在管线中的位置；每点标注来源；不要写成完整学习指南。"
+    },
+    {
+      "id": "concept-breakdown-math-foundations",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "向量矩阵与坐标系基础拆分",
+      "clear_conversation": true,
+      "prompt": "【单问·知识点拆分】请仅围绕 CG Part 1 / Week 2 中的“向量、矩阵、坐标系、基、齐次坐标等数学基础”。\n\n依据：笔记-week02-周一-图形学、课件02-Lecture02-2026；必要时参考课件01-Lecture01-2026 中对后续管线的承接。\n\n要求：中文；拆出子知识点；分别给基础解释、几何/视觉直觉、在模型/世界/观察/裁剪/屏幕空间中的位置；如涉及公式或矩阵，请先解释符号、输入输出和几何意义；每点标注来源；不要提前讲完整 MVP 推导或投影矩阵。"
+    },
+    {
+      "id": "deep-dive-pipeline-dataflow",
+      "layer": "L3",
+      "priority": "critical",
+      "title": "渲染管线数据流深入解释",
+      "clear_conversation": true,
+      "prompt": "【单问·深挖】请仅深入讲解：Part 1 中“场景数据如何沿渲染管线变成屏幕像素”的数据流。\n\n依据：笔记-week01-周一-图形学、课件01-Lecture01-2026、课件02-Lecture02-2026。\n\n要求：中文；先讲直观图像，再按阶段说明输入、处理、输出；解释顶点处理、图元装配、光栅化、片元处理、framebuffer 之间的关系；给一个最小几何例子（例如一个三角形）说明数据如何变化；说明常见误解；标注来源；不要扩展到高级光照或路径追踪。"
+    },
+    {
+      "id": "deep-dive-coordinates-homogeneous",
+      "layer": "L3",
+      "priority": "critical",
+      "title": "坐标系与齐次坐标深入解释",
+      "clear_conversation": true,
+      "prompt": "【单问·深挖】请仅深入讲解：Part 1 中“为什么图形学需要坐标系、矩阵和齐次坐标”。\n\n依据：笔记-week02-周一-图形学、课件02-Lecture02-2026。\n\n要求：中文；先讲视觉/几何直觉，再讲点、向量、基、矩阵、齐次坐标的符号含义；给一个小例子说明位置和方向为什么要区分、齐次坐标为什么能统一平移与线性变换；说明常见误解和后续 Week 3-4 的承接；标注来源；不要展开完整投影矩阵。"
+    },
+    {
+      "id": "slide-skeleton-lecture01",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "课件01原序骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定】请仅依据以下课件：课件01-Lecture01-2026。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件分了几个主要模块？每个模块分别讲了什么知识点？哪些模块/知识点最重要？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键示例或例题；每点标注来源；不要展开成完整学习指南。"
+    },
+    {
+      "id": "slide-skeleton-lecture02",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "课件02原序骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定】请仅依据以下课件：课件02-Lecture02-2026。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件分了几个主要模块？每个模块分别讲了什么知识点？哪些模块/知识点最重要？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键示例或例题；每点标注来源；不要展开成完整学习指南。"
+    },
+    {
+      "id": "slide-module-detail-lecture02-math",
+      "layer": "L2",
+      "priority": "important",
+      "title": "课件02数学基础模块详解",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定·模块详解】请仅依据以下课件：课件02-Lecture02-2026。不要使用其他来源。\n\n问题：请详细梳理课件中与向量、矩阵、坐标系、基变换、齐次坐标或后续变换准备有关的模块。\n\n要求：中文；解释每个知识点的具体含义；说明课件是如何讲解的；指出重要图片、图示、流程、示例或例题；如果课件没有完整例题，请明确说明并构思一个贴合课件内容的小例子；标注来源。"
+    },
+    {
+      "id": "examples-pipeline-and-math",
+      "layer": "L3",
+      "priority": "important",
+      "title": "管线与数学基础示例",
+      "clear_conversation": true,
+      "prompt": "【单问·示例】请仅围绕 Part 1 的“渲染管线 + 向量/矩阵/坐标系基础”，从笔记-week01-周一-图形学、笔记-week02-周一-图形学、课件01-Lecture01-2026、课件02-Lecture02-2026 中抽取示例/例题并讲解；如果没有可直接引用的例题，请明确说明并构思一个符合课程语境的小例题。\n\n要求：中文；逐步讲解输入、过程、输出和图形学意义；至少包含一个管线例子和一个坐标/向量/矩阵例子；标注来源或说明构思依据；不要扩展到其他主题。"
+    },
+    {
+      "id": "misconceptions-part1",
+      "layer": "L3",
+      "priority": "important",
+      "title": "Part 1 易混点与常见错误",
+      "clear_conversation": true,
+      "prompt": "【单问·易混点】请仅围绕 CG Part 1 / Week 1-2，列出最易混淆的 3-5 组概念或常见错误，用对比表说明：为什么易混、正确理解、图形学直觉、记忆技巧。\n\n依据：笔记-week01-周一-图形学、笔记-week02-周一-图形学、课件01-Lecture01-2026、课件02-Lecture02-2026。\n\n要求：中文；优先覆盖课程中容易影响后续变换、投影、光栅化和 Project 代码理解的点；每组标注来源。"
+    },
+    {
+      "id": "project-bridge",
+      "layer": "L4",
+      "priority": "important",
+      "title": "与后续周次、Project 和复习衔接",
+      "clear_conversation": true,
+      "prompt": "【单问·串联】请仅说明：CG Part 1 / Week 1-2 知识与后续周次、渲染管线、Project/作业或考试复习的衔接关系。\n\n依据：笔记-week01-周一-图形学、笔记-week02-周一-图形学、课件01-Lecture01-2026、课件02-Lecture02-2026。若这些来源中没有 Project、作业或考试安排，请明确说明“来源中未见”，并只基于课程内容说明可能的后续落点。\n\n要求：中文；按“前置知识 → 本 Part 作用 → 后续用途 → Project/复习落点”组织；标注来源；不要引入来源中无法支持的课程安排。"
+    }
+  ]
+}
