@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于课件05-Lecture06-2025，请展开讲解 Part 3 中“Z-buffer、A-buffer、BSP Tree、Scan-line、Area Subdivision”等消隐算法。
+
+Stage 1 骨架依据：Lecture06 总结强调深入理解 Z-buffer、A-buffer 和 Ray Casting，熟悉 BSP Tree 与 Back-face Culling，了解 OpenGL 如何处理消隐。
+
+要求：中文；重点解释 Z-buffer 的数据结构、每个像素的深度比较流程、与 rasterization / fragment 生成的关系；解释 A-buffer 相比 Z-buffer 试图补什么；概述 BSP Tree、Scan-line、Area Subdivision 的基本思想；说明 OpenGL / GPU 中 depth test 的位置（如来源支持）；标注来源；不要总结易混点。

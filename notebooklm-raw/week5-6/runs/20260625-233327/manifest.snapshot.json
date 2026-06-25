@@ -1,0 +1,76 @@
+{
+  "module": "week5-6",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 5-6 / Part 3：基于 focus map 的 targeted deep-dive / examples / visual explanations（v4.1 dynamic raw stage 3）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P3",
+  "stage": "stage-3-targeted-deep-dive",
+  "focus_map_ref": "notebooklm-raw/week5-6/focus-map.md",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "quality_standards": [
+      "术语首次出现必须解释",
+      "期末英语考试术语格式：中文(English) 或 Abbr(Full English Name，中文对照)",
+      "最终指南使用章节就近参考 raw 引用块",
+      "最终指南不包含采集说明或补采计划",
+      "Markdown 表格避免未转义竖线，数学表达优先用 LaTeX"
+    ],
+    "optional_stage4": "Stage 1-2 已显示 Week 6 / Project / Sampling raw 缺口来自 source list；当前不固定生成补采，必要时在 review-iteration 记录。"
+  },
+  "scope": {
+    "weeks": [
+      "Week 5",
+      "Week 6"
+    ],
+    "sources": [
+      "笔记-week05-周一-图形学",
+      "课件04-Lecture04-05-2025",
+      "课件05-Lecture06-2025"
+    ],
+    "stage2_run": "notebooklm-raw/week5-6/runs/20260625-232714",
+    "focus_targets": [
+      "Projection 后到 framebuffer 前的完整视觉链",
+      "Scan conversion / rasterization 的覆盖、扫描线和插值直觉",
+      "Z-buffer / depth test 的逐 fragment 流程",
+      "Hidden Surface Removal 算法族对比"
+    ]
+  },
+  "batches": [
+    {
+      "id": "visual-explain-post-projection-pipeline",
+      "stage": "stage-3",
+      "layer": "L4-L5",
+      "priority": "critical",
+      "title": "Projection 后管线视觉解释",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 视觉解释】基于 Week 5 课堂记录、课件04-Lecture04-05-2025 和课件05-Lecture06-2025，请把 Part 3 的 Projection 后到 framebuffer 前的管线整理成可视化解释素材。\n\nFocus map 指出：指南需要一张完整图，说明 Clipping、Viewport Transformation、Scan Conversion / Rasterization、Hidden Surface Removal / Depth Test 的输入输出、坐标状态和责任边界。\n\n要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)，例如 NDC、HSR、Z-buffer；按 Clip Space / NDC、Viewport / Screen Coordinates、Fragments、Depth Buffer、Frame Buffer 的顺序解释每一步；给出适合改写成 Mermaid flowchart 的节点和箭头；标注来源；不要写成最终指南全文。"
+    },
+    {
+      "id": "examples-rasterization-scanline-interpolation",
+      "stage": "stage-3",
+      "layer": "L4",
+      "priority": "critical",
+      "title": "光栅化、扫描线与插值例题",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 例题深挖】基于 Week 5 课堂记录和课件04-Lecture04-05-2025，请为 Part 3 的 Scan Conversion / Rasterization 整理可放入学习指南的例题和直观解释。\n\nFocus map 指出：Stage 2 已覆盖 scan conversion、triangle coverage、scan-line、Bresenham 和 interpolation，但指南需要从连续图元到 fragment 的可跟读例子。\n\n要求：中文；术语首次出现请写中文(English)；解释 pixel center / triangle coverage / scan-line span 的直觉；给一个小型扫描线或像素覆盖例子；说明 Bresenham 直线算法的增量思想；说明深度、颜色或纹理坐标插值为什么服务于后续 depth test / shading；标注来源；不要编造来源没有的底层 GPU 调度细节。"
+    },
+    {
+      "id": "deep-dive-zbuffer-depth-test",
+      "stage": "stage-3",
+      "layer": "L3-L4",
+      "priority": "critical",
+      "title": "Z-buffer 与 Depth Test 深挖",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 深挖】基于课件05-Lecture06-2025，请深挖 Part 3 的 Z-buffer / Depth Test。\n\nFocus map 指出：指南需要逐 fragment 的深度比较流程、初始化、更新、与 rasterization / framebuffer 的关系，以及两个表面竞争同一像素的可跟读例子。\n\n要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用伪代码或编号流程说明初始化、比较、更新颜色缓冲和深度缓冲；给一个同一像素先后到达两个 fragment 的数值例；说明绘制顺序为什么可以随机；解释 Z-buffer 的局限，如 transparency、aliasing 或 depth precision（如来源支持）；标注来源。"
+    },
+    {
+      "id": "compare-hidden-surface-algorithms",
+      "stage": "stage-3",
+      "layer": "L4",
+      "priority": "important",
+      "title": "消隐算法族对比",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 对比整理】基于课件05-Lecture06-2025 和 Week 5 课堂记录，请整理 Part 3 的 Hidden Surface Removal 算法族对比素材。\n\nFocus map 指出：Back-face Culling、Painter、Ray Casting、Z-buffer、A-buffer、Scan-line、Area Subdivision、BSP Tree 容易混淆，需要按处理空间、输入输出、优势、局限和典型场景对比。\n\n要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；先按 object-space / image-space 分类，再给出适合改写为 Markdown 表格的对比内容；解释各算法在现代 GPU 管线中的主次地位；标注来源；不要写成最终指南全文。"
+    }
+  ]
+}

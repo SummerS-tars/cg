@@ -1,0 +1,51 @@
+{
+  "module": "week5-6",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week5-6-stage3.json",
+  "run_dir": "notebooklm-raw/week5-6/runs/20260625-233327",
+  "started_at": "2026-06-25T15:33:27.532444+00:00",
+  "finished_at": "2026-06-25T15:37:16.433124+00:00",
+  "batches_total": 4,
+  "batches_completed": 4,
+  "batches_ok": 4,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "visual-explain-post-projection-pipeline",
+      "layer": "L4-L5",
+      "status": "ok",
+      "elapsed_seconds": 43.05,
+      "retry_count": 0,
+      "conversation_id": "002d3706-2ab4-48af-9926-a4eb8ea7ac53"
+    },
+    {
+      "id": "examples-rasterization-scanline-interpolation",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 54.93,
+      "retry_count": 0,
+      "conversation_id": "9b90b443-28b6-4694-8159-33f18dd7d4e4"
+    },
+    {
+      "id": "deep-dive-zbuffer-depth-test",
+      "layer": "L3-L4",
+      "status": "ok",
+      "elapsed_seconds": 51.7,
+      "retry_count": 0,
+      "conversation_id": "ce6ccbd3-a2d6-4857-ba62-449c0b95141f"
+    },
+    {
+      "id": "compare-hidden-surface-algorithms",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 50.66,
+      "retry_count": 0,
+      "conversation_id": "cb2cebe9-9b65-496c-978a-c81f099de49a"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 228.9,
+  "total_retry_count": 0
+}

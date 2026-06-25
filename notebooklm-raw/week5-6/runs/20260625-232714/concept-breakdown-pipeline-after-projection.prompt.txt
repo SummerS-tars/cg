@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 5 课堂记录、课件04-Lecture04-05-2025 和课件05-Lecture06-2025，请展开讲解 Part 3 中“投影之后、像素之前的 3D Rendering Pipeline 后段”。
+
+Stage 1 骨架依据：P3 从 Part 2 的 Projection / Clip Space 承接到 Clipping、Viewport Transformation、Scan Conversion、Hidden Surface Removal，并进入可编程管线背景。
+
+要求：中文；先说明这一段管线解决什么图形问题；按 Clipping、Viewport Transformation、Scan Conversion / Rasterization、Hidden Surface Removal 的顺序解释输入、输出、坐标或数据状态；说明与 Week 3-4 MVP / NDC 的关系；标注来源；不要展开完整算法细节；不要总结易混点。

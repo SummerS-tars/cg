@@ -1,0 +1,5 @@
+【单问·Stage 3 对比整理】基于课件05-Lecture06-2025 和 Week 5 课堂记录，请整理 Part 3 的 Hidden Surface Removal 算法族对比素材。
+
+Focus map 指出：Back-face Culling、Painter、Ray Casting、Z-buffer、A-buffer、Scan-line、Area Subdivision、BSP Tree 容易混淆，需要按处理空间、输入输出、优势、局限和典型场景对比。
+
+要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；先按 object-space / image-space 分类，再给出适合改写为 Markdown 表格的对比内容；解释各算法在现代 GPU 管线中的主次地位；标注来源；不要写成最终指南全文。

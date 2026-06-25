@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 5 课堂记录和课件04-Lecture04-05-2025，请展开讲解 Part 3 中“Scan Conversion / Rasterization”的角色。
+
+Stage 1 骨架依据：课件04-Lecture04-05 把 Scan Conversion 放在 3D Rendering Pipeline 末端，负责将几何信息转为像素，并与 texturing 和 hidden surface 处理相关。
+
+要求：中文；先讲 scan conversion / rasterization 解决什么问题；说明它接收什么几何或屏幕空间输入，输出什么像素/fragment 信息；解释它与 Clipping、Viewport、Hidden Surface Removal、Texturing 的前后关系；如来源中提到三角形覆盖、扫描线或插值，请按来源展开；如未覆盖，请明确说明 raw 未提供细节；标注来源；不要编造未在来源中的算法细节。

@@ -1,0 +1,67 @@
+{
+  "module": "week5-6",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week5-6-stage2.json",
+  "run_dir": "notebooklm-raw/week5-6/runs/20260625-232714",
+  "started_at": "2026-06-25T15:27:14.490095+00:00",
+  "finished_at": "2026-06-25T15:32:34.144294+00:00",
+  "batches_total": 6,
+  "batches_completed": 6,
+  "batches_ok": 6,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "concept-breakdown-pipeline-after-projection",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 49.1,
+      "retry_count": 0,
+      "conversation_id": "0bb034e6-063f-433c-8b84-b1fb19ce3671"
+    },
+    {
+      "id": "concept-breakdown-clipping-viewport",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 45.28,
+      "retry_count": 0,
+      "conversation_id": "72a9f3f2-4202-42a5-ab72-6b5d835f5c56"
+    },
+    {
+      "id": "concept-breakdown-scan-conversion-rasterization",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 41.74,
+      "retry_count": 0,
+      "conversation_id": "d5dc5d51-ab5d-4ed6-8725-209c4f535bab"
+    },
+    {
+      "id": "concept-breakdown-programmable-pipeline",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 44.14,
+      "retry_count": 0,
+      "conversation_id": "ebf16983-8fe7-45a2-84e7-fda9c6720f21"
+    },
+    {
+      "id": "concept-breakdown-hidden-surface-overview",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 46.69,
+      "retry_count": 0,
+      "conversation_id": "e039b475-a009-41d7-a593-43333287c561"
+    },
+    {
+      "id": "concept-breakdown-depth-buffer-algorithms",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 43.42,
+      "retry_count": 0,
+      "conversation_id": "b21f67d8-c306-4155-8185-67f17749b3e6"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 319.65,
+  "total_retry_count": 0
+}

@@ -1,0 +1,20 @@
+[23:23:48] 模块: week5-6 | 批次数: 3 | 输出: /home/thesumst/development/cg/notebooklm-raw/week5-6/runs/20260625-232348
+[23:23:48] 代理环境: HTTP(S)_PROXY/http(s)_proxy=http://127.0.0.1:7897
+[23:23:48] 同步认证…
+[23:23:48] 认证 OK
+[23:23:48] 选定 Notebook: c46f03a0-be2e-4cbb-8172-24a3ee0fce88
+[23:23:52] --- batch 1/3: [L0] overview-skeleton ---
+[23:23:52] 清空会话上下文 (notebooklm clear)
+[23:23:52] 提问 (399 字, nlm_timeout=120s)…
+[23:24:43] 完成 overview-skeleton (50.6s)
+[23:24:43] 等待 8.0s…
+[23:24:51] --- batch 2/3: [L1] slide-skeleton-lecture04-05-part3 ---
+[23:24:51] 清空会话上下文 (notebooklm clear)
+[23:24:51] 提问 (320 字, nlm_timeout=120s)…
+[23:25:28] 完成 slide-skeleton-lecture04-05-part3 (37.2s)
+[23:25:28] 等待 8.0s…
+[23:25:36] --- batch 3/3: [L1] slide-skeleton-lecture06 ---
+[23:25:36] 清空会话上下文 (notebooklm clear)
+[23:25:36] 提问 (253 字, nlm_timeout=120s)…
+[23:26:12] 完成 slide-skeleton-lecture06 (36.2s)
+[23:26:12] 采集结束: status=completed | ok=3 skipped=0 failed=0/3 | 重试 0 次 | 耗时 143.82s

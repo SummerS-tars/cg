@@ -1,0 +1,5 @@
+【单问·Stage 3 例题深挖】基于 Week 5 课堂记录和课件04-Lecture04-05-2025，请为 Part 3 的 Scan Conversion / Rasterization 整理可放入学习指南的例题和直观解释。
+
+Focus map 指出：Stage 2 已覆盖 scan conversion、triangle coverage、scan-line、Bresenham 和 interpolation，但指南需要从连续图元到 fragment 的可跟读例子。
+
+要求：中文；术语首次出现请写中文(English)；解释 pixel center / triangle coverage / scan-line span 的直觉；给一个小型扫描线或像素覆盖例子；说明 Bresenham 直线算法的增量思想；说明深度、颜色或纹理坐标插值为什么服务于后续 depth test / shading；标注来源；不要编造来源没有的底层 GPU 调度细节。

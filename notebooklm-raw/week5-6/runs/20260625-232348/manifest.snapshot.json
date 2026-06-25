@@ -1,0 +1,68 @@
+{
+  "module": "week5-6",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 5-6 / Part 3：光栅化、可见性与采样（v4.1 dynamic raw stage 1；只采骨架）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P3",
+  "stage": "stage-1-skeleton",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "carry_forward": "Agent 读取 stage-1 answers 后产出 notebooklm-raw/week5-6/stage1-summary.md，并把摘要显式写入 stage-2 manifest；不得依赖 NotebookLM chat history。",
+    "next_stage": "stage-2 module expansion / concept breakdown",
+    "postpone_until_focus_map": [
+      "misconceptions-*",
+      "project-bridge",
+      "glossary-raw"
+    ]
+  },
+  "scope": {
+    "weeks": [
+      "Week 5",
+      "Week 6"
+    ],
+    "topics": [
+      "光栅化基础",
+      "三角形覆盖",
+      "重心坐标与插值",
+      "深度与可见性",
+      "采样与抗锯齿"
+    ],
+    "source_alignment_note": "P3 范围依据 notebooklm-raw/semester-parts.md 与 guides/CG课程-16周内容梳理.md；2026-06-25 source list 中存在 Week 5 课堂笔记、课件04-Lecture04-05-2025 与课件05-Lecture06-2025，未看到 Week 6 课堂笔记或 Project 文档，需在 Stage 1 回答中校准缺口。"
+  },
+  "sources_hint": [
+    "笔记-week05-CG / 笔记-week05-周一-图形学",
+    "笔记-week06-CG（source list 未发现，若不存在请说明）",
+    "课件04-Lecture04-05-2025",
+    "课件05-Lecture06-2025",
+    "Project / Assignment 文档（source list 未发现，若不存在请说明）"
+  ],
+  "batches": [
+    {
+      "id": "overview-skeleton",
+      "stage": "stage-1",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Part 3 全面内容骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·Part 骨架·Stage 1】请综合 Week 5-6 课程记录和相关课件，全面梳理 CG Part 3 讲了哪些大知识点。\n\n建议来源范围：笔记-week05-CG / 笔记-week05-周一-图形学、笔记-week06-CG（若 NotebookLM 中不存在请说明）、课件04-Lecture04-05-2025、课件05-Lecture06-2025、相关 Project / Assignment 文档（若不存在请说明）；若 NotebookLM 中实际 source 名称不同，请以可见来源为准并在回答中说明。\n\n要求：中文；按授课或课件顺序列出大知识点；说明每个大知识点解决的图形学问题、重要性（核心/重要/了解）、与渲染管线以及 Week 3-4 MVP/投影内容的关系、相关来源；可以不用展开公式细节；不要遗漏边角主题；不要写成学习指南正文；不要总结易混点或常见错误。"
+    },
+    {
+      "id": "slide-skeleton-lecture04-05-part3",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "important",
+      "title": "课件04/05中 Part 3 原序骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定·Stage 1】请仅依据以下课件：课件04-Lecture04-05-2025。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件中属于 Lecture05 / Part 3 的光栅化、扫描转换、可见性或后续管线内容。哪些内容仍属于 Week 4 / Part 2 的相机投影承接，哪些进入 Week 5-6 / Part 3？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键示例或例题；每点标注来源；不要展开成完整学习指南；不要总结易混点或常见错误。若该课件在 NotebookLM 中不存在或标题不同，请明确说明。"
+    },
+    {
+      "id": "slide-skeleton-lecture06",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "课件05/Lecture06 原序骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定·Stage 1】请仅依据以下课件：课件05-Lecture06-2025。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件分了几个主要模块？每个模块分别讲了什么知识点？哪些模块/知识点最重要？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键示例或例题；每点标注来源；不要展开成完整学习指南；不要总结易混点或常见错误。若该课件在 NotebookLM 中不存在或标题不同，请明确说明。"
+    }
+  ]
+}

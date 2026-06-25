@@ -1,0 +1,5 @@
+【单问·Stage 3 深挖】基于课件05-Lecture06-2025，请深挖 Part 3 的 Z-buffer / Depth Test。
+
+Focus map 指出：指南需要逐 fragment 的深度比较流程、初始化、更新、与 rasterization / framebuffer 的关系，以及两个表面竞争同一像素的可跟读例子。
+
+要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用伪代码或编号流程说明初始化、比较、更新颜色缓冲和深度缓冲；给一个同一像素先后到达两个 fragment 的数值例；说明绘制顺序为什么可以随机；解释 Z-buffer 的局限，如 transparency、aliasing 或 depth precision（如来源支持）；标注来源。

@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于课件05-Lecture06-2025 和 Week 5 课堂记录，请展开讲解 Part 3 中“Hidden Surface Removal / 消隐”的总览。
+
+Stage 1 骨架依据：Lecture06 明确讲消隐原因、管线位置、object-space / image-space 分类、back-face culling、depth sort / painter、ray casting、Z-buffer、A-buffer、scan-line、area subdivision、BSP tree。
+
+要求：中文；先讲为什么需要消隐，以及背面、遮挡、图像平面重叠或相交分别是什么；解释 object-space algorithms 和 image-space algorithms 的区别；概述 back-face culling、depth sort / painter、ray casting 等方法的思想和适用位置；标注来源；不要深入 Z-buffer 公式细节。

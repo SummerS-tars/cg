@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 5 课堂记录和课件04-Lecture04-05-2025，请展开讲解 Part 3 中“Clipping 与 Viewport Transformation”。
+
+Stage 1 骨架依据：Lecture04-05 后半把 Clipping 放在投影后、视口前，并给出 window-to-viewport 的线性映射；Week 5 笔记提到 Cohen-Sutherland 与 Liang-Barsky。
+
+要求：中文；解释为什么要裁剪、裁剪处理什么几何对象、Clipping 和 NDC / Viewport 的先后关系；介绍 Cohen-Sutherland 的 outcode 思想和 Liang-Barsky 的参数化思想；给出 viewport mapping 的公式或直觉，并解释输入输出坐标；标注来源；不要写成最终学习指南。

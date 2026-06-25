@@ -1,0 +1,43 @@
+{
+  "module": "week5-6",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week5-6-stage1.json",
+  "run_dir": "notebooklm-raw/week5-6/runs/20260625-232348",
+  "started_at": "2026-06-25T15:23:48.973767+00:00",
+  "finished_at": "2026-06-25T15:26:12.794342+00:00",
+  "batches_total": 3,
+  "batches_completed": 3,
+  "batches_ok": 3,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "overview-skeleton",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 50.57,
+      "retry_count": 0,
+      "conversation_id": "e7b3331d-4229-492b-a7d4-c123bd033b86"
+    },
+    {
+      "id": "slide-skeleton-lecture04-05-part3",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 37.18,
+      "retry_count": 0,
+      "conversation_id": "7facf77b-1650-4b44-8b76-3e19180467cf"
+    },
+    {
+      "id": "slide-skeleton-lecture06",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 36.25,
+      "retry_count": 0,
+      "conversation_id": "d8642232-16f4-4f1b-b453-227f838a76bc"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 143.82,
+  "total_retry_count": 0
+}

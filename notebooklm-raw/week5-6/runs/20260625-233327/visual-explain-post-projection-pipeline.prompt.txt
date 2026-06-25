@@ -1,0 +1,5 @@
+【单问·Stage 3 视觉解释】基于 Week 5 课堂记录、课件04-Lecture04-05-2025 和课件05-Lecture06-2025，请把 Part 3 的 Projection 后到 framebuffer 前的管线整理成可视化解释素材。
+
+Focus map 指出：指南需要一张完整图，说明 Clipping、Viewport Transformation、Scan Conversion / Rasterization、Hidden Surface Removal / Depth Test 的输入输出、坐标状态和责任边界。
+
+要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)，例如 NDC、HSR、Z-buffer；按 Clip Space / NDC、Viewport / Screen Coordinates、Fragments、Depth Buffer、Frame Buffer 的顺序解释每一步；给出适合改写成 Mermaid flowchart 的节点和箭头；标注来源；不要写成最终指南全文。

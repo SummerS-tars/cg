@@ -1,0 +1,93 @@
+{
+  "module": "week5-6",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 5-6 / Part 3：基于 stage-1 真实骨架的模块展开（v4.1 dynamic raw stage 2）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P3",
+  "stage": "stage-2-module-expansion",
+  "stage_input_summary": "notebooklm-raw/week5-6/stage1-summary.md",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "carry_forward": "Agent 读取 stage-2 answers 后产出 notebooklm-raw/week5-6/focus-map.md，并把 critical/important/normal、缺口与 deep-dive 目标显式写入 stage-3 manifest。",
+    "postpone_until_focus_map": [
+      "misconceptions-*",
+      "project-bridge",
+      "glossary-raw"
+    ]
+  },
+  "scope": {
+    "weeks": ["Week 5", "Week 6"],
+    "sources": [
+      "笔记-week05-周一-图形学",
+      "课件04-Lecture04-05-2025",
+      "课件05-Lecture06-2025"
+    ],
+    "stage1_run": "notebooklm-raw/week5-6/runs/20260625-232348",
+    "stage1_modules": [
+      "Lecture04-05 后半：Clipping、Viewport Transformation、Scan Conversion、Programmable Pipeline",
+      "Lecture06：Hidden Surface Removal、object-space / image-space algorithms、Z-buffer、A-buffer、Ray Casting、BSP Tree",
+      "Week 5 笔记：Vulkan / shader 工程承接"
+    ],
+    "source_gaps": [
+      "未发现 Week 6 课堂笔记",
+      "未发现 Project / Assignment 文档",
+      "Stage 1 raw 未实质覆盖 Sampling / Anti-aliasing"
+    ]
+  },
+  "batches": [
+    {
+      "id": "concept-breakdown-pipeline-after-projection",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "投影后到像素前的管线后段展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 5 课堂记录、课件04-Lecture04-05-2025 和课件05-Lecture06-2025，请展开讲解 Part 3 中“投影之后、像素之前的 3D Rendering Pipeline 后段”。\n\nStage 1 骨架依据：P3 从 Part 2 的 Projection / Clip Space 承接到 Clipping、Viewport Transformation、Scan Conversion、Hidden Surface Removal，并进入可编程管线背景。\n\n要求：中文；先说明这一段管线解决什么图形问题；按 Clipping、Viewport Transformation、Scan Conversion / Rasterization、Hidden Surface Removal 的顺序解释输入、输出、坐标或数据状态；说明与 Week 3-4 MVP / NDC 的关系；标注来源；不要展开完整算法细节；不要总结易混点。"
+    },
+    {
+      "id": "concept-breakdown-clipping-viewport",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "important",
+      "title": "Clipping 与 Viewport Transformation 展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 5 课堂记录和课件04-Lecture04-05-2025，请展开讲解 Part 3 中“Clipping 与 Viewport Transformation”。\n\nStage 1 骨架依据：Lecture04-05 后半把 Clipping 放在投影后、视口前，并给出 window-to-viewport 的线性映射；Week 5 笔记提到 Cohen-Sutherland 与 Liang-Barsky。\n\n要求：中文；解释为什么要裁剪、裁剪处理什么几何对象、Clipping 和 NDC / Viewport 的先后关系；介绍 Cohen-Sutherland 的 outcode 思想和 Liang-Barsky 的参数化思想；给出 viewport mapping 的公式或直觉，并解释输入输出坐标；标注来源；不要写成最终学习指南。"
+    },
+    {
+      "id": "concept-breakdown-scan-conversion-rasterization",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "Scan Conversion / Rasterization 展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 5 课堂记录和课件04-Lecture04-05-2025，请展开讲解 Part 3 中“Scan Conversion / Rasterization”的角色。\n\nStage 1 骨架依据：课件04-Lecture04-05 把 Scan Conversion 放在 3D Rendering Pipeline 末端，负责将几何信息转为像素，并与 texturing 和 hidden surface 处理相关。\n\n要求：中文；先讲 scan conversion / rasterization 解决什么问题；说明它接收什么几何或屏幕空间输入，输出什么像素/fragment 信息；解释它与 Clipping、Viewport、Hidden Surface Removal、Texturing 的前后关系；如来源中提到三角形覆盖、扫描线或插值，请按来源展开；如未覆盖，请明确说明 raw 未提供细节；标注来源；不要编造未在来源中的算法细节。"
+    },
+    {
+      "id": "concept-breakdown-programmable-pipeline",
+      "stage": "stage-2",
+      "layer": "L2",
+      "priority": "important",
+      "title": "固定管线到可编程管线展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 5 课堂记录和课件04-Lecture04-05-2025，请展开讲解 Part 3 中“Fixed Pipeline 到 Programmable Pipeline，以及现代 API / shader 工程位置”。\n\nStage 1 骨架依据：Week 5 笔记提到 Vulkan、GPU 资源管理、shader 中手动矩阵计算；课件04-Lecture04-05 对比 DX10/11/12 可编程管线架构。\n\n要求：中文；解释 fixed pipeline 与 programmable pipeline 的差异；说明 vertex shader、pixel/fragment shader、geometry/tessellation shader 在管线中的位置；把 MVP、clipping、rasterization、hidden surface 与 shader / GPU 固定功能阶段的关系讲清；标注来源；不要展开用户未提供的 Project 文档细节。"
+    },
+    {
+      "id": "concept-breakdown-hidden-surface-overview",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "Hidden Surface Removal 总览展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于课件05-Lecture06-2025 和 Week 5 课堂记录，请展开讲解 Part 3 中“Hidden Surface Removal / 消隐”的总览。\n\nStage 1 骨架依据：Lecture06 明确讲消隐原因、管线位置、object-space / image-space 分类、back-face culling、depth sort / painter、ray casting、Z-buffer、A-buffer、scan-line、area subdivision、BSP tree。\n\n要求：中文；先讲为什么需要消隐，以及背面、遮挡、图像平面重叠或相交分别是什么；解释 object-space algorithms 和 image-space algorithms 的区别；概述 back-face culling、depth sort / painter、ray casting 等方法的思想和适用位置；标注来源；不要深入 Z-buffer 公式细节。"
+    },
+    {
+      "id": "concept-breakdown-depth-buffer-algorithms",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "Z-buffer / A-buffer / BSP 等深度算法展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于课件05-Lecture06-2025，请展开讲解 Part 3 中“Z-buffer、A-buffer、BSP Tree、Scan-line、Area Subdivision”等消隐算法。\n\nStage 1 骨架依据：Lecture06 总结强调深入理解 Z-buffer、A-buffer 和 Ray Casting，熟悉 BSP Tree 与 Back-face Culling，了解 OpenGL 如何处理消隐。\n\n要求：中文；重点解释 Z-buffer 的数据结构、每个像素的深度比较流程、与 rasterization / fragment 生成的关系；解释 A-buffer 相比 Z-buffer 试图补什么；概述 BSP Tree、Scan-line、Area Subdivision 的基本思想；说明 OpenGL / GPU 中 depth test 的位置（如来源支持）；标注来源；不要总结易混点。"
+    }
+  ]
+}

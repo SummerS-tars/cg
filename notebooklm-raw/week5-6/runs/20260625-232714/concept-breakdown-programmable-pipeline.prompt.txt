@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 5 课堂记录和课件04-Lecture04-05-2025，请展开讲解 Part 3 中“Fixed Pipeline 到 Programmable Pipeline，以及现代 API / shader 工程位置”。
+
+Stage 1 骨架依据：Week 5 笔记提到 Vulkan、GPU 资源管理、shader 中手动矩阵计算；课件04-Lecture04-05 对比 DX10/11/12 可编程管线架构。
+
+要求：中文；解释 fixed pipeline 与 programmable pipeline 的差异；说明 vertex shader、pixel/fragment shader、geometry/tessellation shader 在管线中的位置；把 MVP、clipping、rasterization、hidden surface 与 shader / GPU 固定功能阶段的关系讲清；标注来源；不要展开用户未提供的 Project 文档细节。
