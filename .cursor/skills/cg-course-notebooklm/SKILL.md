@@ -154,7 +154,7 @@ notebooklm-raw/<module>/runs/latest → 最近 completed run
 - 首次出现的专业术语、算法名、坐标空间、矩阵名必须纳入术语表或局部术语块；内部 Review 要专门排查未解释术语
 - 核心章节附近使用简短 `参考 raw` 引用块；最终指南不得用末尾长表集中堆“资料索引”
 - 最终指南不得包含 `Step 4 补充采集说明`、补采计划或 manifest 计划；这些内容放到 `review-iteration.md`、`focus-map.md` 或采集说明文档
-- Markdown 表格要检查未转义竖线，表格内绝对值优先写为 `abs(m)`，避免 `|m|` 破坏渲染
+- Markdown 表格要检查未转义竖线，表格内绝对值优先写为 `abs(m)`，避免竖线绝对值写法破坏渲染
 - 不得一次写完就交付：必须经历「基础框架 → 基础补充 → 重难点深挖 → 内部 Review → 迭代整合 → 再 Review」后，才进入用户 Review。
 
 **产出**：`guides/CG-Week{N}-学习指南.md` 或 `guides/CG-Week{N-M}-学习指南.md`

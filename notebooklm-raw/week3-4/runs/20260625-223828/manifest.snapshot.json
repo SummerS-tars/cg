@@ -16,8 +16,17 @@
     ]
   },
   "scope": {
-    "weeks": ["Week 3", "Week 4"],
-    "topics": ["2D/3D 几何变换", "坐标系与复合变换", "相机/观察变换", "正交与透视投影", "裁剪空间与 NDC"],
+    "weeks": [
+      "Week 3",
+      "Week 4"
+    ],
+    "topics": [
+      "2D/3D 几何变换",
+      "坐标系与复合变换",
+      "相机/观察变换",
+      "正交与透视投影",
+      "裁剪空间与 NDC"
+    ],
     "source_alignment_note": "P2 范围依据 notebooklm-raw/semester-parts.md 与 guides/CG课程-16周内容梳理.md；2026-06-25 已重新同步 Windows 登录态并校准 NotebookLM source list，Week 4 对应课件真实名称为 课件04-Lecture04-05-2025。"
   },
   "sources_hint": [

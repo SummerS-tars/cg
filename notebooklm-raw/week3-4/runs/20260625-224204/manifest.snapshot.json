@@ -1,0 +1,95 @@
+{
+  "module": "week3-4",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 3-4 / Part 2：基于 stage-1 真实骨架的模块展开（v4.1 dynamic raw stage 2）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P2",
+  "stage": "stage-2-module-expansion",
+  "stage_input_summary": "notebooklm-raw/week3-4/stage1-summary.md",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "carry_forward": "Agent 读取 stage-2 answers 后产出 notebooklm-raw/week3-4/focus-map.md，并把 critical/important/normal、缺口与 deep-dive 目标显式写入 stage-3 manifest。",
+    "postpone_until_focus_map": [
+      "misconceptions-*",
+      "project-bridge",
+      "glossary-raw"
+    ]
+  },
+  "scope": {
+    "weeks": [
+      "Week 3",
+      "Week 4"
+    ],
+    "sources": [
+      "笔记-week03-周一-图形学",
+      "笔记-week04-周一-图形学",
+      "课件03-Lecture03-2026",
+      "课件04-Lecture04-05-2025"
+    ],
+    "stage1_run": "notebooklm-raw/week3-4/runs/20260625-223828",
+    "stage1_modules": [
+      "Lecture03：几何变换、齐次坐标、4x4 矩阵、变换组合、3D 旋转、层次结构",
+      "Lecture04：渲染管线观察段、相机模型、观察变换、投影变换、裁剪、NDC、视口变换"
+    ],
+    "excluded_or_compressed": [
+      "Lecture05 可编程管线细节仅作为后续承接背景",
+      "几何原语、Z-buffer 只用于管线定位，不作为 Part 2 主线深挖"
+    ]
+  },
+  "batches": [
+    {
+      "id": "concept-breakdown-geometric-transforms",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "几何变换与齐次坐标展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 3 课堂记录和课件03-Lecture03-2026，请展开讲解 Part 2 中“2D/3D 几何变换、齐次坐标与 4x4 矩阵”这一模块。\n\nStage 1 骨架依据：Lecture03 包含变换导论、2D/3D 缩放/旋转/平移/错切、齐次坐标、4x4 矩阵统一表达；这是 Part 2 核心。\n\n要求：中文；先讲这些变换解决什么图形问题，再按缩放、旋转、平移、错切、齐次坐标组织；给出关键矩阵或公式并解释几何意义、输入输出坐标、w 分量和点/向量区别；提供至少一个小型数值或图形例子；标注来源；不要展开相机和投影；不要总结易混点。"
+    },
+    {
+      "id": "concept-breakdown-composition-hierarchy",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "变换组合、矩阵顺序与层次结构展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 3 课堂记录和课件03-Lecture03-2026，请展开讲解 Part 2 中“变换组合、矩阵顺序、局部/世界坐标和变换层次结构”这一模块。\n\nStage 1 骨架依据：Lecture03 强调矩阵组合顺序重要、3D 旋转不交换、scene graph / hierarchy 用父子矩阵链管理复杂对象。\n\n要求：中文；解释为什么变换顺序会改变视觉结果；说明局部坐标、世界坐标、父子节点矩阵如何连乘；用一个机器人手臂、太阳-行星或对象实例化例子说明矩阵链；说明右手定则和 3D 旋转顺序；标注来源；不要提前总结常见错误或 misconceptions。"
+    },
+    {
+      "id": "concept-breakdown-camera-view",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "相机模型与观察变换展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 4 课堂记录和课件04-Lecture04-05-2025，请展开讲解 Part 2 中“相机模型与观察变换”这一模块。\n\nStage 1 骨架依据：Lecture04 包含针孔相机、eye position、view direction、up direction、FOV、view plane，以及用 R/U/B 基向量和相机位置构造 view matrix。\n\n要求：中文；先讲相机在渲染管线中解决什么问题；解释世界坐标到相机坐标的映射；说明 eye/look-at/up 如何构造相机基向量，为什么可先构造 camera-to-world 再求逆得到 view matrix；给出矩阵或伪推导并解释几何意义；标注来源；不要展开投影矩阵。"
+    },
+    {
+      "id": "concept-breakdown-projection",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "正交与透视投影展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 4 课堂记录和课件04-Lecture04-05-2025，请展开讲解 Part 2 中“投影变换：平行/正交投影与透视投影”这一模块。\n\nStage 1 骨架依据：Lecture04 将投影分为平行投影和透视投影，强调透视投影的近大远小、相似三角形推导、frustum 和 4x4 投影矩阵。\n\n要求：中文；先说明投影在 view transform 之后解决什么图形问题；对比平行/正交/斜投影和透视投影；用相似三角形推导透视投影坐标的直觉；说明 frustum、near/far、FOV/aspect 与投影矩阵各自控制什么；标注来源；不要展开裁剪算法。"
+    },
+    {
+      "id": "concept-breakdown-clip-ndc-viewport",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "裁剪空间、NDC 与视口变换展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 4 课堂记录和课件04-Lecture04-05-2025，请展开讲解 Part 2 中“裁剪空间、透视除法、NDC 与视口变换”这一模块。\n\nStage 1 骨架依据：Lecture04 在投影后讲裁剪、window-to-viewport 映射；overview-skeleton 指出局部空间 -> 世界空间 -> 相机空间 -> 裁剪空间 -> 屏幕空间 -> 图像空间。\n\n要求：中文；说明 clip space、透视除法、NDC、screen/window/viewport/image coordinates 的先后关系；解释为什么要先裁剪再映射到视口；给出 window-to-viewport 的线性映射公式或直觉；标注来源；可以提 Cohen-Sutherland 作为初步背景但不要深入算法细节；不要总结易混点。"
+    },
+    {
+      "id": "slide-module-detail-lecture04-part2",
+      "stage": "stage-2",
+      "layer": "L2",
+      "priority": "important",
+      "title": "课件04 Part 2 原序细化",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定·Stage 2】请仅依据以下课件：课件04-Lecture04-05-2025。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件原顺序，细化其中属于 Week 4 / Part 2 的相机模型、观察变换、投影变换、裁剪、视口变换内容。若同一课件后半部分进入 Lecture05 或可编程管线延伸，请标为“后续延伸”，只用 1-2 段定位。\n\n要求：中文；按课件顺序编号；每个模块说明学习目标、关键公式/图、关键例题或示意；说明该模块在渲染管线中的前后关系；每点标注来源；不要总结易混点或常见错误。"
+    }
+  ]
+}

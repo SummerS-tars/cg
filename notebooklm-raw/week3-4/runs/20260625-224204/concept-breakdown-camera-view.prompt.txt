@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 4 课堂记录和课件04-Lecture04-05-2025，请展开讲解 Part 2 中“相机模型与观察变换”这一模块。
+
+Stage 1 骨架依据：Lecture04 包含针孔相机、eye position、view direction、up direction、FOV、view plane，以及用 R/U/B 基向量和相机位置构造 view matrix。
+
+要求：中文；先讲相机在渲染管线中解决什么问题；解释世界坐标到相机坐标的映射；说明 eye/look-at/up 如何构造相机基向量，为什么可先构造 camera-to-world 再求逆得到 view matrix；给出矩阵或伪推导并解释几何意义；标注来源；不要展开投影矩阵。

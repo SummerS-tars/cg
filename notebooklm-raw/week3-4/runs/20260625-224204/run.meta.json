@@ -1,0 +1,67 @@
+{
+  "module": "week3-4",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week3-4-stage2.json",
+  "run_dir": "notebooklm-raw/week3-4/runs/20260625-224204",
+  "started_at": "2026-06-25T14:42:04.117771+00:00",
+  "finished_at": "2026-06-25T14:58:59.088236+00:00",
+  "batches_total": 6,
+  "batches_completed": 4,
+  "batches_ok": 4,
+  "batches_skipped": 0,
+  "batches_failed": 2,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "concept-breakdown-geometric-transforms",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 42.31,
+      "retry_count": 0,
+      "conversation_id": "4366cdb4-473d-495f-ac8e-b4dca9918238"
+    },
+    {
+      "id": "concept-breakdown-composition-hierarchy",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 48.76,
+      "retry_count": 0,
+      "conversation_id": "48e34c07-1b6b-4e2f-a2f4-d80aab60cca7"
+    },
+    {
+      "id": "concept-breakdown-camera-view",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 43.79,
+      "retry_count": 0,
+      "conversation_id": "90c7663f-6d40-4fbf-976a-1ce9e9272f58"
+    },
+    {
+      "id": "concept-breakdown-projection",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 37.52,
+      "retry_count": 0,
+      "conversation_id": "e3a0981c-ebcf-4dab-b8fc-7d53e86815d0"
+    },
+    {
+      "id": "concept-breakdown-clip-ndc-viewport",
+      "layer": "L2-L3",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "",
+      "elapsed_seconds": 253.53
+    },
+    {
+      "id": "slide-module-detail-lecture04-part2",
+      "layer": "L2",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "",
+      "elapsed_seconds": 232.36
+    }
+  ],
+  "status": "partial",
+  "total_elapsed_seconds": 492.56,
+  "total_retry_count": 0
+}
