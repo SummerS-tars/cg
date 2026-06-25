@@ -1,9 +1,19 @@
 # CG Week 1-2 学习指南：图形学地图、扫描转换与数学语言
 
 > **对应 Part**：P1 / `week1-2`  
-> **raw run**：`notebooklm-raw/week1-2/runs/latest`  
+> **范围定位**：Week 1-2 / 笔记-week01、笔记-week02、课件01-Lecture01-2026、课件02-Lecture02-2026；真实主线是图形学总览、渲染管线入门、2D 扫描转换与后续变换所需的数学语言。
 > **知识图谱**：`notebooklm-raw/week1-2/knowledge-graph.md`  
 > **状态**：Agent 内部 Review 后的用户 Review 版；已按术语首现、英语考试对照、章节就近引用标准修订。
+
+## 本指南要回答的问题 / 学习目标
+
+读完本指南，你应该能回答：
+
+- CG(Computer Graphics，计算机图形学) 为什么要同时研究建模(Modeling)、渲染(Rendering)、动画(Animation)和感知(Perception)。
+- 一个几何图元怎样沿“顶点(Vertex) → 光栅化(Rasterization) → 片元(Fragment) → Framebuffer(Frame Buffer，帧缓冲)”变成屏幕像素。
+- DDA(Digital Differential Analyzer，数字微分分析器) 与 Bresenham 直线算法(Bresenham Line Algorithm)分别怎样把连续直线落到离散像素格。
+- 为什么点(Point)、向量(Vector)、坐标系(Coordinate System)、基(Basis)和齐次坐标(Homogeneous Coordinates)是 Week 3-4 变换、相机和投影的前置语言。
+- 哪些内容是课程真实 source 支持的 Week 1-2 主线，哪些只是为后续 Part 做承接预热。
 
 ## 0. 术语表
 
@@ -101,7 +111,7 @@ flowchart LR
 
 **小结**：渲染管线解释了“数据怎么流动”，但其中最关键的一步是从连续几何到离散片元。下一节看 Week 2 的扫描转换。
 
-> **参考来源：** Week 1-2 课程记录；课件01-Lecture01-2026；课件02-Lecture02-2026。  
+> **参考来源：** Week 1-2 课程记录；课件01-Lecture01-2026；课件02-Lecture02-2026。
 > raw batch: `concept-breakdown-rendering-pipeline`、`deep-dive-pipeline-dataflow`
 
 ### 2.3 扫描转换：连续几何如何落到像素格
@@ -247,3 +257,18 @@ Week 1-2 是全课地基：
 1. 先能用自己的话解释 CG(Computer Graphics，计算机图形学) 的四类任务：建模(Modeling)、渲染(Rendering)、动画(Animation)、感知(Perception)。
 2. 再画出“顶点(Vertex) → 光栅化(Rasterization) → 片元(Fragment) → Framebuffer(Frame Buffer，帧缓冲)”的数据流。
 3. 最后手推一个 DDA(Digital Differential Analyzer，数字微分分析器) 或 Bresenham 直线算法(Bresenham Line Algorithm) 的小例子，并说明为什么主步进轴要看 $\operatorname{abs}(m)$。
+
+### 自测题
+
+1. 为什么说“片元(Fragment)还不是最终像素”？它还要经过哪些后段处理？
+2. 对 $0 \le m \le 1$ 的直线，Bresenham 直线算法(Bresenham Line Algorithm)的决策参数 $p_k$ 如何决定选右边像素还是右上像素？
+3. 扫描线填充(Scanline Filling)和区域填充(Region Filling)的输入分别是什么，为什么不能混成同一种算法？
+4. 为什么齐次坐标(Homogeneous Coordinates)可以让平移(Translation)进入矩阵乘法？点(Point)和向量(Vector)的 $w$ 分量为什么不同？
+5. 如果后续 Week 3-4 的 MVP(Model-View-Projection，模型-观察-投影)矩阵结果不对，你会从“矩阵顺序、坐标空间、点/向量混淆”中的哪几项排查？
+
+### 前后 Part 承接
+
+P1 从“图形学是什么”落到“连续几何如何变成像素”和“几何如何被数学表示”。下一 Part 会把这里的点、向量、矩阵和齐次坐标正式推进到模型变换(Model Transform)、观察变换(View Transform)和投影变换(Projection Transform)；再后面的光栅化、着色和光追都会反复使用“几何表示 → 管线阶段 → 像素输出”这条主线。
+
+> **参考来源：** Week 1-2 课程记录；课件01-Lecture01-2026；课件02-Lecture02-2026。
+> raw batch: `overview-skeleton`、`project-bridge`、`misconceptions-part1`
