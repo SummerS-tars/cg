@@ -1,8 +1,9 @@
 {
   "module": "week1-2",
   "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
-  "description": "Week 1-2：图形学总览、渲染管线与数学基础（v4 分层 raw 采集；单问单答，每 batch 新对话）",
-  "workflow": "v4-layered-raw-coverage",
+  "description": "Week 1-2：图形学总览、渲染管线与数学基础（v4 静态分层试跑；单问单答，每 batch 新对话）",
+  "workflow": "v4-layered-raw-coverage-pre-v4.1",
+  "compatibility_note": "本 manifest 是 v4.1 dynamic manifest 前的静态分层试跑，已生成 raw/knowledge graph/学习指南，保留用于追溯。后续 Part 采用 stage-1 skeleton -> stage1-summary -> stage-2 expansion -> focus-map -> stage-3 targeted deep dive -> optional stage-4 的动态流程。",
   "part": "P1",
   "scope": {
     "weeks": ["Week 1", "Week 2"],

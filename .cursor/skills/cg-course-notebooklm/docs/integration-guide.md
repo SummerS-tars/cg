@@ -1,6 +1,6 @@
 # 学习指南整合规范
 
-> **版本**：v2（分层 raw + 内部迭代版）  
+> **版本**：v2.1（动态分层 raw + 内部迭代版）  
 > **配套**：`.cursor/skills/cg-course-notebooklm/SKILL.md`  
 > **标杆产出**：`guides/CG-Week*-学习指南.md`  
 > **标杆图谱**：`notebooklm-raw/<module>/knowledge-graph.md`
@@ -80,14 +80,12 @@ raw 采集尽量全，指南整合要分层：
 
 | raw 类型 | 指南处理 |
 |----------|----------|
-| `overview-skeleton` | 转成知识地图、章节顺序和全景节，不直接大段粘贴 |
-| `concept-breakdown-*` | 作为核心知识的基础解释，合并重复、补来源 |
-| `deep-dive-*` | 放入重难点、追问、直观理解、公式/矩阵意义 |
-| `examples-*` | 改写为读者可跟着走的例题、图形小例子或伪代码 |
-| `slide-skeleton-*` | 用于课件原序梳理和资料索引，也辅助 Part 全景 |
-| `slide-module-detail-*` | 提取课件如何讲、重要图片、示例、例题，支撑重点章节 |
-| `misconceptions-*` | 汇总到易混点和常见错误 |
-| `project-bridge` | 汇总到知识串联、Project/代码/考试复习 |
+| Stage 1 `overview-skeleton` / `slide-skeleton-*` | 转成真实课程骨架、章节顺序和 source 对齐，不直接大段粘贴 |
+| `stage1-summary.md` | 作为 stage-2 manifest 的显式输入，记录真实模块、偏差和缺失 |
+| Stage 2 `concept-breakdown-*` / `slide-module-detail-*` | 作为核心知识的基础解释，合并重复、补来源 |
+| `focus-map.md` | 标注 critical / important / normal、难点、缺口，决定 stage-3 是否追问 |
+| Stage 3 `deep-dive-*` / `examples-*` / `visual-explain-*` | 放入重难点、追问、直观理解、公式/矩阵意义和可跟读例题 |
+| Optional Stage 4 `misconceptions-*` / `project-bridge` / `glossary-raw` | 仅当 focus map 显示确有价值时汇总到易混点、Project/代码/考试复习或术语表 |
 
 ### 2.4 三层叙事（每章必查）
 
@@ -205,7 +203,8 @@ Mermaid 图只在能降低理解成本时使用，优先表达：
 |------|------|
 | 知识图谱 | `notebooklm-raw/<module>/knowledge-graph.md` |
 | 学习指南 | `guides/CG-Week*-学习指南.md` |
-| manifest | `notebooklm-raw/manifests/<module>.json` |
+| 分阶段 manifest | `notebooklm-raw/manifests/<module>-stageN.json` |
+| 阶段摘要 / focus map | `notebooklm-raw/<module>/stage1-summary.md`、`focus-map.md` |
 | 原始回答 | `notebooklm-raw/<module>/runs/latest/` |
 
 定稿检查项见同目录 `checklist.md`。

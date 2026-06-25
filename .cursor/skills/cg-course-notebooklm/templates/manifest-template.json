@@ -1,8 +1,17 @@
 {
   "module": "weekX-Y",
   "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
-  "description": "Week X-Y：<计算机图形学主题>（分层 raw 采集；单问单答，每 batch 新对话）",
-  "workflow": "v4-layered-raw-coverage",
+  "description": "Week X-Y：<计算机图形学主题>（v4.1 dynamic raw stage 1；单问单答，每 batch 新对话）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "stage": "stage-1-skeleton",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "carry_forward": "Agent 必须读取上一阶段 answers，产出 summary / focus map，并显式写入下一阶段 prompt 或 manifest metadata；不得依赖 NotebookLM chat history。",
+    "stage_1": "skeleton / slide-skeleton：固定少量总结类问题，获取真实课程/课件原序骨架。",
+    "stage_2": "module expansion / concept breakdown：根据 stage-1 summary 生成。",
+    "stage_3": "targeted deep dive / examples / visual explanation：根据 focus-map 生成。",
+    "stage_4_optional": "misconceptions / project-bridge / glossary raw：仅在 stage-2/3 显示确有价值时追加。"
+  },
   "sources_hint": [
     "笔记-week0X-CG",
     "课件0N-*.pdf",
@@ -11,6 +20,7 @@
   "batches": [
     {
       "id": "overview-skeleton",
+      "stage": "stage-1",
       "layer": "L0",
       "priority": "critical",
       "title": "Part 全面内容骨架",
@@ -18,60 +28,44 @@
       "prompt": "【单问·Part 骨架】请综合 Week X-Y 课程记录和相关课件，全面梳理本 Part 讲了哪些大知识点。\n\n依据：Week X/Y 课程记录、课件 NN、必要的 Project 文档。\n要求：中文；按授课/课件顺序列出大知识点；说明每个大知识点解决的图形学问题、重要性（核心/重要/了解）、相关来源；可以不用展开公式细节；不要遗漏边角主题；不要写成学习指南正文。"
     },
     {
-      "id": "concept-breakdown-topic",
-      "layer": "L2",
-      "priority": "critical",
-      "title": "大知识点拆分与基础解释",
-      "clear_conversation": true,
-      "prompt": "【单问·知识点拆分】请仅围绕：<一个 overview-skeleton 中的大知识点>。\n\n依据：Week X/Y 课程记录、课件 NN。\n要求：中文；拆出该大知识点下的子知识点；分别给基础解释、几何/视觉直觉、在渲染管线或坐标空间中的位置；如涉及公式/矩阵，请先解释符号和输入输出；每点标注来源；不要同时讲其他大主题。"
-    },
-    {
-      "id": "deep-dive-topic",
-      "layer": "L3",
-      "priority": "critical",
-      "title": "重点难点深入解释",
-      "clear_conversation": true,
-      "prompt": "【单问·深挖】请仅深入讲解：<核心/难点子主题>。\n\n依据：课程记录、课件 NN、必要的教材或 Project 文档。\n要求：中文；先讲直观图像，再讲符号、公式/矩阵/算法步骤；给一个小例子或数值/几何例；说明常见误解和调试错误；标注来源；不要泛泛复述整个 Part。"
-    },
-    {
       "id": "slide-skeleton-slides",
+      "stage": "stage-1",
       "layer": "L1",
       "priority": "critical",
       "title": "课件原序全面骨架",
       "clear_conversation": true,
-      "prompt": "【单问·课件限定】请仅依据以下课件：<课件 NN 标题/文件名>。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件分了几个主要模块？每个模块分别讲了什么知识点？哪些模块/知识点最重要？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键例子或例题；每点标注来源；不要展开成完整学习指南。"
-    },
-    {
-      "id": "slide-module-detail-slides-module",
+      "prompt": "【单问·课件限定·Stage 1】请仅依据以下课件：<课件 NN 标题/文件名>。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件分了几个主要模块？每个模块分别讲了什么知识点？哪些模块/知识点最重要？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键例子或例题；每点标注来源；不要展开成完整学习指南。"
+    }
+  ],
+  "next_stage_templates": {
+    "stage_2_batch": {
+      "id": "concept-breakdown-<module>",
+      "stage": "stage-2",
       "layer": "L2",
-      "priority": "important",
-      "title": "课件模块详细梳理",
+      "priority": "critical",
+      "title": "由 stage1-summary 生成的真实模块拆分",
       "clear_conversation": true,
-      "prompt": "【单问·课件限定·模块详解】请仅依据以下课件：<课件 NN 标题/文件名>。不要使用其他来源。\n\n问题：请详细梳理课件中的模块：<模块名>。\n\n要求：中文；解释每个知识点的具体含义；说明课件是如何讲解的；指出重要图片、图示、流程、示例或例题；如果课件没有完整例题，请明确说明并构思一个贴合课件内容的小例子；标注来源。"
+      "stage_input_summary": "摘录 stage1-summary.md 中与该模块相关的真实课程/课件骨架、source 匹配和缺口。",
+      "prompt": "【单问·知识点拆分·Stage 2】请仅围绕 stage-1 summary 中确认的真实模块：<模块名>。\n\n上一阶段摘要：<粘贴 stage1-summary 中该模块的来源、顺序、重点和缺口>。\n\n要求：中文；拆出子知识点；分别给基础解释、几何/视觉直觉、在渲染管线或坐标空间中的位置；如涉及公式/矩阵，请先解释符号和输入输出；每点标注来源；不要同时讲其他大主题。"
     },
-    {
-      "id": "examples-topic",
+    "stage_3_batch": {
+      "id": "deep-dive-<topic>",
+      "stage": "stage-3",
       "layer": "L3",
-      "priority": "important",
-      "title": "示例与例题",
+      "priority": "critical",
+      "title": "由 focus-map 生成的定向深挖",
       "clear_conversation": true,
-      "prompt": "【单问·示例】请仅围绕：<主题>，从课件、课程记录、教材或 Project 文档中抽取示例/例题并讲解；如果没有可直接引用的例题，请明确说明并构思一个符合课程语境的小例题。\n\n要求：中文；逐步讲解输入、过程、输出和图形学意义；标注来源或说明构思依据；不要扩展到其他主题。"
+      "focus_map_ref": "摘录 focus-map.md 中该主题的优先级、难点、raw 缺口和追问目标。",
+      "prompt": "【单问·定向深挖·Stage 3】请仅深入讲解 focus-map 中标为 <critical/important> 的主题：<主题>。\n\nfocus map 摘要：<粘贴该主题为何需要深挖、已有 raw 覆盖和缺口>。\n\n要求：中文；先讲直观图像，再讲符号、公式/矩阵/算法步骤；给一个小例子或数值/几何例；标注来源；不要泛泛复述整个 Part。"
     },
-    {
-      "id": "misconceptions-topic",
-      "layer": "L3",
-      "priority": "important",
-      "title": "易混淆概念",
-      "clear_conversation": true,
-      "prompt": "【单问·易混点】请仅围绕：<主题或 Part>，列出最易混淆的 3-5 组概念或常见错误，用对比表说明：为什么易混、正确理解、图形学直觉、记忆技巧。\n\n依据：课程记录、课件。\n要求：中文；标注来源；优先覆盖课程中容易考、Project 中容易错的点。"
-    },
-    {
-      "id": "project-bridge",
+    "stage_4_optional_batch": {
+      "id": "misconceptions-or-project-bridge-<topic>",
+      "stage": "stage-4-optional",
       "layer": "L4",
       "priority": "important",
-      "title": "与前后周和 Project 衔接",
+      "title": "可选后置 raw",
       "clear_conversation": true,
-      "prompt": "【单问·串联】请仅说明：Week X-Y 知识与前后周、渲染管线、Project/作业或考试复习的衔接关系。\n\n依据：课程记录、课件、Project 文档。\n要求：中文；按“前置知识 → 本 Part 作用 → 后续用途 → Project/复习落点”组织；标注来源。"
+      "prompt": "仅当 focus-map.md 或内部 review 明确显示需要时，才生成 misconceptions-*、project-bridge、glossary-raw 或 supplement-* 正式 batch。不要把易混点与常见错误放进最早的固定 raw。"
     }
-  ]
+  }
 }

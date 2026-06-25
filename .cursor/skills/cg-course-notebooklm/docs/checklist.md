@@ -5,9 +5,13 @@
 ## 流程门控
 
 - [ ] Phase 1：`run.meta.json` 状态 `completed`（或目标 batch 均已 ok）
-- [ ] Phase 1：manifest 至少包含 Part 骨架 `overview-skeleton`，并基于其回答拆出 `concept-breakdown-*`
-- [ ] Phase 1：核心/难点已按需补 `deep-dive-*`、`examples-*`、`misconceptions-*` 或 `project-bridge`
+- [ ] Phase 1：已先运行 stage-1 skeleton manifest，且仅包含 `overview-skeleton` / 必要的 `slide-skeleton-*`
+- [ ] Phase 1：已通读 stage-1 raw 并产出 `stage1-summary.md`，stage-2 manifest 基于该摘要生成
+- [ ] Phase 1：已运行 stage-2 module expansion / concept breakdown，并产出 `focus-map.md`
+- [ ] Phase 1：核心/难点已按 focus map 补 stage-3 `deep-dive-*`、`examples-*` 或 `visual-explain-*`
+- [ ] Phase 1：`misconceptions-*`、`project-bridge`、`glossary-raw` 只在 stage-2/3 显示确有价值时作为 optional stage-4 或整合项追加
 - [ ] Phase 1：课件专用 batch 已明确“仅限指定课件”，并覆盖 `slide-skeleton-*` 与必要的 `slide-module-detail-*`
+- [ ] Phase 1：正式 batch 默认 `clear_conversation: true`；上一轮 summary / focus map 已显式写入下一阶段 prompt 或 manifest metadata
 - [ ] Phase 1.5：已通读该模块全部 `*.answer.md`
 - [ ] Phase 1.5：`notebooklm-raw/<module>/knowledge-graph.md` 已产出
 - [ ] 指南章节可追溯到知识图谱节点与 raw batch

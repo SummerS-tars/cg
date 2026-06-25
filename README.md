@@ -22,7 +22,7 @@
 ## 工作流
 
 1. **课件结构分析**：NotebookLM 限定相关课件 → 提取课件原序模块、图形管线、图片/示例与重点
-2. **分层 raw 采集**：设计 v4 manifest → 骨架、知识点拆分、深挖、示例、易混点、Project 串联 → `notebooklm-raw/`
+2. **动态分层 raw 采集**：设计 v4.1 stage-1 manifest → 骨架/课件原序 → Agent 摘要 → stage-2 展开 → Agent focus map → stage-3 定向深挖 → optional stage-4 → `notebooklm-raw/`
 3. **知识图谱**：通读 raw → 产出认知阶梯、坐标/管线关系与叙事承接
 4. **叙事整合**：按图谱撰写学习指南，补全景节、Mermaid/ASCII 图、易混对比，并完成内部 Review 迭代
 5. **定稿**：用户 Review → 更新进度索引
@@ -33,6 +33,7 @@
 - 全课程总览：`guides/CG课程-16周内容梳理.md`
 - Part / 同步矩阵：`notebooklm-raw/semester-parts.md`
 - 整合规范：`.cursor/skills/cg-course-notebooklm/docs/integration-guide.md`
+- Manifest 模板：`.cursor/skills/cg-course-notebooklm/templates/manifest-template.json`
 - 公开写作规范：`guides/学习指南整合规范.md`
 
 ## 主题覆盖

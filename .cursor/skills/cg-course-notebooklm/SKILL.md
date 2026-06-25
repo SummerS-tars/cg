@@ -57,7 +57,7 @@ flowchart LR
 2. 更新 `guides/CG课程-内容梳理.md` 进度
 3. 标注缺失周次、缺失课件与作业关联
 
-## Phase 1：采集
+## Phase 1：动态分层采集（v4.1）
 
 ### 命令（在仓库根目录执行）
 
@@ -84,36 +84,32 @@ python $NLM notebooklm-raw/manifests/<module>.json \
 python $NLM merge-runs <src_run> <dst_run>
 ```
 
-### Manifest 设计原则
+### Manifest 设计原则（multi-stage dynamic manifest）
 
-- **一个 batch = 一个 chat**（`clear_conversation: true`）
-- **raw 覆盖优先**：先问全局骨架，再按骨架拆知识点，再深挖重点/难点；不要在采集阶段为了简短而跳过边角知识。
-- **仍按 Part / module 组织**：每个 Part 独立 manifest、run、knowledge-graph；必要时为同一 Part 增加 `slides-*` 或 `supplement-*` batch。
-- 复杂主题拆开（如变换矩阵 / 投影 / 光照模型 / 光栅化 / 纹理映射各一问）
-- 字段：`id`, `layer`, `priority`, `title`, `prompt`, `clear_conversation`
+- **raw 覆盖优先**：raw 阶段获取足够全面、优质、可选择的材料；指南阶段再判断取舍、易混对比和最终叙事。
+- **Manifest 必须动态生成**：不要一次性写完整 Part 的所有固定 batch。每个正式阶段跑完后，Agent 必须通读上一阶段 raw，写出 summary / focus map，再生成下一阶段 manifest。
+- **仍按 Part / module 组织**：每个 Part 独立 manifest、run、stage summary、focus map、knowledge-graph；必要时为同一 Part 增加 `stage4-*` 或 `supplement-*`。
+- 复杂主题拆开（如变换矩阵 / 投影 / 光照模型 / 光栅化 / 纹理映射各一问），但拆分依据必须来自 stage-1/2 raw，而不是只凭通用 CG 常识。
+- 字段：`id`, `stage`, `layer`, `priority`, `title`, `prompt`, `clear_conversation`；metadata 建议写入 `stage_input_summary` 或 `focus_map_ref`。
 - 模板：`templates/manifest-template.json`
-- 范例路径：`notebooklm-raw/manifests/weekX-Y.json`
+- 范例路径：`notebooklm-raw/manifests/weekX-Y-stage1.json`、`weekX-Y-stage2.json`、`weekX-Y-stage3.json`
 
-### Batch 命名与采集层级
+### clear_conversation 策略
 
-| 层级 | batch id 建议 | 目标 |
-|------|---------------|------|
-| Part 骨架 | `overview-skeleton` | 让 NotebookLM 根据相关课程记录与课件列出完整内容骨架、大知识点和重要性 |
-| 知识点拆分 | `concept-breakdown-<topic>` | 拆出大知识点下的子知识点，给基础解释和理解入口 |
-| 重点深挖 | `deep-dive-<topic>` | 对核心/难点继续拆分子知识点，获取更详细、直观解释 |
-| 示例例题 | `examples-<topic>` | 从课件、课本、Project 或 NotebookLM 可见资料中抽取/构思例题并讲解 |
-| 课件骨架 | `slide-skeleton-<slides>` | 仅限相关课件，按课件顺序梳理模块、知识点和重点 |
-| 课件模块详解 | `slide-module-detail-<slides>-<module>` | 仅限相关课件，逐模块讲含义、图片、示例、例题 |
-| 易混点 | `misconceptions-<topic>` | 对比易混概念、常见错误和记忆方式 |
-| 项目桥接 | `project-bridge` | 把知识点接到 Project、代码管线、考试或复习任务 |
+- **正式主路径**：一个 batch = 一个可追溯 raw 样本，`clear_conversation: true`。这样每个回答不依赖 NotebookLM chat history，便于复现、审计和定位污染。
+- **跨阶段反馈**：上一阶段结果不靠 NotebookLM 历史上下文传递。Agent 读取 `*.answer.md` 后，把 stage summary / focus map 明确写入下一阶段 prompt 或 manifest metadata。
+- **探索性连续追问**：可以临时设 `clear_conversation: false`，但 batch 必须标记 `exploratory: true`，落盘到探索记录；不得作为最终可复现 raw 主路径，除非重写成正式 batch 并重新采集。
 
-### raw 获取顺序
+### Stage 设计与 raw 获取顺序
 
-1. **Part 骨架**：先问 `overview-skeleton`，要求 NotebookLM 综合相关 Week 课程记录和课件，全面列出本 Part 讲了哪些大知识点、顺序、重要性和资料来源。
-2. **知识点拆分**：Agent 通读骨架回答后，为每个大知识点创建 `concept-breakdown-*` batch，要求 NotebookLM 拆子知识点并给基础解释。
-3. **重点判断**：Agent 根据第 2 步 raw 判断核心/难点/易混点，补 `deep-dive-*`、`examples-*`、`misconceptions-*`、`project-bridge`。
-4. **课件专用采集**：对重要课件单独建 `slide-skeleton-*` 与 `slide-module-detail-*`，prompt 必须写明“仅限以下课件”，防止 NotebookLM 混入其他资料。
-5. **补采**：整合时发现缺口，再追加 `supplement-*` 或上述命名 batch，用 `--only` + `--resume` 续跑。
+| Stage | batch id 建议 | 目标 | 进入下一阶段的 Agent 产物 |
+|-------|---------------|------|--------------------------|
+| Stage 1 skeleton / slide-skeleton | `overview-skeleton`、`slide-skeleton-<slides>` | 固定少量总结类问题；按 Part / 课件原序梳理真实内容骨架、顺序、重点、来源 | `stage1-summary.md`；列出真实模块、source 匹配、缺失和 stage-2 问题草案 |
+| Stage 2 module expansion / concept breakdown | `concept-breakdown-<module>`、必要的 `slide-module-detail-*` | 根据 stage-1 真实模块展开子知识点、基础解释、管线/坐标位置 | `focus-map.md`；标注 critical / important / normal、难点、缺口和 stage-3 目标 |
+| Stage 3 targeted deep dive / examples / visual explanation | `deep-dive-<topic>`、`examples-<topic>`、`visual-explain-<topic>` | 仅对重点难点或高价值主题深挖公式、例题、图形直觉、视觉解释 | 可直接进入 knowledge-graph，或列出 stage-4 候选 |
+| Optional Stage 4 | `misconceptions-<topic>`、`project-bridge`、`glossary-raw`、`supplement-*` | 仅当 stage-2/3 显示确有价值时追加易混点、项目桥接、术语 raw 或缺口补采 | `review-iteration.md` 记录为什么追加 |
+
+反例：`misconceptions-*`、`project-bridge` 不宜放在最早固定 raw 中一次跑完。它们更适合作为 Agent 读完 stage-2/3 后的追问或整合项。
 
 ### Prompt 必含
 

@@ -3,7 +3,7 @@
 > **课程**：计算机图形学（Computer Graphics）  
 > **依据**：`guides/CG课程-16周内容梳理.md` 的待校准 16 周框架  
 > **盘点日期**：2026-06-25  
-> **状态**：本文件是采集规划与同步状态矩阵；2026-06-25 已确认 CG Notebook UUID 与 source list，P1 / `week1-2` 已完成 raw、knowledge graph、学习指南与内部 review。
+> **状态**：本文件是采集规划与同步状态矩阵；2026-06-25 已确认 CG Notebook UUID 与 source list，P1 / `week1-2` 已完成 v4.1 前静态分层试跑、knowledge graph、学习指南与内部 review。后续 Part 采用 v4.1 multi-stage dynamic manifest。
 
 ---
 
@@ -21,20 +21,20 @@
 | **P6** | `week12-14` | W12–W14 | 高级渲染 / 光线追踪 / 全局光照 | shadow map、ray tracing、path tracing 资料 | `guides/CG-Week12-14-学习指南.md` |
 | **P7** | `week15-16` | W15–W16 | 项目整合 / 复习展示 | Project 文档、评分标准、复习范围 | `guides/CG-Week15-16-学习指南.md` |
 
-### Part 内采集层级（v4）
+### Part 内采集层级（v4.1 dynamic）
 
-每个 Part 的 manifest 不应只写几个大问题，而要按“覆盖 → 拆分 → 深挖 → 示例 → 串联”设计 batch。raw 阶段覆盖优先于精炼，指南阶段再按重要程度压缩。
+每个 Part 不再一次性写完整固定 batch，而是按“stage-1 骨架 → Agent 摘要 → stage-2 展开 → Agent focus map → stage-3 定向深挖 → optional stage-4”推进。raw 阶段覆盖优先于精炼，指南阶段再按重要程度压缩。
 
-| 层级 | 必要性 | batch id 建议 | 说明 |
-|------|--------|---------------|------|
-| 全面骨架 | 必做 | `overview-skeleton` | NotebookLM 综合相关 Week 记录和课件，列出大知识点、授课顺序、重要性和来源 |
-| 知识点拆分 | 必做 | `concept-breakdown-<topic>` | 对骨架中的每个大知识点拆子知识点，给基础解释、直觉和管线位置 |
-| 重点深挖 | 按需 | `deep-dive-<topic>` | 对核心/难点/易混点继续拆分，补详细解释、推导、直观理解 |
-| 示例例题 | 按需 | `examples-<topic>` | 从课件、教材、Project 中抽取例题；没有现成例题时明确构思依据 |
-| 课件骨架 | 重要课件必做 | `slide-skeleton-<slides>` | 仅限指定课件，按课件顺序梳理模块、知识点和重点 |
-| 课件模块详解 | 按需 | `slide-module-detail-<slides>-<module>` | 仅限指定课件，讲模块内知识点、重要图片、示例、例题 |
-| 易混点 | 推荐 | `misconceptions-<topic>` | 易混概念、常见错误、记忆方式 |
-| 项目桥接 | 推荐 | `project-bridge` | 串联前后周、渲染管线、Project/考试复习 |
+| Stage | 必要性 | batch id 建议 | 说明 |
+|-------|--------|---------------|------|
+| Stage 1 skeleton | 必做 | `overview-skeleton`、`slide-skeleton-<slides>` | 少量总结类问题，综合相关 Week 记录和课件，列出真实大知识点、授课/课件顺序、重要性和来源 |
+| Agent gate | 必做 | `stage1-summary.md` | Agent 通读 stage-1 raw，写出真实模块、source 匹配、偏差、缺失，并生成 stage-2 manifest |
+| Stage 2 expansion | 必做 | `concept-breakdown-<module>`、必要的 `slide-module-detail-*` | 只围绕 stage-1 真实模块拆子知识点，给基础解释、直觉和管线/坐标位置 |
+| Agent gate | 必做 | `focus-map.md` | Agent 通读 stage-2 raw，标注核心、难点、高价值主题和缺口，并生成 stage-3 manifest |
+| Stage 3 targeted | 按需但通常需要 | `deep-dive-<topic>`、`examples-<topic>`、`visual-explain-<topic>` | 仅对 focus map 中的重点难点深挖，补详细解释、推导、直观理解和例题 |
+| Stage 4 optional | 可选 | `misconceptions-<topic>`、`project-bridge`、`glossary-raw`、`supplement-*` | 只有 stage-2/3 显示确有价值时追加；不作为最早固定 raw |
+
+正式 batch 默认 `clear_conversation: true`，使每个 batch 成为独立可追溯 raw 样本。上一轮结果必须由 Agent 摘要后显式写入下一阶段 prompt 或 manifest metadata，不能依赖 NotebookLM chat history。探索性连续追问可以不清理上下文，但需标记 `exploratory`，不作为最终可复现 raw 主路径。
 
 课件采集 prompt 必须写明“仅限以下课件”，防止 NotebookLM 把课堂记录、论文或其他周次混入课件梳理。
 
@@ -71,7 +71,7 @@ P1 管线地图和数学语言
 
 | Part | manifest | topics-map | raw 采集 | knowledge-graph | 学习指南 |
 |------|----------|------------|----------|-----------------|----------|
-| P1 `week1-2` | 已创建 | 已生成 | 已采集 12/12 | 已生成 | 已写用户 Review 前版本 |
+| P1 `week1-2` | 已创建 v4 静态试跑 | 已生成 | 已采集 12/12 | 已生成 | 已写用户 Review 前版本 |
 | P2 `week3-4` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
 | P3 `week5-6` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
 | P4 `week7-9` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
@@ -115,14 +115,14 @@ notebooklm source list
 1. **Phase 0：真实资料盘点**  
    补齐课程资料根目录、课件列表、Week 记录、Project 文档，并更新 `guides/CG课程-16周内容梳理.md`。
 
-2. **Phase 1：Part 骨架采集**  
-   先为目标 Part 创建 `overview-skeleton`，让 NotebookLM 对相关 Week 记录和课件做全面内容骨架梳理。
+2. **Phase 1：Stage 1 骨架采集**  
+   先为目标 Part 创建 stage-1 manifest，只包含 `overview-skeleton` 和必要 `slide-skeleton-*`，让 NotebookLM 对相关 Week 记录和课件做全面内容骨架梳理。
 
-3. **Phase 1：分 Part 分层深采**  
-   根据骨架回答创建 `concept-breakdown-*`；再为核心/难点补 `deep-dive-*`、`examples-*`、`misconceptions-*`、`project-bridge`。
+3. **Phase 1：Agent 摘要与 Stage 2 展开**  
+   Agent 读取 stage-1 answers，产出 `stage1-summary.md`，再根据真实模块创建 `concept-breakdown-*` 和必要 `slide-module-detail-*`。
 
-4. **Phase 1：课件专用采集**  
-   对目标 Part 的重要课件增加 `slide-skeleton-*` 和 `slide-module-detail-*`，仅限课件来源，按课件原序覆盖图片、示例和例题。
+4. **Phase 1：Focus map 与 Stage 3/4 追问**  
+   Agent 读取 stage-2 answers，产出 `focus-map.md`，再为核心/难点补 `deep-dive-*`、`examples-*`、`visual-explain-*`。`misconceptions-*`、`project-bridge`、`glossary-raw` 仅在确有价值时追加。
 
 5. **Phase 1.5：知识图谱**  
    通读 `runs/latest/*.answer.md`，生成 `notebooklm-raw/<module>/knowledge-graph.md`。
