@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 12 课堂记录、Week 11 光线追踪线索和 Ray Tracing in One Weekend source，请展开 Part 6 中“Whitted-style Ray Tracing 基础”。
+
+Stage 1 摘要：P6 从主光线、最近交点、shadow rays、反射 / 折射递归和环境映射进入高级渲染。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；按 ray generation、intersection、shading、shadow ray、reflection / refraction recursion、termination 的顺序解释；给出输入输出与几何直觉；标注来源；不要展开 Monte Carlo path tracing。

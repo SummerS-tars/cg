@@ -1,0 +1,67 @@
+{
+  "module": "week12-14",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week12-14-stage3.json",
+  "run_dir": "notebooklm-raw/week12-14/runs/20260626-001714",
+  "started_at": "2026-06-25T16:17:14.777041+00:00",
+  "finished_at": "2026-06-25T16:22:33.530420+00:00",
+  "batches_total": 6,
+  "batches_completed": 6,
+  "batches_ok": 6,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "visual-explain-ray-tracing-pipeline",
+      "layer": "L4-L5",
+      "status": "ok",
+      "elapsed_seconds": 39.97,
+      "retry_count": 0,
+      "conversation_id": "0b702ea8-1a9a-44d9-b76b-bb4694148318"
+    },
+    {
+      "id": "deep-dive-bvh-aabb-example",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 41.27,
+      "retry_count": 0,
+      "conversation_id": "ae4a3fa7-1a54-47ee-adfb-8bb1fa0dd3d9"
+    },
+    {
+      "id": "deep-dive-rendering-equation-terms",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 42.96,
+      "retry_count": 0,
+      "conversation_id": "9d4bbef1-c531-4203-acaa-54be87d8a81b"
+    },
+    {
+      "id": "examples-monte-carlo-path-tracing-noise",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 46.44,
+      "retry_count": 0,
+      "conversation_id": "1d092140-6ab1-4e8d-96b7-6019b7548646"
+    },
+    {
+      "id": "compare-rr-importance-nee",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 50.19,
+      "retry_count": 0,
+      "conversation_id": "2c363225-3922-4b1e-b942-6600ce200931"
+    },
+    {
+      "id": "visual-explain-realtime-denoising",
+      "layer": "L4-L5",
+      "status": "ok",
+      "elapsed_seconds": 42.92,
+      "retry_count": 0,
+      "conversation_id": "30f8164c-45a2-4daa-97cd-3104760d2e0f"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 318.75,
+  "total_retry_count": 0
+}

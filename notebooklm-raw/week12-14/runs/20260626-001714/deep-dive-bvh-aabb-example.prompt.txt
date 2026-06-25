@@ -1,0 +1,5 @@
+【单问·Stage 3 深挖】基于 P6 stage-2 raw，请深挖 AABB slab test、BVH 剔除、TLAS / BLAS、RT Core 和 OptiX 的直观解释。
+
+Focus map 指出：指南需要把 ray-box test 的区间直觉和 BVH 从 O(N) 到 O(log N) 的剔除逻辑讲清。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给一个小型场景例说明 BVH 如何少测三角形；标注来源；不要写具体代码。

@@ -1,0 +1,5 @@
+【单问·课堂笔记限定·Stage 1】请仅依据以下 source：笔记-week12-周一-图形学、笔记-week13-周一-图形学、笔记-week14-周一-图形学。不要使用课件、论文或 Project 文档。
+
+问题：请按 Week 12、Week 13、Week 14 的课堂顺序梳理实际讲了哪些模块？每个模块解决什么高级渲染问题？哪些内容是 shadow map / real-time effects，哪些内容是 ray tracing / path tracing / global illumination？
+
+要求：中文；按原文顺序编号；说明每个模块的学习目标、关键概念、公式或例子；每点标注来源；列出缺失周次或主题偏差；不要展开成完整学习指南。

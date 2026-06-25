@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 12 课堂记录、Week 11 硬件加速线索和 OptiX source，请展开 Part 6 中“AABB、BVH、RT Core 与 ray tracing 性能优化”。
+
+Stage 1 摘要：大量光线与几何体求交是 ray tracing 的瓶颈；AABB / BVH 用空间层次剔除无关物体，RT Core 硬件化包围盒遍历和三角形求交。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释 ray-box test 的区间直觉、BVH 为什么降低复杂度、RT Core / OptiX 在管线中的角色；标注来源；不要写成具体代码教程。

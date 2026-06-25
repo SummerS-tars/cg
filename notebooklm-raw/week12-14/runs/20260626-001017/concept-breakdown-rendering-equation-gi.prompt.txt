@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 13 课堂记录、课件08-Lecture11-part1-2026 和论文-The Rendering Equation-SIGGRAPH1986，请展开 Part 6 中“Rendering Equation 与 Global Illumination”。
+
+Stage 1 摘要：渲染方程统一描述自发光、入射光、BRDF、几何项、可见性和半球积分；OpenGL、ray tracing、radiosity、path tracing 是不同近似。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 写关键公式；解释每个符号的物理意义和视觉直觉；说明局部光照到全局光照的差别；标注来源。

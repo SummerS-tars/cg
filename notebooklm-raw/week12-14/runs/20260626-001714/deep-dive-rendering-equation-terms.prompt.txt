@@ -1,0 +1,5 @@
+【单问·Stage 3 深挖】基于 P6 stage-2 raw、课件08 和 The Rendering Equation source，请深挖渲染方程各项的视觉意义。
+
+Focus map 指出：指南不能只贴公式，需要解释 $L_o$、$L_e$、$f_r$、$L_i$、$\cos\theta$、visibility、geometry term 与局部 / 全局光照的差别。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 写公式；给一个“白墙反射红墙颜色”的视觉例；标注来源。

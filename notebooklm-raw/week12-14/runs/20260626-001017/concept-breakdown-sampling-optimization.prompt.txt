@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 13/14 课堂记录、课件09-Lecture11-part2-路径追踪-2026 和论文-Particle Transport and Image Synthesis-CG1990，请展开 Part 6 中“Russian Roulette、Importance Sampling、Direct Light Sampling / Next Event Estimation”。
+
+Stage 1 摘要：Russian Roulette 用概率终止路径并保持无偏；importance sampling 根据 BRDF 或光源分布降低方差；direct light sampling 把采样域转向光源表面积以提高小光源命中率。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释无偏性、方差、采样概率补偿的直觉；给出适合指南的例子或对比；标注来源；不要泛泛复述整个 P6。

@@ -1,0 +1,67 @@
+{
+  "module": "week12-14",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week12-14-stage2.json",
+  "run_dir": "notebooklm-raw/week12-14/runs/20260626-001017",
+  "started_at": "2026-06-25T16:10:17.323958+00:00",
+  "finished_at": "2026-06-25T16:15:28.760651+00:00",
+  "batches_total": 6,
+  "batches_completed": 6,
+  "batches_ok": 6,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "concept-breakdown-ray-tracing-basics",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 44.7,
+      "retry_count": 0,
+      "conversation_id": "538e89f0-b62b-4c99-a8d7-825d39344514"
+    },
+    {
+      "id": "concept-breakdown-acceleration-structures",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 42.85,
+      "retry_count": 0,
+      "conversation_id": "85215e2c-e0cb-4195-a6cd-e4740ad8a0a5"
+    },
+    {
+      "id": "concept-breakdown-rendering-equation-gi",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 42.81,
+      "retry_count": 0,
+      "conversation_id": "817a8b99-bc04-43e2-8e44-b6c96042d3f6"
+    },
+    {
+      "id": "concept-breakdown-monte-carlo-path-tracing",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 39.58,
+      "retry_count": 0,
+      "conversation_id": "c0947c49-8f10-4a4d-99a6-181bde0fc011"
+    },
+    {
+      "id": "concept-breakdown-sampling-optimization",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 40.58,
+      "retry_count": 0,
+      "conversation_id": "512a4e21-c7de-458c-8041-2057c062d68f"
+    },
+    {
+      "id": "concept-breakdown-denoising-realtime-rt",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 47.56,
+      "retry_count": 0,
+      "conversation_id": "51224450-0672-4cfc-84dc-0e298762b896"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 311.44,
+  "total_retry_count": 0
+}

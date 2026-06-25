@@ -1,0 +1,5 @@
+【单问·Stage 3 对比整理】基于 P6 stage-2 raw 和 Particle Transport source，请整理 Russian Roulette、Importance Sampling、Direct Light Sampling / Next Event Estimation 的对比素材。
+
+Focus map 指出：指南需要解释 RR 的无偏概率补偿，importance sampling 的降方差直觉，以及 NEE 为什么适合小光源。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给出适合改写为 Markdown 表格的对比内容；标注来源。

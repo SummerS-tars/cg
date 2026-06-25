@@ -1,0 +1,88 @@
+{
+  "module": "week12-14",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 12-14 / Part 6：基于 focus map 的 ray tracing / path tracing / denoising 深挖（v4.1 dynamic raw stage 3）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P6",
+  "stage": "stage-3-targeted-deep-dive",
+  "focus_map_ref": "notebooklm-raw/week12-14/focus-map.md",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "quality_standards": [
+      "术语首次出现必须解释",
+      "期末英语考试术语格式：中文(English) 或 Abbr(Full English Name，中文对照)",
+      "最终指南使用章节就近参考 raw 引用块",
+      "最终指南不包含采集说明或补采计划",
+      "Markdown 表格避免未转义竖线，数学表达优先用 LaTeX"
+    ],
+    "optional_stage4": "当前不追加 optional stage-4；shadow map 仅作为压缩背景，除非用户后续补充专项 source。"
+  },
+  "scope": {
+    "weeks": ["Week 12", "Week 13", "Week 14"],
+    "stage2_run": "notebooklm-raw/week12-14/runs/20260626-001017",
+    "focus_targets": [
+      "ray tracing 数据流",
+      "AABB / BVH / RT Core / OptiX",
+      "rendering equation 各项直觉",
+      "Monte Carlo / SPP / noise",
+      "Russian Roulette / importance sampling / NEE",
+      "real-time denoising / DLSS"
+    ]
+  },
+  "batches": [
+    {
+      "id": "visual-explain-ray-tracing-pipeline",
+      "stage": "stage-3",
+      "layer": "L4-L5",
+      "priority": "critical",
+      "title": "Ray Tracing 管线视觉解释",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 视觉解释】基于 P6 stage-2 raw，请把 Whitted-style Ray Tracing 的数据流整理成可视化解释素材。\n\nFocus map 指出：指南需要从 ray generation -> intersection -> shading -> shadow/reflection/refraction recursion -> output 解释输入输出和递归边界。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给出适合改写成 Mermaid flowchart 的节点和箭头；说明与 P4 光栅化管线的差别；标注来源。"
+    },
+    {
+      "id": "deep-dive-bvh-aabb-example",
+      "stage": "stage-3",
+      "layer": "L4",
+      "priority": "critical",
+      "title": "AABB / BVH 可视化例子",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 深挖】基于 P6 stage-2 raw，请深挖 AABB slab test、BVH 剔除、TLAS / BLAS、RT Core 和 OptiX 的直观解释。\n\nFocus map 指出：指南需要把 ray-box test 的区间直觉和 BVH 从 O(N) 到 O(log N) 的剔除逻辑讲清。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给一个小型场景例说明 BVH 如何少测三角形；标注来源；不要写具体代码。"
+    },
+    {
+      "id": "deep-dive-rendering-equation-terms",
+      "stage": "stage-3",
+      "layer": "L4",
+      "priority": "critical",
+      "title": "渲染方程各项视觉意义",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 深挖】基于 P6 stage-2 raw、课件08 和 The Rendering Equation source，请深挖渲染方程各项的视觉意义。\n\nFocus map 指出：指南不能只贴公式，需要解释 $L_o$、$L_e$、$f_r$、$L_i$、$\\cos\\theta$、visibility、geometry term 与局部 / 全局光照的差别。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 写公式；给一个“白墙反射红墙颜色”的视觉例；标注来源。"
+    },
+    {
+      "id": "examples-monte-carlo-path-tracing-noise",
+      "stage": "stage-3",
+      "layer": "L4",
+      "priority": "critical",
+      "title": "Monte Carlo / Path Tracing 噪声例子",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 例题深挖】基于 P6 stage-2 raw 和课件09-Lecture11-part2-路径追踪-2026，请整理 Monte Carlo path tracing、PDF、estimator、SPP、variance、$N=1$ 和噪声收敛的例子。\n\nFocus map 指出：指南需要把“每次弹射只采一条路径”和“每像素多次采样取平均”讲清。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 写估算公式；给一个低 SPP 到高 SPP 的视觉解释；标注来源。"
+    },
+    {
+      "id": "compare-rr-importance-nee",
+      "stage": "stage-3",
+      "layer": "L4",
+      "priority": "critical",
+      "title": "RR / Importance / NEE 对比",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 对比整理】基于 P6 stage-2 raw 和 Particle Transport source，请整理 Russian Roulette、Importance Sampling、Direct Light Sampling / Next Event Estimation 的对比素材。\n\nFocus map 指出：指南需要解释 RR 的无偏概率补偿，importance sampling 的降方差直觉，以及 NEE 为什么适合小光源。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给出适合改写为 Markdown 表格的对比内容；标注来源。"
+    },
+    {
+      "id": "visual-explain-realtime-denoising",
+      "stage": "stage-3",
+      "layer": "L4-L5",
+      "priority": "important",
+      "title": "实时去噪与 DLSS 图示",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 视觉解释】基于 P6 stage-2 raw，请整理实时路径追踪去噪与 DLSS 的可视化解释素材。\n\nFocus map 指出：指南需要从 low-spp noisy image -> G-buffer (normal / albedo / motion vectors) -> spatial / temporal denoising -> DLSS / Tensor Core / output image 解释。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给出适合改写成 Mermaid flowchart 的节点和箭头；说明 RT Core 与 Tensor Core 分工；标注来源。"
+    }
+  ]
+}

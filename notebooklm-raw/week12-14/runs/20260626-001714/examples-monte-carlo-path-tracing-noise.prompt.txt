@@ -1,0 +1,5 @@
+【单问·Stage 3 例题深挖】基于 P6 stage-2 raw 和课件09-Lecture11-part2-路径追踪-2026，请整理 Monte Carlo path tracing、PDF、estimator、SPP、variance、$N=1$ 和噪声收敛的例子。
+
+Focus map 指出：指南需要把“每次弹射只采一条路径”和“每像素多次采样取平均”讲清。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 写估算公式；给一个低 SPP 到高 SPP 的视觉解释；标注来源。

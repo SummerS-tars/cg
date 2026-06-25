@@ -1,0 +1,59 @@
+{
+  "module": "week12-14",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week12-14-stage1.json",
+  "run_dir": "notebooklm-raw/week12-14/runs/20260626-000323",
+  "started_at": "2026-06-25T16:03:23.923364+00:00",
+  "finished_at": "2026-06-25T16:08:02.611123+00:00",
+  "batches_total": 5,
+  "batches_completed": 5,
+  "batches_ok": 5,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "overview-skeleton",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 55.54,
+      "retry_count": 0,
+      "conversation_id": "f1173b5c-0134-457c-bd4b-6a263b463903"
+    },
+    {
+      "id": "notes-skeleton-week12-14",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 50.87,
+      "retry_count": 0,
+      "conversation_id": "237205ce-bd02-4ef1-aa1c-8a8c37600c6a"
+    },
+    {
+      "id": "slide-skeleton-lecture11-part1",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 41.17,
+      "retry_count": 0,
+      "conversation_id": "fe2615b0-8790-41f0-9cc2-57433d4e29c4"
+    },
+    {
+      "id": "slide-skeleton-lecture11-part2-path-tracing",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 38.92,
+      "retry_count": 0,
+      "conversation_id": "849b3b93-3831-43d3-b709-aba9be69795e"
+    },
+    {
+      "id": "source-skeleton-rendering-equation",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 46.63,
+      "retry_count": 0,
+      "conversation_id": "22ffe663-1588-4752-88fc-8949dc669b00"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 278.69,
+  "total_retry_count": 0
+}

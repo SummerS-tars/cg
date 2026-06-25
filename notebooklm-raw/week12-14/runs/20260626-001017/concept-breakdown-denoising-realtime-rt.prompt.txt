@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 13/14 课堂记录、Week 11 硬件线索和相关 GPU / RTX source，请展开 Part 6 中“低采样率实时光追、去噪、G-buffer、DLSS 与 AI 超采样”。
+
+Stage 1 摘要：现代实时 path tracing 常以 1-4 spp 渲染，再依靠时空去噪、G-buffer 信息、DLSS / AI 帧生成提高质量和帧率。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释低 spp 为什么噪声大，G-buffer 中法线、反照率、运动向量如何帮助去噪；说明 DLSS 与 RT Core / Tensor Core 的角色；标注来源。

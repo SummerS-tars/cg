@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 13/14 课堂记录和课件09-Lecture11-part2-路径追踪-2026，请展开 Part 6 中“Monte Carlo Integration 与 Path Tracing”。
+
+Stage 1 摘要：路径追踪使用 Monte Carlo estimator 求解渲染方程；每次弹射可采用 N=1 单方向采样，通过 SPP 累积降低噪声。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释 PDF、expected value、estimator、variance、SPP、N=1 策略；用 LaTeX 写估算公式；说明噪声和收敛的直觉；标注来源。

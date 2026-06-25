@@ -1,0 +1,93 @@
+{
+  "module": "week12-14",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 12-14 / Part 6：高级渲染、光线追踪与全局光照资料校准（v4.1 dynamic raw stage 1；只采骨架）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P6",
+  "stage": "stage-1-skeleton",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "carry_forward": "Agent 读取 stage-1 answers 后产出 notebooklm-raw/week12-14/stage1-summary.md，并把摘要显式写入 stage-2 manifest；不得依赖 NotebookLM chat history。",
+    "next_stage": "stage-2 module expansion / concept breakdown",
+    "postpone_until_focus_map": [
+      "misconceptions-*",
+      "project-bridge",
+      "glossary-raw"
+    ],
+    "parallel_raw_experiment": "允许与另一个 Part 的 stage-1 小并发运行；每个 Part 使用独立 manifest 与 run directory。若出现限流、429、超时、认证或会话冲突，立即停止并回退串行。"
+  },
+  "scope": {
+    "weeks": [
+      "Week 12",
+      "Week 13",
+      "Week 14"
+    ],
+    "topics": [
+      "阴影与全局效果",
+      "光线追踪",
+      "路径追踪",
+      "渲染方程",
+      "Monte Carlo 采样",
+      "加速结构"
+    ],
+    "source_alignment_note": "P6 范围依据 notebooklm-raw/semester-parts.md 与 guides/CG课程-16周内容梳理.md；2026-06-26 source list 可见 Week 12/13/14 课堂笔记、课件08-Lecture11-part1-2026、课件09-Lecture11-part2-路径追踪-2026，以及 Ray Tracing in One Weekend、The Rendering Equation、Particle Transport and Image Synthesis、OptiX 等论文 / 补充资料。Stage 1 用于校准这些 source 与高级渲染主线的真实对应关系。"
+  },
+  "sources_hint": [
+    "笔记-week12-周一-图形学",
+    "笔记-week13-周一-图形学",
+    "笔记-week14-周一-图形学",
+    "课件08-Lecture11-part1-2026",
+    "课件09-Lecture11-part2-路径追踪-2026",
+    "论文-Ray Tracing in One Weekend",
+    "论文-The Rendering Equation-SIGGRAPH1986",
+    "论文-Particle Transport and Image Synthesis-CG1990",
+    "论文-OptiX Ray Tracing Engine-SIGGRAPH2010"
+  ],
+  "batches": [
+    {
+      "id": "overview-skeleton",
+      "stage": "stage-1",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Part 6 全面内容骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·Part 骨架·Stage 1】请综合 Week 12-14 课程记录、相关课件和高级渲染论文 / 补充资料，全面梳理 CG Part 6 讲了哪些大知识点。\n\n建议来源范围：笔记-week12-周一-图形学、笔记-week13-周一-图形学、笔记-week14-周一-图形学、课件08-Lecture11-part1-2026、课件09-Lecture11-part2-路径追踪-2026、论文-Ray Tracing in One Weekend、论文-The Rendering Equation-SIGGRAPH1986、论文-Particle Transport and Image Synthesis-CG1990、论文-OptiX Ray Tracing Engine-SIGGRAPH2010；若 NotebookLM 中实际 source 名称不同，请以可见来源为准并说明。\n\n要求：中文；按授课或课件顺序列出大知识点；说明每个大知识点解决的图形学问题、重要性（核心/重要/了解）、与前序 P4/P5 的关系、相关来源；可以不用展开公式细节；不要遗漏边角主题；不要写成学习指南正文；不要总结易混点或常见错误。"
+    },
+    {
+      "id": "notes-skeleton-week12-14",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "Week 12-14 课堂笔记骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课堂笔记限定·Stage 1】请仅依据以下 source：笔记-week12-周一-图形学、笔记-week13-周一-图形学、笔记-week14-周一-图形学。不要使用课件、论文或 Project 文档。\n\n问题：请按 Week 12、Week 13、Week 14 的课堂顺序梳理实际讲了哪些模块？每个模块解决什么高级渲染问题？哪些内容是 shadow map / real-time effects，哪些内容是 ray tracing / path tracing / global illumination？\n\n要求：中文；按原文顺序编号；说明每个模块的学习目标、关键概念、公式或例子；每点标注来源；列出缺失周次或主题偏差；不要展开成完整学习指南。"
+    },
+    {
+      "id": "slide-skeleton-lecture11-part1",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "课件08/Lecture11 part1 原序骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定·Stage 1】请仅依据以下课件：课件08-Lecture11-part1-2026。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件分了几个主要模块？每个模块分别讲了什么知识点？它更适合归入 shadow / ray tracing / global illumination / geometry 中哪一类？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键示例或例题；每点标注来源；不要展开成完整学习指南；不要总结易混点或常见错误。"
+    },
+    {
+      "id": "slide-skeleton-lecture11-part2-path-tracing",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "课件09/Lecture11 part2 路径追踪原序骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定·Stage 1】请仅依据以下课件：课件09-Lecture11-part2-路径追踪-2026。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份路径追踪课件分了几个主要模块？每个模块分别讲了什么知识点？哪些模块与渲染方程、Monte Carlo 估计、采样、噪声 / 收敛直接相关？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键示例或公式；每点标注来源；不要展开成完整学习指南；不要总结易混点或常见错误。"
+    },
+    {
+      "id": "source-skeleton-rendering-equation",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "important",
+      "title": "Rendering Equation / Particle Transport source 骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·source 限定·Stage 1】请仅依据以下 source：论文-The Rendering Equation-SIGGRAPH1986、论文-Particle Transport and Image Synthesis-CG1990。不要使用其他周次、课堂记录、课件或 Project 文档。\n\n问题：请判断这些 source 与 Part 6 的全局光照、渲染方程、路径追踪或 Monte Carlo 采样是否相关；若相关，请按原文顺序梳理它们提供了哪些核心概念、公式或物理直觉；若不相关，请明确说明。\n\n要求：中文；标注来源；只做 source 骨架和相关性判断；不要展开成完整学习指南；不要总结易混点或常见错误。"
+    }
+  ]
+}

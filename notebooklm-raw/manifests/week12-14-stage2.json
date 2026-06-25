@@ -1,0 +1,98 @@
+{
+  "module": "week12-14",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 12-14 / Part 6：基于 stage-1 真实骨架的高级渲染模块展开（v4.1 dynamic raw stage 2）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P6",
+  "stage": "stage-2-module-expansion",
+  "stage_input_summary": "notebooklm-raw/week12-14/stage1-summary.md",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "carry_forward": "Agent 读取 stage-2 answers 后产出 notebooklm-raw/week12-14/focus-map.md，并把 critical/important/normal、缺口与 deep-dive 目标显式写入 stage-3 manifest。",
+    "parallel_raw_experiment": "可与 P5 stage-2 小并发运行；若出现限流、超时、认证或会话冲突，立即回退串行。",
+    "postpone_until_focus_map": [
+      "misconceptions-*",
+      "project-bridge",
+      "glossary-raw"
+    ]
+  },
+  "scope": {
+    "weeks": ["Week 12", "Week 13", "Week 14"],
+    "sources": [
+      "笔记-week12-周一-图形学",
+      "笔记-week13-周一-图形学",
+      "笔记-week14-周一-图形学",
+      "课件08-Lecture11-part1-2026",
+      "课件09-Lecture11-part2-路径追踪-2026",
+      "论文-Ray Tracing in One Weekend",
+      "论文-The Rendering Equation-SIGGRAPH1986",
+      "论文-Particle Transport and Image Synthesis-CG1990",
+      "论文-OptiX Ray Tracing Engine-SIGGRAPH2010"
+    ],
+    "stage1_run": "notebooklm-raw/week12-14/runs/20260626-000323",
+    "stage1_modules": [
+      "Whitted-style Ray Tracing",
+      "AABB / BVH 加速结构",
+      "Rendering Equation / Global Illumination",
+      "Monte Carlo Path Tracing",
+      "Sampling Optimization",
+      "Denoising / Real-time Ray Tracing"
+    ]
+  },
+  "batches": [
+    {
+      "id": "concept-breakdown-ray-tracing-basics",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "基础光线追踪展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 12 课堂记录、Week 11 光线追踪线索和 Ray Tracing in One Weekend source，请展开 Part 6 中“Whitted-style Ray Tracing 基础”。\n\nStage 1 摘要：P6 从主光线、最近交点、shadow rays、反射 / 折射递归和环境映射进入高级渲染。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；按 ray generation、intersection、shading、shadow ray、reflection / refraction recursion、termination 的顺序解释；给出输入输出与几何直觉；标注来源；不要展开 Monte Carlo path tracing。"
+    },
+    {
+      "id": "concept-breakdown-acceleration-structures",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "AABB / BVH 与硬件加速展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 12 课堂记录、Week 11 硬件加速线索和 OptiX source，请展开 Part 6 中“AABB、BVH、RT Core 与 ray tracing 性能优化”。\n\nStage 1 摘要：大量光线与几何体求交是 ray tracing 的瓶颈；AABB / BVH 用空间层次剔除无关物体，RT Core 硬件化包围盒遍历和三角形求交。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释 ray-box test 的区间直觉、BVH 为什么降低复杂度、RT Core / OptiX 在管线中的角色；标注来源；不要写成具体代码教程。"
+    },
+    {
+      "id": "concept-breakdown-rendering-equation-gi",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "渲染方程与全局光照展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 13 课堂记录、课件08-Lecture11-part1-2026 和论文-The Rendering Equation-SIGGRAPH1986，请展开 Part 6 中“Rendering Equation 与 Global Illumination”。\n\nStage 1 摘要：渲染方程统一描述自发光、入射光、BRDF、几何项、可见性和半球积分；OpenGL、ray tracing、radiosity、path tracing 是不同近似。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 写关键公式；解释每个符号的物理意义和视觉直觉；说明局部光照到全局光照的差别；标注来源。"
+    },
+    {
+      "id": "concept-breakdown-monte-carlo-path-tracing",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "Monte Carlo 与 Path Tracing 展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 13/14 课堂记录和课件09-Lecture11-part2-路径追踪-2026，请展开 Part 6 中“Monte Carlo Integration 与 Path Tracing”。\n\nStage 1 摘要：路径追踪使用 Monte Carlo estimator 求解渲染方程；每次弹射可采用 N=1 单方向采样，通过 SPP 累积降低噪声。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释 PDF、expected value、estimator、variance、SPP、N=1 策略；用 LaTeX 写估算公式；说明噪声和收敛的直觉；标注来源。"
+    },
+    {
+      "id": "concept-breakdown-sampling-optimization",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "采样优化策略展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 13/14 课堂记录、课件09-Lecture11-part2-路径追踪-2026 和论文-Particle Transport and Image Synthesis-CG1990，请展开 Part 6 中“Russian Roulette、Importance Sampling、Direct Light Sampling / Next Event Estimation”。\n\nStage 1 摘要：Russian Roulette 用概率终止路径并保持无偏；importance sampling 根据 BRDF 或光源分布降低方差；direct light sampling 把采样域转向光源表面积以提高小光源命中率。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释无偏性、方差、采样概率补偿的直觉；给出适合指南的例子或对比；标注来源；不要泛泛复述整个 P6。"
+    },
+    {
+      "id": "concept-breakdown-denoising-realtime-rt",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "important",
+      "title": "实时光追与去噪展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 13/14 课堂记录、Week 11 硬件线索和相关 GPU / RTX source，请展开 Part 6 中“低采样率实时光追、去噪、G-buffer、DLSS 与 AI 超采样”。\n\nStage 1 摘要：现代实时 path tracing 常以 1-4 spp 渲染，再依靠时空去噪、G-buffer 信息、DLSS / AI 帧生成提高质量和帧率。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释低 spp 为什么噪声大，G-buffer 中法线、反照率、运动向量如何帮助去噪；说明 DLSS 与 RT Core / Tensor Core 的角色；标注来源。"
+    }
+  ]
+}

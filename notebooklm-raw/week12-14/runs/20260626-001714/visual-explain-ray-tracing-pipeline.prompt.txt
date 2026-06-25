@@ -1,0 +1,5 @@
+【单问·Stage 3 视觉解释】基于 P6 stage-2 raw，请把 Whitted-style Ray Tracing 的数据流整理成可视化解释素材。
+
+Focus map 指出：指南需要从 ray generation -> intersection -> shading -> shadow/reflection/refraction recursion -> output 解释输入输出和递归边界。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给出适合改写成 Mermaid flowchart 的节点和箭头；说明与 P4 光栅化管线的差别；标注来源。
