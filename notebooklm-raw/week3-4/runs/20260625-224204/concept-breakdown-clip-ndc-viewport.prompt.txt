@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 4 课堂记录和课件04-Lecture04-05-2025，请展开讲解 Part 2 中“裁剪空间、透视除法、NDC 与视口变换”这一模块。
+
+Stage 1 骨架依据：Lecture04 在投影后讲裁剪、window-to-viewport 映射；overview-skeleton 指出局部空间 -> 世界空间 -> 相机空间 -> 裁剪空间 -> 屏幕空间 -> 图像空间。
+
+要求：中文；说明 clip space、透视除法、NDC、screen/window/viewport/image coordinates 的先后关系；解释为什么要先裁剪再映射到视口；给出 window-to-viewport 的线性映射公式或直觉；标注来源；可以提 Cohen-Sutherland 作为初步背景但不要深入算法细节；不要总结易混点。

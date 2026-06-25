@@ -1,0 +1,74 @@
+{
+  "module": "week3-4",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 3-4 / Part 2：基于 focus map 的 targeted deep-dive / examples / visual explanations（v4.1 dynamic raw stage 3）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P2",
+  "stage": "stage-3-targeted-deep-dive",
+  "focus_map_ref": "notebooklm-raw/week3-4/focus-map.md",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "quality_standards": [
+      "术语首次出现必须解释",
+      "期末英语考试术语格式：中文(English) 或 Abbr(Full English Name，中文对照)",
+      "最终指南使用章节就近参考 raw 引用块",
+      "最终指南不包含采集说明或补采计划",
+      "Markdown 表格避免未转义竖线，数学表达优先用 LaTeX"
+    ],
+    "optional_stage4": "仅当 Stage 3 读完后发现确有缺口时追加；当前不固定生成 misconceptions/project-bridge。"
+  },
+  "scope": {
+    "weeks": ["Week 3", "Week 4"],
+    "sources": [
+      "笔记-week03-周一-图形学",
+      "笔记-week04-周一-图形学",
+      "课件03-Lecture03-2026",
+      "课件04-Lecture04-05-2025"
+    ],
+    "stage2_run": "notebooklm-raw/week3-4/runs/20260625-224204",
+    "focus_targets": [
+      "变换顺序和矩阵链例子",
+      "look-at / view matrix 几何意义",
+      "projection / clip / NDC / viewport 完整链路",
+      "MVP 到像素的可视化解释和术语对照"
+    ]
+  },
+  "batches": [
+    {
+      "id": "examples-transform-order-matrix-chain",
+      "stage": "stage-3",
+      "layer": "L4",
+      "priority": "critical",
+      "title": "变换顺序与矩阵链例题",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 例题深挖】基于 Week 3 课堂记录和课件03-Lecture03-2026，请为 Part 2 的“变换顺序、矩阵组合、绕任意点旋转、父子矩阵链”整理一个可放入学习指南的例题与视觉解释。\n\nFocus map 指出：Stage 2 已说明矩阵乘法不交换，但需要一个小点或小物体的可跟读例子。\n\n要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 写矩阵/公式；至少包含一个“先旋转再平移 vs 先平移再旋转”的数值或坐标例；解释为什么矩阵应用顺序从右到左；补一个机器人手臂或父子节点矩阵链小例；标注来源；不要总结成最终指南正文。"
+    },
+    {
+      "id": "deep-dive-view-matrix-lookat",
+      "stage": "stage-3",
+      "layer": "L3-L4",
+      "priority": "critical",
+      "title": "Look-at 与 View Matrix 深挖",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 深挖】基于 Week 4 课堂记录和课件04-Lecture04-05-2025，请深挖 Part 2 的“相机模型、look-at、R/U/B 基向量、View Matrix”这一难点。\n\nFocus map 指出：指南需要把“移动相机”等价于“反向移动世界”讲透，并解释为什么先构造 camera-to-world 再求逆。\n\n要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 表达向量和矩阵；说明 Eye、Look-at、Up 如何构造 B/R/U 或 N/U/V；解释叉积顺序和右手坐标系；给一个简单相机位置示例；标注来源；不要展开投影。"
+    },
+    {
+      "id": "deep-dive-projection-clip-ndc",
+      "stage": "stage-3",
+      "layer": "L3-L4",
+      "priority": "critical",
+      "title": "投影、裁剪空间与 NDC 深挖",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 深挖】基于 Week 4 课堂记录和课件04-Lecture04-05-2025，请深挖 Part 2 的“透视投影、Clip Space、Perspective Division、NDC、Viewport Transformation”完整链路。\n\nFocus map 指出：Stage 2 已覆盖各空间，但需要串成从 View Space 到 Pixel Coordinates 的完整视觉链，并解释为什么在 Clip Space 裁剪。\n\n要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 写相似三角形推导和 viewport mapping 公式；解释 FOV、aspect、near/far、w 分量、透视除法各控制什么；给一个简化坐标流动例子；标注来源；不要深入 DirectX 可编程管线。"
+    },
+    {
+      "id": "visual-explain-mvp-pipeline",
+      "stage": "stage-3",
+      "layer": "L4-L5",
+      "priority": "important",
+      "title": "MVP 到像素的视觉解释",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 视觉解释】基于 Week 3-4 课堂记录、课件03-Lecture03-2026 和课件04-Lecture04-05-2025，请把 Part 2 的 Model/View/Projection 到像素输出整理成可视化解释素材。\n\n要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)，例如 MVP、FOV、NDC；按 Model Space、World Space、View Space、Clip Space、NDC、Screen/Viewport、Pixel Coordinates 的顺序解释每一步输入、输出、负责矩阵或操作、常见调试现象；给出适合改写成 Mermaid flowchart 的节点和箭头；标注来源；不要写成最终指南全文。"
+    }
+  ]
+}

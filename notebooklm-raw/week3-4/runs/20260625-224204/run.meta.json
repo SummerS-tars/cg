@@ -4,12 +4,12 @@
   "manifest": "notebooklm-raw/manifests/week3-4-stage2.json",
   "run_dir": "notebooklm-raw/week3-4/runs/20260625-224204",
   "started_at": "2026-06-25T14:42:04.117771+00:00",
-  "finished_at": "2026-06-25T14:58:59.088236+00:00",
+  "finished_at": "2026-06-25T15:05:19.576051+00:00",
   "batches_total": 6,
-  "batches_completed": 4,
-  "batches_ok": 4,
+  "batches_completed": 6,
+  "batches_ok": 6,
   "batches_skipped": 0,
-  "batches_failed": 2,
+  "batches_failed": 0,
   "batches_pending": 0,
   "batches": [
     {
@@ -47,21 +47,21 @@
     {
       "id": "concept-breakdown-clip-ndc-viewport",
       "layer": "L2-L3",
-      "status": "error",
-      "error_kind": "unknown",
-      "error": "",
-      "elapsed_seconds": 253.53
+      "status": "ok",
+      "elapsed_seconds": 87.61,
+      "retry_count": 2,
+      "conversation_id": "b27a2d0a-4a0f-4459-a5c1-60ab934f9cca"
     },
     {
       "id": "slide-module-detail-lecture04-part2",
       "layer": "L2",
-      "status": "error",
-      "error_kind": "unknown",
-      "error": "",
-      "elapsed_seconds": 232.36
+      "status": "ok",
+      "elapsed_seconds": 48.02,
+      "retry_count": 0,
+      "conversation_id": "357a2c69-ff28-4a51-8eb5-99be0438ed13"
     }
   ],
-  "status": "partial",
-  "total_elapsed_seconds": 492.56,
-  "total_retry_count": 0
+  "status": "completed",
+  "total_elapsed_seconds": 149.94,
+  "total_retry_count": 2
 }

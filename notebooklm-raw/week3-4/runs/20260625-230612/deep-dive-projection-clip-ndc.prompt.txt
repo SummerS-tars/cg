@@ -1,0 +1,5 @@
+【单问·Stage 3 深挖】基于 Week 4 课堂记录和课件04-Lecture04-05-2025，请深挖 Part 2 的“透视投影、Clip Space、Perspective Division、NDC、Viewport Transformation”完整链路。
+
+Focus map 指出：Stage 2 已覆盖各空间，但需要串成从 View Space 到 Pixel Coordinates 的完整视觉链，并解释为什么在 Clip Space 裁剪。
+
+要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 写相似三角形推导和 viewport mapping 公式；解释 FOV、aspect、near/far、w 分量、透视除法各控制什么；给一个简化坐标流动例子；标注来源；不要深入 DirectX 可编程管线。

@@ -1,0 +1,51 @@
+{
+  "module": "week3-4",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week3-4-stage3.json",
+  "run_dir": "notebooklm-raw/week3-4/runs/20260625-230612",
+  "started_at": "2026-06-25T15:06:12.471156+00:00",
+  "finished_at": "2026-06-25T15:09:44.071590+00:00",
+  "batches_total": 4,
+  "batches_completed": 4,
+  "batches_ok": 4,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "examples-transform-order-matrix-chain",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 47.5,
+      "retry_count": 0,
+      "conversation_id": "7136a6d3-ca60-4dee-82d7-69cf34d9c83a"
+    },
+    {
+      "id": "deep-dive-view-matrix-lookat",
+      "layer": "L3-L4",
+      "status": "ok",
+      "elapsed_seconds": 49.04,
+      "retry_count": 0,
+      "conversation_id": "64da7505-caf6-47b4-b887-d2110de2fc82"
+    },
+    {
+      "id": "deep-dive-projection-clip-ndc",
+      "layer": "L3-L4",
+      "status": "ok",
+      "elapsed_seconds": 46.95,
+      "retry_count": 0,
+      "conversation_id": "f8de822e-1e27-4308-af87-8ab39867a513"
+    },
+    {
+      "id": "visual-explain-mvp-pipeline",
+      "layer": "L4-L5",
+      "status": "ok",
+      "elapsed_seconds": 38.99,
+      "retry_count": 0,
+      "conversation_id": "2ba2bba7-281d-46b8-b152-9e5b3d97e3b1"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 211.6,
+  "total_retry_count": 0
+}

@@ -1,0 +1,5 @@
+【单问·Stage 3 深挖】基于 Week 4 课堂记录和课件04-Lecture04-05-2025，请深挖 Part 2 的“相机模型、look-at、R/U/B 基向量、View Matrix”这一难点。
+
+Focus map 指出：指南需要把“移动相机”等价于“反向移动世界”讲透，并解释为什么先构造 camera-to-world 再求逆。
+
+要求：中文；术语首次出现请写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；用 LaTeX 表达向量和矩阵；说明 Eye、Look-at、Up 如何构造 B/R/U 或 N/U/V；解释叉积顺序和右手坐标系；给一个简单相机位置示例；标注来源；不要展开投影。
