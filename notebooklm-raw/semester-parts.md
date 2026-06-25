@@ -1,0 +1,113 @@
+# CG 本学期 Part 总览（Phase 0 盘点）
+
+> **课程**：计算机图形学（Computer Graphics）  
+> **依据**：`guides/CG课程-16周内容梳理.md` 的待校准 16 周框架  
+> **盘点日期**：2026-06-25  
+> **状态**：本文件是采集规划与同步状态矩阵，当前未确认 NotebookLM source list，也未发现 raw 采集结果。
+
+---
+
+## Part 分层（待真实资料校准）
+
+按 CG 课程常见认知路线划分 7 个采集/整合 Part。真实周次、Project 节点和考试重点到位后，应以课程记录与课件为准修订。
+
+| Part | module 目录 | 覆盖周次 | 主题 | 主要资料期望 | 指南目标 |
+|------|-------------|----------|------|--------------|----------|
+| **P1** | `week1-2` | W1–W2 | 图形学总览 + 数学基础 | 课程大纲、W1/W2 记录、数学基础课件 | `guides/CG-Week1-2-学习指南.md` |
+| **P2** | `week3-4` | W3–W4 | 变换 / 相机 / 投影 | 变换、相机、投影课件与例题 | `guides/CG-Week3-4-学习指南.md` |
+| **P3** | `week5-6` | W5–W6 | 光栅化 / 可见性 / 采样 | 光栅化、深度、抗锯齿课件与 Project 说明 | `guides/CG-Week5-6-学习指南.md` |
+| **P4** | `week7-9` | W7–W9 | 着色 / 光照 / 纹理 | 光照模型、GLSL、纹理课件与代码框架 | `guides/CG-Week7-9-学习指南.md` |
+| **P5** | `week10-11` | W10–W11 | 几何建模 / 曲线曲面 / 网格 | 曲线曲面、mesh、模型加载资料 | `guides/CG-Week10-11-学习指南.md` |
+| **P6** | `week12-14` | W12–W14 | 高级渲染 / 光线追踪 / 全局光照 | shadow map、ray tracing、path tracing 资料 | `guides/CG-Week12-14-学习指南.md` |
+| **P7** | `week15-16` | W15–W16 | 项目整合 / 复习展示 | Project 文档、评分标准、复习范围 | `guides/CG-Week15-16-学习指南.md` |
+
+### 叙事链（Part 间承接）
+
+```text
+P1 管线地图和数学语言
+  → P2 用矩阵、相机和投影把 3D 放进屏幕空间
+  → P3 用光栅化、深度和采样把几何变成片元
+  → P4 用 shader、光照和纹理决定像素外观
+  → P5 用曲线曲面和 mesh 构造更复杂几何
+  → P6 用阴影、光线追踪和全局光照提升真实感
+  → P7 回到 Project、展示和考试总复习
+```
+
+---
+
+## 本地资料对齐
+
+| 类别 | 本地状态 | NotebookLM 期望 | 当前动作 |
+|------|----------|-----------------|----------|
+| 课程大纲 | 未发现 | `课纲-计算机图形学` | 需要用户提供本地路径或上传状态 |
+| 课件 PDF | 未发现 | `课件01-*` … `课件NN-*` | 需要用户提供课件目录 |
+| 课程记录 W1–W16 | 未发现 | `笔记-week01-CG` … `笔记-week16-CG` | 需要从邮箱/FiCS/iCourse 导出并核对停课周 |
+| Project / 作业文档 | 未发现 | `Project-*`、`Assignment-*` | 需要用户提供文档和评分要求 |
+| NotebookLM source list | 未验证 | 与上述标题逐项一致 | 认证恢复后运行 `notebooklm source list` |
+| raw 采集结果 | 未发现 | `notebooklm-raw/<module>/runs/latest/*.answer.md` | 待 manifest 创建与采集 |
+
+> **重要**：当前仓库只有采集工具和规范，不包含可据以定稿的课程原文。所有 Part 的主题与周次均为采集规划，不是已验证课表。
+
+---
+
+## 流水线进度矩阵
+
+| Part | manifest | topics-map | raw 采集 | knowledge-graph | 学习指南 |
+|------|----------|------------|----------|-----------------|----------|
+| P1 `week1-2` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
+| P2 `week3-4` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
+| P3 `week5-6` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
+| P4 `week7-9` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
+| P5 `week10-11` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
+| P6 `week12-14` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
+| P7 `week15-16` | 待创建 | 未生成 | 未采集 | 未生成 | 待写 |
+
+---
+
+## NotebookLM Source 对齐（待认证与 source list）
+
+当前没有可验证的 Notebook UUID 或 source list。下面是建议的 source 命名，用于后续 manifest 的 `sources_hint`，不是已确认的远端清单。
+
+| Part | 建议 Source |
+|------|-------------|
+| P1 | `课纲-计算机图形学`、`笔记-week01-CG`、`笔记-week02-CG`、总览/数学基础课件 |
+| P2 | `笔记-week03-CG`、`笔记-week04-CG`、变换/相机/投影课件 |
+| P3 | `笔记-week05-CG`、`笔记-week06-CG`、光栅化/深度/采样课件、相关 Project 文档 |
+| P4 | `笔记-week07-CG`、`笔记-week08-CG`、`笔记-week09-CG`、着色/光照/纹理课件、shader 代码框架 |
+| P5 | `笔记-week10-CG`、`笔记-week11-CG`、曲线曲面/mesh 课件 |
+| P6 | `笔记-week12-CG`、`笔记-week13-CG`、`笔记-week14-CG`、高级渲染/光线追踪课件 |
+| P7 | `笔记-week15-CG`、`笔记-week16-CG`、Project 说明、展示/复习范围 |
+
+认证与 source 对齐建议按本仓库 skill 执行：
+
+```bash
+export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897
+python3 ~/service/openclaw/workspace/skills/notebooklm-integration/scripts/sync-auth.py --force
+python3 ~/service/openclaw/workspace/skills/notebooklm-integration/scripts/sync-auth.py --check
+notebooklm source list
+```
+
+> Agent 不应在 WSL 中执行 `notebooklm login` 或触发 Windows 浏览器登录；需要用户先在 Windows 侧完成登录，再同步认证。
+
+---
+
+## 建议采集顺序
+
+1. **Phase 0：真实资料盘点**  
+   补齐课程资料根目录、课件列表、Week 记录、Project 文档，并更新 `guides/CG课程-16周内容梳理.md`。
+
+2. **Phase 1：L0 discovery**  
+   先为 P1–P7 创建 discovery manifest，每个 Part 只问结构、覆盖范围、与 Project/考试关系。
+
+3. **Phase 1：分 Part 深采**  
+   每个 Part 拆成单问 batch，重点覆盖图形问题、几何直觉、公式/矩阵、管线位置、代码/Project 错误。
+
+4. **Phase 1.5：知识图谱**  
+   通读 `runs/latest/*.answer.md`，生成 `notebooklm-raw/<module>/knowledge-graph.md`。
+
+5. **Phase 2–3：学习指南**  
+   按认知顺序写 `guides/CG-Week*-学习指南.md`，不要按 raw 拼接。
+
+---
+
+*Phase 0 产出；真实资料到位后，本文件应成为 manifest、raw、knowledge-graph 与学习指南的进度总表。*

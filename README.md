@@ -6,11 +6,12 @@
 
 ```
 ├── guides/                    # 学习指南（定稿）
-│   ├── CG课程-内容梳理.md       # 全课程知识脉络总览
+│   ├── CG课程-16周内容梳理.md   # 全课程知识脉络总览（待真实资料校准）
 │   ├── CG-Week1-2-学习指南.md
 │   ├── CG-Week3-4-学习指南.md
 │   └── ...
 ├── notebooklm-raw/           # NotebookLM 采集原始数据
+│   ├── semester-parts.md       # Part 分组、同步状态与流水线矩阵
 │   ├── manifests/             # 采集 manifest（提问计划）
 │   ├── week1-2/               # 按周模块采集结果
 │   ├── week3-4/
@@ -29,6 +30,8 @@
 ## 工作流入口
 
 - Cursor Skill：`.cursor/skills/cg-course-notebooklm/SKILL.md`
+- 全课程总览：`guides/CG课程-16周内容梳理.md`
+- Part / 同步矩阵：`notebooklm-raw/semester-parts.md`
 - 整合规范：`.cursor/skills/cg-course-notebooklm/docs/integration-guide.md`
 - 公开写作规范：`guides/学习指南整合规范.md`
 
