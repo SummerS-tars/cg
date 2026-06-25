@@ -42,7 +42,8 @@ flowchart LR
 > **追问：为什么 Week 3-4 要紧跟 Week 1-2 的点、向量、矩阵？**  
 > 因为渲染管线并不是直接“画模型”。它先把顶点在多个坐标空间之间搬运。点(Point)、向量(Vector)、齐次坐标(Homogeneous Coordinates) 和矩阵(Matrix) 是这条搬运链的语言。
 
-> **参考 raw：** `overview-skeleton.answer.md`、`stage1-summary.md`、`visual-explain-mvp-pipeline.answer.md`。
+> **参考来源：** Week 3-4 课程记录；课件03-Lecture03-2026；课件04-Lecture04-05-2025。  
+> raw batch: `overview-skeleton`、`visual-explain-mvp-pipeline`；阶段摘要：`stage1-summary.md`
 
 ## 2. 核心知识
 
@@ -95,7 +96,8 @@ $$
 
 **小结**：几何变换先解决“物体如何改变位置和形态”。但真实场景会连续做多个变换，下一步必须处理顺序。
 
-> **参考 raw：** `concept-breakdown-geometric-transforms.answer.md`、`slide-skeleton-lecture03.answer.md`。
+> **参考来源：** Week 3 课程记录；课件03-Lecture03-2026。  
+> raw batch: `concept-breakdown-geometric-transforms`、`slide-skeleton-lecture03`
 
 ### 2.2 矩阵顺序与层次结构：为什么不能乱乘
 
@@ -162,7 +164,8 @@ $$
 
 **小结**：Model Matrix 把物体从局部空间放进世界空间。接下来要问：这个世界从哪只“眼睛”看？
 
-> **参考 raw：** `concept-breakdown-composition-hierarchy.answer.md`、`examples-transform-order-matrix-chain.answer.md`；Stage 3 原始数值例有排版异常，本节使用校正后的 LaTeX 例子。
+> **参考来源：** Week 3 课程记录；课件03-Lecture03-2026。  
+> raw batch: `concept-breakdown-composition-hierarchy`、`examples-transform-order-matrix-chain`；Stage 3 原始数值例有排版异常，本节使用校正后的 LaTeX 例子。
 
 ### 2.3 相机与 View Matrix：反向移动世界
 
@@ -219,7 +222,8 @@ $$
 
 **小结**：View Matrix 把世界放到相机坐标系里。现在所有点仍是 3D，下一步要把它们投到 2D 成像平面。
 
-> **参考 raw：** `concept-breakdown-camera-view.answer.md`、`deep-dive-view-matrix-lookat.answer.md`、`slide-module-detail-lecture04-part2.answer.md`。
+> **参考来源：** Week 4 课程记录；课件04-Lecture04-05-2025。  
+> raw batch: `concept-breakdown-camera-view`、`deep-dive-view-matrix-lookat`、`slide-module-detail-lecture04-part2`
 
 ### 2.4 投影：从 3D 观察空间到可成像空间
 
@@ -263,7 +267,8 @@ $$
 
 **小结**：投影不是一步到屏幕，而是先进入 Clip Space。这个中间状态是理解裁剪和 NDC 的关键。
 
-> **参考 raw：** `concept-breakdown-projection.answer.md`、`deep-dive-projection-clip-ndc.answer.md`、`slide-module-detail-lecture04-part2.answer.md`。
+> **参考来源：** Week 4 课程记录；课件04-Lecture04-05-2025。  
+> raw batch: `concept-breakdown-projection`、`deep-dive-projection-clip-ndc`、`slide-module-detail-lecture04-part2`
 
 ### 2.5 Clip Space、NDC 与 Viewport：最后怎么到像素
 
@@ -322,7 +327,8 @@ $$
 
 **小结**：到这里，Part 2 完成了从模型空间到像素坐标前的全部几何变换。下一周的光栅化会接手“哪些像素被图元覆盖”。
 
-> **参考 raw：** `concept-breakdown-clip-ndc-viewport.answer.md`、`deep-dive-projection-clip-ndc.answer.md`、`visual-explain-mvp-pipeline.answer.md`。
+> **参考来源：** Week 4 课程记录；课件04-Lecture04-05-2025。  
+> raw batch: `concept-breakdown-clip-ndc-viewport`、`deep-dive-projection-clip-ndc`、`visual-explain-mvp-pipeline`
 
 ## 3. 重难点与易错点
 

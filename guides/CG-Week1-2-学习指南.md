@@ -66,7 +66,8 @@ flowchart LR
 
 **小结**：应用场景只是动机，真正贯穿课程的是“用数学表示场景，再用管线把它变成图像”。下一节进入这条管线。
 
-> **参考 raw：** `overview-skeleton.answer.md`、`concept-breakdown-graphics-overview.answer.md`；对应来源：Week 1 记录、课件01。
+> **参考来源：** Week 1 课程记录；课件01-Lecture01-2026。  
+> raw batch: `overview-skeleton`、`concept-breakdown-graphics-overview`
 
 ### 2.2 从场景数据到屏幕像素
 
@@ -100,7 +101,8 @@ flowchart LR
 
 **小结**：渲染管线解释了“数据怎么流动”，但其中最关键的一步是从连续几何到离散片元。下一节看 Week 2 的扫描转换。
 
-> **参考 raw：** `concept-breakdown-rendering-pipeline.answer.md`、`deep-dive-pipeline-dataflow.answer.md`；对应来源：Week 1-2 记录、课件01。
+> **参考来源：** Week 1-2 课程记录；课件01-Lecture01-2026；课件02-Lecture02-2026。  
+> raw batch: `concept-breakdown-rendering-pipeline`、`deep-dive-pipeline-dataflow`
 
 ### 2.3 扫描转换：连续几何如何落到像素格
 
@@ -151,7 +153,8 @@ $$
 
 **小结**：扫描转换让你看到图形学最底层的取舍：质量、效率和离散误差。下一节回到这些算法上游，解释点、向量、坐标和矩阵为什么是必须的语言。
 
-> **参考 raw：** `slide-skeleton-lecture02.answer.md`、`examples-pipeline-and-math.answer.md`、`misconceptions-part1.answer.md`；对应来源：Week 2 记录、课件02。
+> **参考来源：** Week 2 课程记录；课件02-Lecture02-2026。  
+> raw batch: `slide-skeleton-lecture02`、`examples-pipeline-and-math`、`misconceptions-part1`
 
 ### 2.4 点、向量、坐标系与齐次坐标
 
@@ -206,7 +209,8 @@ flowchart LR
 
 **小结**：扫描转换解决“怎么落到像素”，坐标和矩阵解决“几何在落到像素前如何被表示和搬运”。两者合起来，构成后续 3D 管线的基础。
 
-> **参考 raw：** `concept-breakdown-math-foundations.answer.md`、`deep-dive-coordinates-homogeneous.answer.md`；对应来源：Week 2 记录与后续承接 raw。
+> **参考来源：** Week 2 课程记录；课件02-Lecture02-2026；对应后续 Week 3-4 承接材料。  
+> raw batch: `concept-breakdown-math-foundations`、`deep-dive-coordinates-homogeneous`
 
 ## 3. 重难点与易错点
 
@@ -235,7 +239,8 @@ Week 1-2 是全课地基：
 - 对 Week 7-9：片元、shader、framebuffer 的位置会帮助你理解光照、纹理和 GLSL 数据流。
 - 对 Project：Week 2 已出现开发环境配置、AI 插件、Unity/VS 等要求；raw 中未见完整 Project 需求，因此这里只能把“记录 AI 互动过程、能解释代码效率和调试原因”作为当前可确认落点。
 
-> **参考 raw：** `project-bridge.answer.md`、`overview-skeleton.answer.md`；完整 raw 映射见 `notebooklm-raw/week1-2/knowledge-graph.md` 与 `notebooklm-raw/week1-2/review-iteration.md`。
+> **参考来源：** Week 1-2 课程记录；课件01-Lecture01-2026；课件02-Lecture02-2026；完整 raw 映射见 `notebooklm-raw/week1-2/knowledge-graph.md` 与 `notebooklm-raw/week1-2/review-iteration.md`。  
+> raw batch: `project-bridge`、`overview-skeleton`
 
 ## 5. 复习路线与自检
 

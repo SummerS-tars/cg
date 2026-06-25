@@ -144,12 +144,15 @@ raw 采集尽量全，指南整合要分层：
 
 ### 3.4 来源标注
 
-- 来源应贴近被支撑的核心知识章节，优先在小节末尾使用简短引用块：
+- 来源应贴近被支撑的核心知识章节，优先在小节末尾使用简短引用块。最终指南的主引用必须是读者可理解的 `Week X 课程记录`、课件标题、论文标题或 Project / Assignment 文档标题，不以 `*.answer.md` 文件名为主：
 
 ```markdown
-> **参考 raw：** `batch-a.answer.md`、`batch-b.answer.md`；对应课件/课堂记录：Week N、课件 0N。
+> **参考来源：** Week 3 课程记录；课件03-Lecture03-2026；课件04-Lecture04-05-2025。
+> raw batch: `concept-breakdown-geometric-transforms`、`slide-skeleton-lecture03`
 ```
 
+- 可读来源优先从 raw metadata、manifest、prompt、stage summary、semester-parts 或 source list 记录中提取；不得凭空补标题。
+- 若无法还原可读标题，可写「对应 Week 记录/课件（标题待校准）」，并保留 `raw batch: ...` 作为辅助追溯。
 - 最终学习指南不得在末尾集中放一个长“资料索引”表；完整 raw 映射应保存在 `knowledge-graph.md`、`review-iteration.md` 或采集说明文档。
 - 课纲冲突：`> **课纲注**：[以课堂记录/课件为准]`
 
@@ -198,8 +201,11 @@ Mermaid 图只在能降低理解成本时使用，优先表达：
 
 ## 5. 文档结构（固定）
 
+完整模板见 `guides/学习指南框架模板.md`。新建或重写指南时，必须先按该模板搭框架，再进入正文整合。
+
 ```markdown
 # Week X–Y 学习指南：[主题]
+## 本指南要回答的问题 / 学习目标
 ## 0. 术语表
 ## 1. 知识地图（L0）
 ## 2. 核心知识（含全景节 + 叙事线）
@@ -208,7 +214,9 @@ Mermaid 图只在能降低理解成本时使用，优先表达：
 ## 5. 复习路线与自检
 ```
 
-最终指南中不得出现 `Step 4 补充采集说明`、补采计划、manifest 计划或长篇 raw 索引；这些内容维护在 `notebooklm-raw/<module>/review-iteration.md`、`focus-map.md`、`knowledge-graph.md` 或专门采集说明中。
+核心章节必须采用「本节叙事线」「本节要回答」「概念解释」「公式 / 图示 / 例子」「易混点」「小结与承接」「章节就近参考」的结构。术语表采用 `中文(English)` 与 `Abbr(Full English Name，中文对照)` 格式。
+
+最终指南中不得出现 `Step 4 补充采集说明`、补采计划、manifest 计划、NotebookLM 执行命令或长篇 raw 索引；这些内容维护在 `notebooklm-raw/<module>/review-iteration.md`、`focus-map.md`、`knowledge-graph.md` 或专门采集说明中。
 
 ---
 

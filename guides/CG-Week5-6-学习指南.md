@@ -40,7 +40,8 @@ flowchart LR
 > **追问：为什么 P3 不直接从“画三角形”开始？**  
 > 因为三角形进入屏幕前还处在一串坐标空间中。裁剪(Clipping)、NDC 和视口变换(Viewport Transformation) 决定它能不能进入屏幕、进入屏幕后落在哪些像素附近；光栅化(Rasterization) 才负责生成片元(Fragment)。
 
-> **参考 raw：** `visual-explain-post-projection-pipeline.answer.md`、`concept-breakdown-pipeline-after-projection.answer.md`、`knowledge-graph.md`。
+> **参考来源：** Week 5 课程记录；课件04-Lecture04-05-2025；课件05-Lecture06-2025。  
+> raw batch: `visual-explain-post-projection-pipeline`、`concept-breakdown-pipeline-after-projection`；图谱：`knowledge-graph.md`
 
 ## 2. 核心知识
 
@@ -77,7 +78,8 @@ flowchart TD
     F --> G[Screen / Image Coordinates]
 ```
 
-> **参考 raw：** `concept-breakdown-clipping-viewport.answer.md`、`slide-skeleton-lecture04-05-part3.answer.md`。
+> **参考来源：** Week 5 课程记录；课件04-Lecture04-05-2025。  
+> raw batch: `concept-breakdown-clipping-viewport`、`slide-skeleton-lecture04-05-part3`
 
 ### 2.2 扫描转换 / 光栅化：连续几何怎样变成 fragment
 
@@ -102,7 +104,8 @@ flowchart TD
 > **直观理解：fragment 为什么还不是最终 pixel？**  
 > 因为多个三角形可能覆盖同一个像素。光栅化只说“这个三角形想在这里画一个候选点”，深度测试(Depth Test)、模板测试和混合等后段操作才决定它是否真正写入帧缓冲(Frame Buffer)。
 
-> **参考 raw：** `examples-rasterization-scanline-interpolation.answer.md`、`concept-breakdown-scan-conversion-rasterization.answer.md`。
+> **参考来源：** Week 5 课程记录；课件04-Lecture04-05-2025；课件05-Lecture06-2025。  
+> raw batch: `examples-rasterization-scanline-interpolation`、`concept-breakdown-scan-conversion-rasterization`
 
 ### 2.3 可编程管线：shader 和固定功能阶段的边界
 
@@ -131,7 +134,8 @@ flowchart LR
 | Fragment Shading | Fragment Shader / 开发者 | 颜色、纹理、光照计算，承接 P4 |
 | Depth Test | 固定功能 / 输出合并阶段 | 用 Z-buffer 判断可见性 |
 
-> **参考 raw：** `concept-breakdown-programmable-pipeline.answer.md`、`overview-skeleton.answer.md`。
+> **参考来源：** Week 5 课程记录；课件04-Lecture04-05-2025；课件05-Lecture06-2025。  
+> raw batch: `concept-breakdown-programmable-pipeline`、`overview-skeleton`
 
 ### 2.4 Hidden Surface Removal：为什么需要消隐
 
@@ -155,7 +159,8 @@ flowchart LR
 > **追问：背面剔除是不是已经解决了遮挡？**  
 > 不是。背面剔除只删掉背向相机的面，不能判断“前面的物体挡住后面的物体”。一个面正对相机，也可能被另一个更近的面挡住，所以仍需要 Z-buffer 等算法。
 
-> **参考 raw：** `concept-breakdown-hidden-surface-overview.answer.md`、`slide-skeleton-lecture06.answer.md`。
+> **参考来源：** Week 5 课程记录；课件05-Lecture06-2025。  
+> raw batch: `concept-breakdown-hidden-surface-overview`、`slide-skeleton-lecture06`
 
 ### 2.5 Z-buffer：现代 GPU 的可见性基石
 
@@ -201,7 +206,8 @@ Z-buffer 也有局限：
 > **直观理解：Z-fighting 为什么像闪烁？**  
 > 深度缓冲的数值精度有限。如果两个表面深度非常接近，某些像素会判断 A 更近，另一些像素或下一帧又判断 B 更近，于是遮挡关系来回跳。
 
-> **参考 raw：** `deep-dive-zbuffer-depth-test.answer.md`、`concept-breakdown-depth-buffer-algorithms.answer.md`。
+> **参考来源：** Week 5 课程记录；课件05-Lecture06-2025。  
+> raw batch: `deep-dive-zbuffer-depth-test`、`concept-breakdown-depth-buffer-algorithms`
 
 ### 2.6 消隐算法族对比
 
@@ -218,7 +224,8 @@ Z-buffer 也有局限：
 | Area Subdivision | Image-space | 递归细分复杂区域 | 利用区域连贯性 | 实现复杂，复杂边缘递归深 |
 | BSP Tree | Mixed / Object-order | 预处理空间分割得到绘制顺序 | 静态场景排序好 | 动态场景更新困难 |
 
-> **参考 raw：** `compare-hidden-surface-algorithms.answer.md`。
+> **参考来源：** Week 5 课程记录；课件05-Lecture06-2025。  
+> raw batch: `compare-hidden-surface-algorithms`
 
 ## 3. 本 Part 的资料缺口与学习边界
 

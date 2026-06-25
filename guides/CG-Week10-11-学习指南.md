@@ -43,7 +43,8 @@ flowchart LR
 > **追问：为什么 P5 不直接变成曲线曲面推导？**
 > 因为当前 raw 显示，这一 Part 的可复习主线更像“资产如何进入渲染器”：模型文件、GLTF、PBR 材质、场景层级和几何表示边界。曲线曲面与 mesh processing 的部分细节要按资料边界保守处理。
 
-> **参考 raw：** `overview-skeleton.answer.md`、`stage1-summary.md`、`concept-breakdown-model-loading-standards.answer.md`、`visual-explain-model-data-pipeline.answer.md`。
+> **参考来源：** Week 11 课程记录；课件08-Lecture11-part1-2026；对应 Week 10 / 曲线曲面资料缺口（标题待校准）。  
+> raw batch: `overview-skeleton`、`concept-breakdown-model-loading-standards`、`visual-explain-model-data-pipeline`；阶段摘要：`stage1-summary.md`
 
 ## 2. 核心知识
 
@@ -86,7 +87,8 @@ flowchart TD
 
 **小结**：模型加载把“文件资产”转成“管线资源”。接下来最重要的工程格式是 GLTF，因为它把几何和现代材质放在同一套传输结构里。
 
-> **参考 raw：** `visual-explain-model-data-pipeline.answer.md`、`examples-gltf-pbr-material-flow.answer.md`。
+> **参考来源：** Week 11 课程记录；课件08-Lecture11-part1-2026。  
+> raw batch: `visual-explain-model-data-pipeline`、`examples-gltf-pbr-material-flow`
 
 ### 2.2 GLTF 与 PBR：P5 的实践核心
 
@@ -124,7 +126,8 @@ PBR 和 GI(Global Illumination，全局光照)的分界要记清：PBR 解决“
 
 **小结**：GLTF 把资产结构带进渲染器，PBR 把表面反射规则带进材质系统。下一步要看这些资产背后的几何可以有哪些表示方式。
 
-> **参考 raw：** `concept-breakdown-gltf-pbr-bridge.answer.md`、`examples-gltf-pbr-material-flow.answer.md`。
+> **参考来源：** Week 11 课程记录；课件08-Lecture11-part1-2026。  
+> raw batch: `concept-breakdown-gltf-pbr-bridge`、`examples-gltf-pbr-material-flow`
 
 ### 2.3 几何表示：知道每种表示适合什么
 
@@ -152,7 +155,8 @@ PBR 和 GI(Global Illumination，全局光照)的分界要记清：PBR 解决“
 
 **小结**：几何表示决定资产如何存储和处理。最后还要明确哪些内容当前 raw 不足，复习时不要硬背成主线。
 
-> **参考 raw：** `concept-breakdown-geometry-representations.answer.md`、`compare-geometry-representations-boundaries.answer.md`。
+> **参考来源：** Week 11 课程记录；对应几何表示 / 曲线曲面课件或记录（标题待校准）。  
+> raw batch: `concept-breakdown-geometry-representations`、`compare-geometry-representations-boundaries`
 
 ### 2.4 资料边界：哪些不要硬背成主线
 
@@ -174,7 +178,8 @@ PBR 和 GI(Global Illumination，全局光照)的分界要记清：PBR 解决“
 
 **小结**：P5 当前最可靠的复习主线是“资产与场景如何进入渲染器”，而不是完整 geometry processing 课程。
 
-> **参考 raw：** `gap-audit-curves-mesh-processing.answer.md`、`review-gap-boundary-curves-mesh.answer.md`。
+> **参考来源：** Week 11 课程记录；当前 source list 中未见 Week 10 / 曲线曲面 / mesh processing 明确来源。  
+> raw batch: `gap-audit-curves-mesh-processing`、`review-gap-boundary-curves-mesh`
 
 ## 3. 易混点
 

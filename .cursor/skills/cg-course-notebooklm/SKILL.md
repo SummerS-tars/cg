@@ -143,8 +143,11 @@ notebooklm-raw/<module>/runs/latest → 最近 completed run
 
 **详细规范**：`docs/integration-guide.md`（叙事、语言、Mermaid、文档结构）
 
+**统一框架模板**：`guides/学习指南框架模板.md`
+
 **硬性要求**：
 
+- 新建或重写 `CG-Week*-学习指南.md` 时，必须先按统一框架模板搭建：标题与 Part/Week 定位、本指南要回答的问题/学习目标、术语表、知识地图、核心章节、易混点、复习路线/自测题、前后 Part 承接
 - 每个大模块（几何变换、投影、光照、光栅化、纹理、曲线曲面等）先有**全景节**（学什么、学完能做什么），再进公式
 - 章级「叙事线」+ 节级「本节要回答」+ 小结→承接
 - ≥3 张 Mermaid/ASCII 管线图，≥2 组易混对比表，≥3 处追问/直观理解块
@@ -152,8 +155,9 @@ notebooklm-raw/<module>/runs/latest → 最近 completed run
 - 非代码数学表达优先使用 Markdown LaTeX 渲染；公式、矩阵、参数方程、齐次坐标点/向量表示不要误放进 `text` 代码块
 - 期末为英语考试：术语表和正文首次出现的专业术语必须写成 `中文(English)`；英文缩写写成 `Abbr(Full English Name，中文对照)`，并用一句话解释
 - 首次出现的专业术语、算法名、坐标空间、矩阵名必须纳入术语表或局部术语块；内部 Review 要专门排查未解释术语
-- 核心章节附近使用简短 `参考 raw` 引用块；最终指南不得用末尾长表集中堆“资料索引”
-- 最终指南不得包含 `Step 4 补充采集说明`、补采计划或 manifest 计划；这些内容放到 `review-iteration.md`、`focus-map.md` 或采集说明文档
+- 核心章节附近使用简短 `参考来源` 引用块；主引用写可读的 `Week X 课程记录`、课件标题、论文标题或 Project / Assignment 文档标题，不以 `*.answer.md` 文件名为主
+- 若无法从 raw metadata、manifest、prompt、stage summary、semester-parts 或 source list 还原标题，写「对应 Week 记录/课件（标题待校准）」并保留 `raw batch: ...` 辅助追溯
+- 最终指南不得包含 `Step 4 补充采集说明`、补采计划、manifest 计划、NotebookLM 执行命令或长篇 raw 索引；这些内容放到 `review-iteration.md`、`focus-map.md` 或采集说明文档
 - Markdown 表格要检查未转义竖线，表格内绝对值优先写为 `abs(m)`，避免竖线绝对值写法破坏渲染
 - 不得一次写完就交付：必须经历「基础框架 → 基础补充 → 重难点深挖 → 内部 Review → 迭代整合 → 再 Review」后，才进入用户 Review。
 
@@ -209,6 +213,7 @@ Phase 4 是用户 Review，不替代 Agent 内部自审。用户看到前，Agen
 - Agent 在 WSL 尝试 `notebooklm login` 或浏览器登录（见 auth-sop.md）
 - Agent 编造公式、图示或坐标推导不标注来源
 - 最终学习指南中保留采集计划、补采说明或长篇 raw 索引
+- 最终学习指南中以 `*.answer.md` 文件名作为章节引用主来源
 - 专业术语首次出现不解释，或未按英语考试格式提供英文对照
 - Markdown 表格中使用未转义 `|` 导致渲染破坏
 - 非代码公式、矩阵或参数方程误用行内代码 / `text` 代码块，导致 Markdown 渲染效果差
