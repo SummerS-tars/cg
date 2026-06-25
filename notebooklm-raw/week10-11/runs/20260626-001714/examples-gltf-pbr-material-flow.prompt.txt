@@ -1,0 +1,5 @@
+【单问·Stage 3 例子深挖】基于 Week 11 课堂记录、P5 作业线索和 P5 stage-2 raw，请整理 GLTF 场景加载与 PBR 材质参数如何服务渲染的例子。
+
+Focus map 指出：P5 指南需要说明 Position、Normal、UV、Albedo、Roughness、Metallic、Normal Map、Light、Camera 等数据如何进入 shader 或 ray tracer。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给一个小型“加载机器人或复杂模型”的数据流例；说明 PBR 与 P6 Global Illumination 的边界；标注来源。

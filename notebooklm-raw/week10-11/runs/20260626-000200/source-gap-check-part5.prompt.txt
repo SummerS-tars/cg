@@ -1,0 +1,5 @@
+【单问·source 缺口检查·Stage 1】请根据当前 NotebookLM 中可见 source，判断是否存在支持 CG Part 5“几何建模 / 曲线曲面 / 网格”的资料。
+
+问题：请列出你能看到的与 Week 10-11、几何建模、曲线曲面、mesh、model loading、geometry processing 相关的 source 名称；如果没有，请明确说明缺失哪些资料，并建议后续采集/学习指南应如何处理这个缺口。
+
+要求：中文；只做 source 对齐和缺口审计；不要根据通用知识编写曲线曲面教程；不要写成学习指南正文；每个判断尽量标注可见来源或说明“未见 source”。

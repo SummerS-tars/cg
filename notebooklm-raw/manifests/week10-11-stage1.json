@@ -1,0 +1,66 @@
+{
+  "module": "week10-11",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 10-11 / Part 5：几何建模、曲线曲面与网格资料校准（v4.1 dynamic raw stage 1；只采骨架）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P5",
+  "stage": "stage-1-skeleton",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "carry_forward": "Agent 读取 stage-1 answers 后产出 notebooklm-raw/week10-11/stage1-summary.md，并把摘要显式写入 stage-2 manifest；不得依赖 NotebookLM chat history。",
+    "next_stage": "stage-2 module expansion / concept breakdown",
+    "postpone_until_focus_map": [
+      "misconceptions-*",
+      "project-bridge",
+      "glossary-raw"
+    ]
+  },
+  "scope": {
+    "weeks": ["Week 10", "Week 11"],
+    "topics": ["几何建模", "曲线与曲面", "参数曲线", "网格表示", "模型加载与几何处理"],
+    "source_alignment_note": "P5 范围依据 notebooklm-raw/semester-parts.md 与 guides/CG课程-16周内容梳理.md；2026-06-26 source list 未发现 Week 10 / Week 16 课堂笔记，也未发现明确以曲线、曲面或 mesh 命名的课件。可见相邻 source 包括 笔记-week11-周一-图形学、课件08-Lecture11-part1-2026、课件09-Lecture11-part2-路径追踪-2026。Stage 1 首要目标是判断这些 source 是否真的覆盖 P5 主题，还是 P5 资料缺失 / 周次规划需要修订。"
+  },
+  "sources_hint": [
+    "笔记-week11-周一-图形学",
+    "课件08-Lecture11-part1-2026",
+    "课件09-Lecture11-part2-路径追踪-2026（仅用于判断是否属于 P5，若为 P6 路径追踪则排除）"
+  ],
+  "batches": [
+    {
+      "id": "overview-skeleton",
+      "stage": "stage-1",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Part 5 全面内容骨架与资料校准",
+      "clear_conversation": true,
+      "prompt": "【单问·Part 骨架·Stage 1】请综合 Notebook 中可见的 Week 10-11 课程记录和相关课件，校准 CG Part 5 是否确实覆盖“几何建模、曲线曲面、参数曲线、网格表示、模型加载与几何处理”。\n\n建议来源范围：笔记-week11-周一-图形学、课件08-Lecture11-part1-2026；若 NotebookLM 中实际存在 Week 10、曲线曲面、mesh、geometry processing、model loading 等 source，请纳入并说明；若只找到光线追踪、路径追踪或高级渲染 source，也请明确指出它们更适合 P6 而非 P5。\n\n要求：中文；按授课或课件顺序列出真实大知识点；说明每个大知识点解决的图形学问题、重要性（核心/重要/了解）、与前序 P4 着色/纹理及后续 P6 高级渲染的关系、相关来源；专门列出缺失 source 和周次偏差；不要写成学习指南正文；不要总结易混点或常见错误。"
+    },
+    {
+      "id": "slide-skeleton-lecture11-part1",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "课件08/Lecture11 part1 原序骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定·Stage 1】请仅依据以下课件：课件08-Lecture11-part1-2026。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件分了几个主要模块？每个模块分别讲了什么知识点？哪些模块/知识点最重要？它是否属于几何建模 / 曲线曲面 / 网格处理，还是属于光线追踪 / 高级渲染？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键示例或例题；每点标注来源；若该课件不是 P5 主题，请明确给出判断依据；不要展开成完整学习指南；不要总结易混点或常见错误。"
+    },
+    {
+      "id": "note-skeleton-week11",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "Week 11 课堂笔记骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课堂笔记限定·Stage 1】请仅依据以下 source：笔记-week11-周一-图形学。不要使用其他周次、课件、论文或 Project 文档。\n\n问题：请按课堂笔记顺序梳理 Week 11 实际讲了哪些模块？这些模块是否覆盖几何建模、曲线曲面、网格或模型加载？如果实际主题是光线追踪、路径追踪或其他高级渲染，请明确说明。\n\n要求：中文；按原文顺序编号；说明每个模块的学习目标、关键概念、例子或公式；每点标注来源；列出与 P5 规划不一致的地方；不要展开成完整学习指南。"
+    },
+    {
+      "id": "source-gap-check-part5",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "important",
+      "title": "Part 5 source 缺口检查",
+      "clear_conversation": true,
+      "prompt": "【单问·source 缺口检查·Stage 1】请根据当前 NotebookLM 中可见 source，判断是否存在支持 CG Part 5“几何建模 / 曲线曲面 / 网格”的资料。\n\n问题：请列出你能看到的与 Week 10-11、几何建模、曲线曲面、mesh、model loading、geometry processing 相关的 source 名称；如果没有，请明确说明缺失哪些资料，并建议后续采集/学习指南应如何处理这个缺口。\n\n要求：中文；只做 source 对齐和缺口审计；不要根据通用知识编写曲线曲面教程；不要写成学习指南正文；每个判断尽量标注可见来源或说明“未见 source”。"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Stage 1 中确认的可见 source，展开 Part 5 的“几何表示方法概览”：polygon mesh、point cloud、subdivision surfaces、NURBS、implicit surfaces、voxels、CSG 和 procedural modeling。
+
+Stage 1 摘要：这些概念主要来自 Week 14 笔记和早期课件的概览，不是系统算法推导。
+
+要求：中文；术语首次出现写中文(English)；分别说明每种表示解决什么建模问题、适合什么场景、与 rasterization / ray tracing 的关系；明确哪些只是课程概览、哪些缺少细节来源；标注来源；不要编造未见 source 中的算法推导。

@@ -1,0 +1,5 @@
+【单问·Stage 3 Review 边界】基于 P5 stage-2 缺口审计，请整理最终学习指南应如何保守处理曲线曲面、参数曲线和 mesh processing 缺口。
+
+Focus map 指出：Bezier、B-spline、de Casteljau、half-edge、QEM、Catmull-Clark 未由当前 raw 支撑，指南应把它们放入扩展 / 缺口说明，而不是当作考试主线。
+
+要求：中文；输出可供 Agent 写 review-iteration 的审计要点；列出指南正文应该保留的安全范围、应该避免的内容、可建议用户补充的 source 类型；标注来源；不要写最终指南全文。

@@ -1,0 +1,5 @@
+【单问·Stage 2 模块展开】基于 Week 11 课堂记录、P5 作业线索和课件08-Lecture11-part1-2026，请展开 Part 5 中“GLTF 场景加载与 PBR / 全局光照的过渡关系”。
+
+Stage 1 摘要：Week 11 提到 P5 要求 PBR 或 GLTF 场景加载；课件08 本身是 Global Illumination，应作为 P5 到 P6 的承接，而不是 P5 几何建模主课件。
+
+要求：中文；解释 PBR（Physically Based Rendering，基于物理的渲染）、材质、纹理、光源、场景加载如何连接；说明 GLTF 场景数据如何服务 PBR；解释为什么 Global Illumination 更适合归入 P6；标注来源；不要写成最终指南全文。

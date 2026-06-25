@@ -1,0 +1,51 @@
+{
+  "module": "week10-11",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week10-11-stage2.json",
+  "run_dir": "notebooklm-raw/week10-11/runs/20260626-001017",
+  "started_at": "2026-06-25T16:10:17.091848+00:00",
+  "finished_at": "2026-06-25T16:14:01.906633+00:00",
+  "batches_total": 4,
+  "batches_completed": 4,
+  "batches_ok": 4,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "concept-breakdown-model-loading-standards",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 48.28,
+      "retry_count": 0,
+      "conversation_id": "77708437-4836-43d7-b48c-af2ffd55aa8c"
+    },
+    {
+      "id": "concept-breakdown-geometry-representations",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 52.65,
+      "retry_count": 0,
+      "conversation_id": "e4103c7a-61ac-4cdb-b50a-6c842a2ffa8d"
+    },
+    {
+      "id": "concept-breakdown-gltf-pbr-bridge",
+      "layer": "L2-L3",
+      "status": "ok",
+      "elapsed_seconds": 42.2,
+      "retry_count": 0,
+      "conversation_id": "ba464304-f888-4a60-9f25-f961ed36c27c"
+    },
+    {
+      "id": "gap-audit-curves-mesh-processing",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 49.02,
+      "retry_count": 0,
+      "conversation_id": "895eaacb-56af-462d-8cf7-5183618c7a4b"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 224.81,
+  "total_retry_count": 0
+}

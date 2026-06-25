@@ -1,0 +1,68 @@
+{
+  "module": "week10-11",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 10-11 / Part 5：基于 focus map 的模型数据流、GLTF/PBR 例子与几何缺口边界深挖（v4.1 dynamic raw stage 3）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P5",
+  "stage": "stage-3-targeted-deep-dive",
+  "focus_map_ref": "notebooklm-raw/week10-11/focus-map.md",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "quality_standards": [
+      "术语首次出现必须解释",
+      "期末英语考试术语格式：中文(English) 或 Abbr(Full English Name，中文对照)",
+      "最终指南使用章节就近参考 raw 引用块",
+      "最终指南不包含采集说明或补采计划",
+      "Markdown 表格避免未转义竖线，数学表达优先用 LaTeX"
+    ],
+    "optional_stage4": "当前不追加 optional stage-4；缺失曲线曲面 / mesh processing 资料需用户补充 source 后再 supplement。"
+  },
+  "scope": {
+    "weeks": ["Week 10", "Week 11"],
+    "stage2_run": "notebooklm-raw/week10-11/runs/20260626-001017",
+    "focus_targets": [
+      "GLTF / OBJ / USD 数据进入渲染管线",
+      "PBR 材质参数与 texture / shader / ray tracer 输入",
+      "几何表示对比与课程 raw 边界",
+      "曲线曲面 / mesh processing 缺口处理"
+    ]
+  },
+  "batches": [
+    {
+      "id": "visual-explain-model-data-pipeline",
+      "stage": "stage-3",
+      "layer": "L4-L5",
+      "priority": "critical",
+      "title": "模型数据进入渲染管线视觉解释",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 视觉解释】基于 P5 stage-2 raw，请把 GLTF / OBJ / USD 等模型或场景数据进入渲染管线的过程整理成可视化解释素材。\n\nFocus map 指出：指南需要用“文件数据 -> CPU 解析 -> GPU buffer / material / texture -> shader / ray tracer”的数据流解释，而不是只列格式名词。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；按数据流顺序解释每一步输入输出；给出适合改写成 Mermaid flowchart 的节点和箭头；标注来源；不要写成最终指南全文。"
+    },
+    {
+      "id": "examples-gltf-pbr-material-flow",
+      "stage": "stage-3",
+      "layer": "L4",
+      "priority": "critical",
+      "title": "GLTF / PBR 材质数据例子",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 例子深挖】基于 Week 11 课堂记录、P5 作业线索和 P5 stage-2 raw，请整理 GLTF 场景加载与 PBR 材质参数如何服务渲染的例子。\n\nFocus map 指出：P5 指南需要说明 Position、Normal、UV、Albedo、Roughness、Metallic、Normal Map、Light、Camera 等数据如何进入 shader 或 ray tracer。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；给一个小型“加载机器人或复杂模型”的数据流例；说明 PBR 与 P6 Global Illumination 的边界；标注来源。"
+    },
+    {
+      "id": "compare-geometry-representations-boundaries",
+      "stage": "stage-3",
+      "layer": "L4",
+      "priority": "important",
+      "title": "几何表示对比与边界",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 对比整理】基于 P5 stage-2 raw，请整理 polygon mesh、point cloud、subdivision surface、NURBS、implicit surface、voxel、CSG、procedural modeling 的对比素材。\n\nFocus map 指出：指南只能做课程 raw 支撑的概念对比，不能展开未见的 Bezier、B-spline、half-edge、QEM、Catmull-Clark 细节。\n\n要求：中文；术语首次出现写中文(English)；先解释每种表示适合什么任务，再给出适合改写为 Markdown 表格的对比内容；明确 raw 覆盖深度（覆盖 / 部分覆盖 / 缺失）；标注来源。"
+    },
+    {
+      "id": "review-gap-boundary-curves-mesh",
+      "stage": "stage-3",
+      "layer": "L4",
+      "priority": "important",
+      "title": "曲线曲面 / mesh 缺口边界整理",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 3 Review 边界】基于 P5 stage-2 缺口审计，请整理最终学习指南应如何保守处理曲线曲面、参数曲线和 mesh processing 缺口。\n\nFocus map 指出：Bezier、B-spline、de Casteljau、half-edge、QEM、Catmull-Clark 未由当前 raw 支撑，指南应把它们放入扩展 / 缺口说明，而不是当作考试主线。\n\n要求：中文；输出可供 Agent 写 review-iteration 的审计要点；列出指南正文应该保留的安全范围、应该避免的内容、可建议用户补充的 source 类型；标注来源；不要写最终指南全文。"
+    }
+  ]
+}

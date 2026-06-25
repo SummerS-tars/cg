@@ -1,0 +1,33 @@
+[00:02:00] 模块: week10-11 | 批次数: 4 | 输出: /home/thesumst/development/cg/notebooklm-raw/week10-11/runs/20260626-000200
+[00:02:00] 代理环境: HTTP(S)_PROXY/http(s)_proxy=http://127.0.0.1:7897
+[00:02:00] 同步认证…
+[00:02:02] 认证 OK
+[00:02:02] 选定 Notebook: c46f03a0-be2e-4cbb-8172-24a3ee0fce88
+[00:02:07] --- batch 1/4: [L0] overview-skeleton ---
+[00:02:07] 清空会话上下文 (notebooklm clear)
+[00:02:07] 提问 (428 字, nlm_timeout=120s)…
+[00:03:23] 模块: week10-11 | 批次数: 4 | 输出: /home/thesumst/development/cg/notebooklm-raw/week10-11/runs/20260626-000200
+[00:03:23] 代理环境: HTTP(S)_PROXY/http(s)_proxy=http://127.0.0.1:7897
+[00:03:23] 同步认证…
+[00:03:26] 认证 OK
+[00:03:26] 选定 Notebook: c46f03a0-be2e-4cbb-8172-24a3ee0fce88
+[00:03:30] --- batch 1/4: [L0] overview-skeleton ---
+[00:03:30] 清空会话上下文 (notebooklm clear)
+[00:03:30] 提问 (428 字, nlm_timeout=120s)…
+[00:04:15] 完成 overview-skeleton (45.1s)
+[00:04:15] 等待 10.0s…
+[00:04:25] --- batch 2/4: [L1] slide-skeleton-lecture11-part1 ---
+[00:04:25] 清空会话上下文 (notebooklm clear)
+[00:04:25] 提问 (289 字, nlm_timeout=120s)…
+[00:05:04] 完成 slide-skeleton-lecture11-part1 (39.2s)
+[00:05:04] 等待 10.0s…
+[00:05:14] --- batch 3/4: [L1] note-skeleton-week11 ---
+[00:05:14] 清空会话上下文 (notebooklm clear)
+[00:05:14] 提问 (240 字, nlm_timeout=120s)…
+[00:05:59] 完成 note-skeleton-week11 (44.3s)
+[00:05:59] 等待 10.0s…
+[00:06:09] --- batch 4/4: [L1] source-gap-check-part5 ---
+[00:06:09] 清空会话上下文 (notebooklm clear)
+[00:06:09] 提问 (301 字, nlm_timeout=120s)…
+[00:06:55] 完成 source-gap-check-part5 (46.6s)
+[00:06:55] 采集结束: status=completed | ok=4 skipped=0 failed=0/4 | 重试 0 次 | 耗时 211.99s

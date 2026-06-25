@@ -1,0 +1,5 @@
+【单问·Stage 3 对比整理】基于 P5 stage-2 raw，请整理 polygon mesh、point cloud、subdivision surface、NURBS、implicit surface、voxel、CSG、procedural modeling 的对比素材。
+
+Focus map 指出：指南只能做课程 raw 支撑的概念对比，不能展开未见的 Bezier、B-spline、half-edge、QEM、Catmull-Clark 细节。
+
+要求：中文；术语首次出现写中文(English)；先解释每种表示适合什么任务，再给出适合改写为 Markdown 表格的对比内容；明确 raw 覆盖深度（覆盖 / 部分覆盖 / 缺失）；标注来源。

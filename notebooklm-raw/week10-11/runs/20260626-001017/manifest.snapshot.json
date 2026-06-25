@@ -1,0 +1,78 @@
+{
+  "module": "week10-11",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 10-11 / Part 5：基于 stage-1 资料校准的模型加载、几何表示与 PBR 过渡展开（v4.1 dynamic raw stage 2）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P5",
+  "stage": "stage-2-module-expansion",
+  "stage_input_summary": "notebooklm-raw/week10-11/stage1-summary.md",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "carry_forward": "Agent 读取 stage-2 answers 后产出 notebooklm-raw/week10-11/focus-map.md，并把 critical/important/normal、缺口与 deep-dive 目标显式写入 stage-3 manifest。",
+    "parallel_raw_experiment": "可与 P6 stage-2 小并发运行；若出现限流、超时、认证或会话冲突，立即回退串行。",
+    "postpone_until_focus_map": [
+      "misconceptions-*",
+      "project-bridge",
+      "glossary-raw"
+    ]
+  },
+  "scope": {
+    "weeks": [
+      "Week 10",
+      "Week 11"
+    ],
+    "sources": [
+      "笔记-week11-周一-图形学",
+      "笔记-week12-周一-图形学",
+      "笔记-week14-周一-图形学",
+      "课件02-Lecture02-2026",
+      "课件04-Lecture04-05-2025",
+      "课件08-Lecture11-part1-2026"
+    ],
+    "stage1_run": "notebooklm-raw/week10-11/runs/20260626-000200",
+    "stage1_modules": [
+      "GLTF / OBJ / USD 与模型加载",
+      "几何表示方法概览",
+      "曲线曲面与 mesh 处理资料缺口",
+      "PBR / 全局光照过渡"
+    ]
+  },
+  "batches": [
+    {
+      "id": "concept-breakdown-model-loading-standards",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "模型加载与场景标准展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 11/12/14 课堂记录和当前 source 中关于 OBJ、FBX、GLTF/GLB、USD、模型加载、场景描述的内容，请展开 Part 5 中“模型加载与场景标准”。\n\nStage 1 摘要：P5 当前可支撑的主线不是完整曲线曲面课，而是 P5 作业中的 PBR 或 GLTF 场景加载，以及 OBJ / FBX / GLTF / USD 等模型与场景标准。\n\n要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；解释模型文件通常保存哪些数据（几何、层级、材质、纹理、动画等）；说明这些数据如何进入 P4/P5 渲染管线；标注来源；不要展开完整光线追踪或路径追踪。"
+    },
+    {
+      "id": "concept-breakdown-geometry-representations",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "important",
+      "title": "几何表示方法概览展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Stage 1 中确认的可见 source，展开 Part 5 的“几何表示方法概览”：polygon mesh、point cloud、subdivision surfaces、NURBS、implicit surfaces、voxels、CSG 和 procedural modeling。\n\nStage 1 摘要：这些概念主要来自 Week 14 笔记和早期课件的概览，不是系统算法推导。\n\n要求：中文；术语首次出现写中文(English)；分别说明每种表示解决什么建模问题、适合什么场景、与 rasterization / ray tracing 的关系；明确哪些只是课程概览、哪些缺少细节来源；标注来源；不要编造未见 source 中的算法推导。"
+    },
+    {
+      "id": "concept-breakdown-gltf-pbr-bridge",
+      "stage": "stage-2",
+      "layer": "L2-L3",
+      "priority": "critical",
+      "title": "GLTF 场景加载与 PBR 过渡展开",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 模块展开】基于 Week 11 课堂记录、P5 作业线索和课件08-Lecture11-part1-2026，请展开 Part 5 中“GLTF 场景加载与 PBR / 全局光照的过渡关系”。\n\nStage 1 摘要：Week 11 提到 P5 要求 PBR 或 GLTF 场景加载；课件08 本身是 Global Illumination，应作为 P5 到 P6 的承接，而不是 P5 几何建模主课件。\n\n要求：中文；解释 PBR（Physically Based Rendering，基于物理的渲染）、材质、纹理、光源、场景加载如何连接；说明 GLTF 场景数据如何服务 PBR；解释为什么 Global Illumination 更适合归入 P6；标注来源；不要写成最终指南全文。"
+    },
+    {
+      "id": "gap-audit-curves-mesh-processing",
+      "stage": "stage-2",
+      "layer": "L2",
+      "priority": "important",
+      "title": "曲线曲面与 mesh 处理缺口审计",
+      "clear_conversation": true,
+      "prompt": "【单问·Stage 2 缺口审计】请仅基于当前 NotebookLM 可见 source，审计 Part 5 中“曲线曲面、参数曲线、网格处理、geometry processing”资料覆盖情况。\n\nStage 1 摘要：未见专门讲 Bezier、B-spline、NURBS、de Casteljau、half-edge、QEM、Catmull-Clark 或 mesh parameterization 的系统课件；只有早期曲线光栅化和 Week 14 几何表示概览。\n\n要求：中文；列出已覆盖、部分覆盖、未覆盖三类；对每个未覆盖主题说明为什么不能当作本课程 raw 已支持内容；给出学习指南中应如何保守处理这些缺口的建议；标注来源；不要根据通用知识补写教程。"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "module": "week10-11",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "manifest": "notebooklm-raw/manifests/week10-11-stage3.json",
+  "run_dir": "notebooklm-raw/week10-11/runs/20260626-001714",
+  "started_at": "2026-06-25T16:17:14.737287+00:00",
+  "finished_at": "2026-06-25T16:20:46.740166+00:00",
+  "batches_total": 4,
+  "batches_completed": 4,
+  "batches_ok": 4,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "visual-explain-model-data-pipeline",
+      "layer": "L4-L5",
+      "status": "ok",
+      "elapsed_seconds": 41.93,
+      "retry_count": 0,
+      "conversation_id": "30defc9e-922c-412a-b742-73e9381db28f"
+    },
+    {
+      "id": "examples-gltf-pbr-material-flow",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 41.88,
+      "retry_count": 0,
+      "conversation_id": "d21e24ec-f6ca-472f-87fb-06af667fa7a4"
+    },
+    {
+      "id": "compare-geometry-representations-boundaries",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 42.91,
+      "retry_count": 0,
+      "conversation_id": "e4498ab6-c6a5-460c-89c0-19c385c61fa6"
+    },
+    {
+      "id": "review-gap-boundary-curves-mesh",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 50.5,
+      "retry_count": 0,
+      "conversation_id": "9f02f2f8-04b3-4517-b7ac-0ef1181bd228"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 212.0,
+  "total_retry_count": 0
+}

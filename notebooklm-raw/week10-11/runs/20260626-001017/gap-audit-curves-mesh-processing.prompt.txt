@@ -1,0 +1,5 @@
+【单问·Stage 2 缺口审计】请仅基于当前 NotebookLM 可见 source，审计 Part 5 中“曲线曲面、参数曲线、网格处理、geometry processing”资料覆盖情况。
+
+Stage 1 摘要：未见专门讲 Bezier、B-spline、NURBS、de Casteljau、half-edge、QEM、Catmull-Clark 或 mesh parameterization 的系统课件；只有早期曲线光栅化和 Week 14 几何表示概览。
+
+要求：中文；列出已覆盖、部分覆盖、未覆盖三类；对每个未覆盖主题说明为什么不能当作本课程 raw 已支持内容；给出学习指南中应如何保守处理这些缺口的建议；标注来源；不要根据通用知识补写教程。

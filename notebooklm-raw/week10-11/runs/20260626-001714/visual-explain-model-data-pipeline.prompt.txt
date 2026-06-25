@@ -1,0 +1,5 @@
+【单问·Stage 3 视觉解释】基于 P5 stage-2 raw，请把 GLTF / OBJ / USD 等模型或场景数据进入渲染管线的过程整理成可视化解释素材。
+
+Focus map 指出：指南需要用“文件数据 -> CPU 解析 -> GPU buffer / material / texture -> shader / ray tracer”的数据流解释，而不是只列格式名词。
+
+要求：中文；术语首次出现写中文(English)，英文缩写写 Abbr(Full English Name，中文对照)；按数据流顺序解释每一步输入输出；给出适合改写成 Mermaid flowchart 的节点和箭头；标注来源；不要写成最终指南全文。
