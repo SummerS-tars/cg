@@ -1,0 +1,58 @@
+{
+  "module": "week3-4",
+  "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
+  "description": "Week 3-4 / Part 2：变换、坐标系、相机与投影（v4.1 dynamic raw stage 1；只采骨架）",
+  "workflow": "v4.1-dynamic-layered-raw",
+  "part": "P2",
+  "stage": "stage-1-skeleton",
+  "stage_policy": {
+    "formal_batches_clear_conversation": true,
+    "carry_forward": "Agent 读取 stage-1 answers 后产出 notebooklm-raw/week3-4/stage1-summary.md，并把摘要显式写入 stage-2 manifest；不得依赖 NotebookLM chat history。",
+    "next_stage": "stage-2 module expansion / concept breakdown",
+    "postpone_until_focus_map": [
+      "misconceptions-*",
+      "project-bridge",
+      "glossary-raw"
+    ]
+  },
+  "scope": {
+    "weeks": ["Week 3", "Week 4"],
+    "topics": ["2D/3D 几何变换", "坐标系与复合变换", "相机/观察变换", "正交与透视投影", "裁剪空间与 NDC"],
+    "source_alignment_note": "P2 范围依据 notebooklm-raw/semester-parts.md 与 guides/CG课程-16周内容梳理.md；2026-06-25 认证失效导致无法实时读取 source list，source 名称先按已记录 ready source 和 P1 命名模式占位，运行前需重新用 NotebookLM source list 校准。"
+  },
+  "sources_hint": [
+    "笔记-week03-CG / 笔记-week03-周一-图形学",
+    "笔记-week04-CG / 笔记-week04-周一-图形学",
+    "课件03-Lecture03-2026",
+    "课件04-Lecture04-2026"
+  ],
+  "batches": [
+    {
+      "id": "overview-skeleton",
+      "stage": "stage-1",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Part 2 全面内容骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·Part 骨架·Stage 1】请综合 Week 3-4 课程记录和相关课件，全面梳理 CG Part 2 讲了哪些大知识点。\n\n建议来源范围：笔记-week03-CG / 笔记-week03-周一-图形学、笔记-week04-CG / 笔记-week04-周一-图形学、课件03-Lecture03-2026、课件04-Lecture04-2026；若 NotebookLM 中实际 source 名称不同，请以可见来源为准并在回答中说明。\n\n要求：中文；按授课或课件顺序列出大知识点；说明每个大知识点解决的图形学问题、重要性（核心/重要/了解）、与渲染管线和 Week 1-2 数学基础的关系、相关来源；可以不用展开公式细节；不要遗漏边角主题；不要写成学习指南正文；不要总结易混点或常见错误。"
+    },
+    {
+      "id": "slide-skeleton-lecture03",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "课件03原序骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定·Stage 1】请仅依据以下课件：课件03-Lecture03-2026。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件分了几个主要模块？每个模块分别讲了什么知识点？哪些模块/知识点最重要？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键示例或例题；每点标注来源；不要展开成完整学习指南；不要总结易混点或常见错误。若该课件在 NotebookLM 中不存在或标题不同，请明确说明。"
+    },
+    {
+      "id": "slide-skeleton-lecture04",
+      "stage": "stage-1",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "课件04原序骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定·Stage 1】请仅依据以下课件：课件04-Lecture04-2026。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件分了几个主要模块？每个模块分别讲了什么知识点？哪些模块/知识点最重要？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键示例或例题；每点标注来源；不要展开成完整学习指南；不要总结易混点或常见错误。若该课件在 NotebookLM 中不存在或标题不同，请明确说明。"
+    }
+  ]
+}
