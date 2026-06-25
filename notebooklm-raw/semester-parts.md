@@ -21,6 +21,23 @@
 | **P6** | `week12-14` | W12–W14 | 高级渲染 / 光线追踪 / 全局光照 | shadow map、ray tracing、path tracing 资料 | `guides/CG-Week12-14-学习指南.md` |
 | **P7** | `week15-16` | W15–W16 | 项目整合 / 复习展示 | Project 文档、评分标准、复习范围 | `guides/CG-Week15-16-学习指南.md` |
 
+### Part 内采集层级（v4）
+
+每个 Part 的 manifest 不应只写几个大问题，而要按“覆盖 → 拆分 → 深挖 → 示例 → 串联”设计 batch。raw 阶段覆盖优先于精炼，指南阶段再按重要程度压缩。
+
+| 层级 | 必要性 | batch id 建议 | 说明 |
+|------|--------|---------------|------|
+| 全面骨架 | 必做 | `overview-skeleton` | NotebookLM 综合相关 Week 记录和课件，列出大知识点、授课顺序、重要性和来源 |
+| 知识点拆分 | 必做 | `concept-breakdown-<topic>` | 对骨架中的每个大知识点拆子知识点，给基础解释、直觉和管线位置 |
+| 重点深挖 | 按需 | `deep-dive-<topic>` | 对核心/难点/易混点继续拆分，补详细解释、推导、直观理解 |
+| 示例例题 | 按需 | `examples-<topic>` | 从课件、教材、Project 中抽取例题；没有现成例题时明确构思依据 |
+| 课件骨架 | 重要课件必做 | `slide-skeleton-<slides>` | 仅限指定课件，按课件顺序梳理模块、知识点和重点 |
+| 课件模块详解 | 按需 | `slide-module-detail-<slides>-<module>` | 仅限指定课件，讲模块内知识点、重要图片、示例、例题 |
+| 易混点 | 推荐 | `misconceptions-<topic>` | 易混概念、常见错误、记忆方式 |
+| 项目桥接 | 推荐 | `project-bridge` | 串联前后周、渲染管线、Project/考试复习 |
+
+课件采集 prompt 必须写明“仅限以下课件”，防止 NotebookLM 把课堂记录、论文或其他周次混入课件梳理。
+
 ### 叙事链（Part 间承接）
 
 ```text
@@ -97,17 +114,20 @@ notebooklm source list
 1. **Phase 0：真实资料盘点**  
    补齐课程资料根目录、课件列表、Week 记录、Project 文档，并更新 `guides/CG课程-16周内容梳理.md`。
 
-2. **Phase 1：L0 discovery**  
-   先为 P1–P7 创建 discovery manifest，每个 Part 只问结构、覆盖范围、与 Project/考试关系。
+2. **Phase 1：Part 骨架采集**  
+   先为目标 Part 创建 `overview-skeleton`，让 NotebookLM 对相关 Week 记录和课件做全面内容骨架梳理。
 
-3. **Phase 1：分 Part 深采**  
-   每个 Part 拆成单问 batch，重点覆盖图形问题、几何直觉、公式/矩阵、管线位置、代码/Project 错误。
+3. **Phase 1：分 Part 分层深采**  
+   根据骨架回答创建 `concept-breakdown-*`；再为核心/难点补 `deep-dive-*`、`examples-*`、`misconceptions-*`、`project-bridge`。
 
-4. **Phase 1.5：知识图谱**  
+4. **Phase 1：课件专用采集**  
+   对目标 Part 的重要课件增加 `slide-skeleton-*` 和 `slide-module-detail-*`，仅限课件来源，按课件原序覆盖图片、示例和例题。
+
+5. **Phase 1.5：知识图谱**  
    通读 `runs/latest/*.answer.md`，生成 `notebooklm-raw/<module>/knowledge-graph.md`。
 
-5. **Phase 2–3：学习指南**  
-   按认知顺序写 `guides/CG-Week*-学习指南.md`，不要按 raw 拼接。
+6. **Phase 2–3：学习指南内部迭代**  
+   按认知顺序写 `guides/CG-Week*-学习指南.md`，执行“基础框架 → 基础补充 → 重难点深挖 → Mermaid/串联 → 自审迭代”，不要按 raw 拼接。
 
 ---
 

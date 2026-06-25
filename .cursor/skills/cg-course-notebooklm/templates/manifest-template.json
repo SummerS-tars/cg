@@ -1,8 +1,8 @@
 {
   "module": "weekX-Y",
   "notebook_id": "c46f03a0-be2e-4cbb-8172-24a3ee0fce88",
-  "description": "Week X-Y：<计算机图形学主题>（单问单答，每 batch 新对话）",
-  "workflow": "v3-one-question-per-chat",
+  "description": "Week X-Y：<计算机图形学主题>（分层 raw 采集；单问单答，每 batch 新对话）",
+  "workflow": "v4-layered-raw-coverage",
   "sources_hint": [
     "笔记-week0X-CG",
     "课件0N-*.pdf",
@@ -10,44 +10,68 @@
   ],
   "batches": [
     {
-      "id": "L0-positioning",
+      "id": "overview-skeleton",
       "layer": "L0",
       "priority": "critical",
-      "title": "模块在课程中的位置",
+      "title": "Part 全面内容骨架",
       "clear_conversation": true,
-      "prompt": "【单问】请仅回答：Week X 和 Week Y 在计算机图形学课程中分别解决什么核心图形问题？与前后周如何衔接？\n\n依据：Week X/Y 课程记录、课件 NN。\n要求：中文；3-5 段；每点标注来源；不要展开具体公式。"
+      "prompt": "【单问·Part 骨架】请综合 Week X-Y 课程记录和相关课件，全面梳理本 Part 讲了哪些大知识点。\n\n依据：Week X/Y 课程记录、课件 NN、必要的 Project 文档。\n要求：中文；按授课/课件顺序列出大知识点；说明每个大知识点解决的图形学问题、重要性（核心/重要/了解）、相关来源；可以不用展开公式细节；不要遗漏边角主题；不要写成学习指南正文。"
     },
     {
-      "id": "wX-topic-example",
+      "id": "concept-breakdown-topic",
       "layer": "L2",
       "priority": "critical",
-      "title": "示例子主题",
+      "title": "大知识点拆分与基础解释",
       "clear_conversation": true,
-      "prompt": "【单问·核心】请仅讲解：<一个具体图形学问题>。\n\n依据：Week X 课程记录、课件 NN。\n要求：中文；先讲几何/视觉直觉，再给符号表或公式；标注来源；不要同时讲其他子主题。"
+      "prompt": "【单问·知识点拆分】请仅围绕：<一个 overview-skeleton 中的大知识点>。\n\n依据：Week X/Y 课程记录、课件 NN。\n要求：中文；拆出该大知识点下的子知识点；分别给基础解释、几何/视觉直觉、在渲染管线或坐标空间中的位置；如涉及公式/矩阵，请先解释符号和输入输出；每点标注来源；不要同时讲其他大主题。"
     },
     {
-      "id": "wXY-pipeline",
+      "id": "deep-dive-topic",
+      "layer": "L3",
+      "priority": "critical",
+      "title": "重点难点深入解释",
+      "clear_conversation": true,
+      "prompt": "【单问·深挖】请仅深入讲解：<核心/难点子主题>。\n\n依据：课程记录、课件 NN、必要的教材或 Project 文档。\n要求：中文；先讲直观图像，再讲符号、公式/矩阵/算法步骤；给一个小例子或数值/几何例；说明常见误解和调试错误；标注来源；不要泛泛复述整个 Part。"
+    },
+    {
+      "id": "slide-skeleton-slides",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "课件原序全面骨架",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定】请仅依据以下课件：<课件 NN 标题/文件名>。不要使用其他周次、课堂记录、论文或 Project 文档。\n\n问题：请按课件顺序梳理这份课件分了几个主要模块？每个模块分别讲了什么知识点？哪些模块/知识点最重要？\n\n要求：中文；按课件顺序编号；说明每个模块的学习目标、关键图/页面（如 NotebookLM 能识别）、关键例子或例题；每点标注来源；不要展开成完整学习指南。"
+    },
+    {
+      "id": "slide-module-detail-slides-module",
+      "layer": "L2",
+      "priority": "important",
+      "title": "课件模块详细梳理",
+      "clear_conversation": true,
+      "prompt": "【单问·课件限定·模块详解】请仅依据以下课件：<课件 NN 标题/文件名>。不要使用其他来源。\n\n问题：请详细梳理课件中的模块：<模块名>。\n\n要求：中文；解释每个知识点的具体含义；说明课件是如何讲解的；指出重要图片、图示、流程、示例或例题；如果课件没有完整例题，请明确说明并构思一个贴合课件内容的小例子；标注来源。"
+    },
+    {
+      "id": "examples-topic",
       "layer": "L3",
       "priority": "important",
-      "title": "管线与算法流程",
+      "title": "示例与例题",
       "clear_conversation": true,
-      "prompt": "【单问·重要】请仅说明：<主题> 在图形学管线中的输入、处理步骤、输出和常见错误。\n\n依据：课程记录、课件、Project 文档。\n要求：中文；可用流程图描述；标注来源。"
+      "prompt": "【单问·示例】请仅围绕：<主题>，从课件、课程记录、教材或 Project 文档中抽取示例/例题并讲解；如果没有可直接引用的例题，请明确说明并构思一个符合课程语境的小例题。\n\n要求：中文；逐步讲解输入、过程、输出和图形学意义；标注来源或说明构思依据；不要扩展到其他主题。"
     },
     {
-      "id": "wXY-bridge",
-      "layer": "L4",
-      "priority": "important",
-      "title": "与前后周衔接",
-      "clear_conversation": true,
-      "prompt": "【单问】请仅说明：Week X-Y 知识与前后周及 Project 的衔接关系。\n\n要求：中文；标注来源。"
-    },
-    {
-      "id": "wXY-mistakes",
+      "id": "misconceptions-topic",
       "layer": "L3",
       "priority": "important",
       "title": "易混淆概念",
       "clear_conversation": true,
-      "prompt": "【单问】请列出本模块最易混淆的 3-5 组概念，用对比表说明：为什么易混、正确理解、记忆技巧。\n\n依据：课程记录、课件。\n要求：中文；标注来源。"
+      "prompt": "【单问·易混点】请仅围绕：<主题或 Part>，列出最易混淆的 3-5 组概念或常见错误，用对比表说明：为什么易混、正确理解、图形学直觉、记忆技巧。\n\n依据：课程记录、课件。\n要求：中文；标注来源；优先覆盖课程中容易考、Project 中容易错的点。"
+    },
+    {
+      "id": "project-bridge",
+      "layer": "L4",
+      "priority": "important",
+      "title": "与前后周和 Project 衔接",
+      "clear_conversation": true,
+      "prompt": "【单问·串联】请仅说明：Week X-Y 知识与前后周、渲染管线、Project/作业或考试复习的衔接关系。\n\n依据：课程记录、课件、Project 文档。\n要求：中文；按“前置知识 → 本 Part 作用 → 后续用途 → Project/复习落点”组织；标注来源。"
     }
   ]
 }
